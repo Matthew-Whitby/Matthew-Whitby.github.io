@@ -12,4 +12,5 @@ clear: both;
   text-align: center;
   font-weight: bold;
   font-size: 40;
+  background: linear-gradient(lightgrey,white);
 }

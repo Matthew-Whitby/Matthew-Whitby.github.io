@@ -1,4 +1,7 @@
 #headbar {
 height: 10%;
+width: 100%;
 background-color: red;
+display: table;
+clear: both;
 }

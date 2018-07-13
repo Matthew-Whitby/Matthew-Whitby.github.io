@@ -18,7 +18,7 @@ clear: both;
   text-align: center;
   font-weight: bold;
   font-size: 40;
-  background: linear-gradient(white,#dcd0ff);
+  background: linear-gradient(#b297ff 10%,#dcd0ff 90%);
 }
 .content{
   height: 95%;

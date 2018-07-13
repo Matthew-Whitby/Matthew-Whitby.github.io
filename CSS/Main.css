@@ -1,3 +1,7 @@
+body {
+  height: 100%;
+  width: 100%;
+}
 #headbar {
 height: 5%;
 width: 100%;

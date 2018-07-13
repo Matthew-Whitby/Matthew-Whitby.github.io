@@ -20,7 +20,7 @@ clear: both;
   font-size: 40;
   background: linear-gradient(white,lightgrey);
 }
-#content{
+.content{
   height: 95%;
   width: 100%;
   background-color: lightgrey;

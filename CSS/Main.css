@@ -10,7 +10,7 @@ width: 100%;
 background-color: lightred;
 display: table;
 clear: both;
-background: linear-gradient(#e5dcff 10%,#dcd0ff 90%);
+background: linear-gradient(#e5dcff 30%,#dcd0ff 70%);
 }
 .MenuOption{
   float: left;

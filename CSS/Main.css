@@ -6,5 +6,7 @@ display: table;
 clear: both;
 }
 .MenuOption{
+  float: left;
+  position: relative;
   width: 33.3%;
 }

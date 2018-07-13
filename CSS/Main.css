@@ -18,5 +18,9 @@ clear: both;
   text-align: center;
   font-weight: bold;
   font-size: 40;
-  background: linear-gradient(lightgrey,white);
+  background: linear-gradient(white,lightgrey);
+}
+#content{
+  height: 95%;
+  width: 100%;
 }

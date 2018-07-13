@@ -5,3 +5,6 @@ background-color: red;
 display: table;
 clear: both;
 }
+.MenuOption{
+  width: 33.3%;
+}

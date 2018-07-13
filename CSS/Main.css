@@ -9,4 +9,6 @@ clear: both;
   float: left;
   position: relative;
   width: 33.3%;
+  text-align: center;
+  font-weight: bold;
 }

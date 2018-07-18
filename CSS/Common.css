@@ -1,0 +1,30 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#headbar {
+height: 5%;
+width: 100%;
+background-color: lightred;
+display: table;
+clear: both;
+background: linear-gradient(#e5dcff 30%,#dcd0ff 70%);
+}
+.MenuOption{
+  float: left;
+  position: relative;
+  width: 13.3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40;
+
+}
+.content{
+  height: 95%;
+  width: 100%;
+  background-color: #dcd0ff;
+}

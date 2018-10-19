@@ -25,7 +25,7 @@ this.applyForce = function(force) {
     this.acc.mult(0);
   }
 
-  this.done(){
+  this.done = function() {
     if (this.lifespan < 0){
       return true;
     }else{

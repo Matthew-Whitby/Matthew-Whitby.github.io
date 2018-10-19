@@ -3,6 +3,7 @@ var gravity;
 
 function setup(){
   createCanvas(400,300);
+  colorMode(HSB);
   gravity = createVector(0,0.2);
   stroke(255);
   strokeWeight(4);
@@ -10,7 +11,8 @@ function setup(){
 }
 
 function draw() {
-  background(0,25);
+  colorMode(RGB);
+  background(0,0,0,25);
   if(random(1) < 0.03){
     fireworks.push(new Firework());
   }

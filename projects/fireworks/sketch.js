@@ -13,7 +13,7 @@ function draw() {
   fireworks.push(new Firework());
   for each(firework in fireworks){
     firework.update();
-    firework[i].show();
+    firework.show();
   }
   /*for (var i = 0;i < fireworks.length; i++){
     fireworks[i].update();

@@ -11,7 +11,7 @@ function setup(){
 function draw() {
   background(51);
   fireworks.push(new Firework());
-  foreach(Firework firework in fireworks){
+  for each(firework in fireworks){
     firework.update();
     firework[i].show();
   }

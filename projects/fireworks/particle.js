@@ -4,7 +4,7 @@ function Particle(x,y){
   this.acc = createVector(0,0);
 
 this.applyForce = function(force) {
-  acc.add(force);
+  this.acc.add(force);
 }
 
   this.update = function(){

@@ -5,11 +5,9 @@ function Firework(){
     if(this.firework){
       this.firework.applyForce(gravity);
       this.firework.update();
-    }
-
-
-    if(this.firework.vel >= 0){
-      this.firework = null;
+      if(this.firework.vel.y >= 0){
+        this.firework = null;
+      }
     }
   }
 

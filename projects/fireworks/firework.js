@@ -12,9 +12,12 @@ function Firework(){
         this.explode();
       }
     }
-    for(var i = 0; i < this.particles.length; i++){
+    for(var i = this.particles.length - 1; i >= 0; i--){
       this.particles[i].applyForce(gravity);
       this.particles[i].update();
+      if(this.particles[i].done()){
+        this.particles.splice(i,1);
+      }
     }
   }
 

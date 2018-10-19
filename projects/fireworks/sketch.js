@@ -10,7 +10,7 @@ function setup(){
 
 function draw() {
   background(51);
-  if(random(1) < 0.1){
+  if(random(1) < 0.05){
     fireworks.push(new Firework());
   }
     for (var i = 0; i < fireworks.length; i++) {

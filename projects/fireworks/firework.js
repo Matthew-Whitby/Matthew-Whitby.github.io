@@ -8,8 +8,8 @@ function Firework(){
       this.firework.applyForce(gravity);
       this.firework.update();
       if(this.firework.vel.y >= 0){
-        //this.exploded = true;
-        //this.explode();
+        this.exploded = true;
+        this.explode();
       }
     }
   }
@@ -22,12 +22,11 @@ function Firework(){
   }
 
   this.show = function(){
-    this.firework.show();
-    /*if(!this.exploded){
-      
+    if(!this.exploded){
+      this.firework.show();
     }
     for(var i = 0; i < this.particles.length; i++){
       this.particles[i].show();
-    }*/
+    }
   }
 }

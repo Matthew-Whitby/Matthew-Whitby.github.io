@@ -1,5 +1,5 @@
 function Firework(){
-  this.Firework = new Particle(random(width),height);
+  this.firework = new Particle(random(width),height);
 
   this.update() {
     this.firework.applyForce(gravity);

@@ -6,7 +6,7 @@ function Particle(x,y,firework){
     this.vel = createVector(0, random(-7,-10)); //Upwards velocity 2p
   } else {
     this.vel = p5.Vector.random2D();
-    this.vel.mult(random(1,6));
+    this.vel.mult(random(1,6)); //magnitude of explosion
   }
 
   this.acc = createVector(0,0);
@@ -17,7 +17,7 @@ this.applyForce = function(force) {
 
   this.update = function(){
     if(!this.firework){
-      this.vel.mult(0.85);
+      this.vel.mult(0.9); //how quickly particles slow down
       this.lifespan -= 4;
     }
     this.vel.add(this.acc);

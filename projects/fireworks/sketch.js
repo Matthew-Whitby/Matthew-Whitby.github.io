@@ -11,7 +11,7 @@ function setup(){
 function draw() {
   background(51);
   fireworks.push(new Firework());
-  for (var i = 0;i < fireworks.length; i++){
+  for (var i = 0; i < fireworks.length; i++) {
     fireworks[i].update();
     fireworks[i].show();
   }

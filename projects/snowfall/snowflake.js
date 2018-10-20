@@ -1,12 +1,22 @@
+function getRandomSize(){
+  while (true){
+    let r1 = random(1);
+    let r2 = random(1);
+    if(r2 > r1){
+      return r1 * 36;
+    }
+  }
+}
+
 class Snowflake {
 
-  constructor() {
-    let x = random(width);
-    let y = random(-100,-10);
+  constructor(sx,sy) {
+    let x = sx || random(width);
+    let y = sy || random(-100,-10);
     this.pos = createVector(x,y);
     this.vel = createVector(0, 0);
     this.acc = createVector();
-    this.r = random(1,36);
+    this.r = getRandomSize();
   }
 
   applyForce(force) {

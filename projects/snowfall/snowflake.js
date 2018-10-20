@@ -21,6 +21,7 @@ class Snowflake {
     this.pos = createVector(x,y);
     this.vel = createVector(0, 0);
     this.acc = createVector();
+    this.angle = random(TWO_PI);
     this.r = getRandomSize();
   }
 
@@ -62,8 +63,11 @@ class Snowflake {
     /*stroke(255);
     strokeWeight(this.r);
     point(this.pos.x, this.pos.y);*/
+    push();
+    translate(this.pos.x,this.pos.y);
+    rotate(this.angle);
     imageMode(CENTER);
-    image(this.img,this.pos.x,this.pos.y,this.r,this.r);
+    image(this.img,0,0,this.r,this.r);
   }
 
   offScreen(){

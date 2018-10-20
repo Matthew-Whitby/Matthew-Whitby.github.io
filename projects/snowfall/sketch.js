@@ -29,7 +29,7 @@ function setup() {
 
 function draw(){
   background(0);
-  image(textures,0,0);
+  //image(textures,0,0);
   //snow.push(new Snowflake());
   for (flake of snow) {
     flake.applyForce(gravity);

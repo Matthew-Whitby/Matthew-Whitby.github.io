@@ -38,7 +38,7 @@ function draw(){
     let xOff = flake.pos.x / width;
     let yOff = flake.pos.y / height;
     let wAngle = noise(xOff,yOff,zOff) * TWO_PI;
-    let wind = p5.Vector.formAngle(wAngle);
+    let wind = p5.Vector.fromAngle(wAngle);
     wind.mult(0.01);
 
     flake.applyForce(gravity);

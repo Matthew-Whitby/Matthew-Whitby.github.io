@@ -1,5 +1,5 @@
 function getRandomSize(){
-  let r = randomGaussian() * 2;
+  let r = randomGaussian() * 2.3;
   return constrain(abs(r*r),2,36);
   /*while (true){
     let r1 = random(1);

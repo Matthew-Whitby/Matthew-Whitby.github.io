@@ -68,6 +68,7 @@ class Snowflake {
     rotate(this.angle);
     imageMode(CENTER);
     image(this.img,0,0,this.r,this.r);
+    pop();
   }
 
   offScreen(){

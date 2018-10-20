@@ -2,10 +2,16 @@ class Snowflake {
 
   constructor() {
     let x = random(width);
-    let y = random(height);
+    let y = random(-100,-10);
     this.pos = createVector(x,y);
-    this.vel = createVector();
+    this.vel = createVector(0, 0);
     this.acc = createVector();
+  }
+
+  update() {
+    this.acc = gravity;
+    this.vel.add(this.acc);
+    this.pos.add(this.vel);
   }
 
   render() {

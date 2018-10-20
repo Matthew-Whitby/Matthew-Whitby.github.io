@@ -1,11 +1,13 @@
 function getRandomSize(){
-  while (true){
+  let r = randomGaussian() * 2;
+  return abs(r*r);
+  /*while (true){
     let r1 = random(1);
     let r2 = random(1);
     if(r2 > r1){
       return r1 * 36;
     }
-  }
+  }*/
 }
 
 class Snowflake {

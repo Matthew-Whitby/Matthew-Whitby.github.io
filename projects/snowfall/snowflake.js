@@ -8,7 +8,7 @@ class Snowflake {
 
   render() {
     stroke(255);
-    strokeWidth(4);
+    strokeWeight(4);
     point(this.pos.x, this.pos.y);
   }
 }

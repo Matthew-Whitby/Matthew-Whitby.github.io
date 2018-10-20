@@ -63,6 +63,13 @@ class Snowflake {
       this.randomize();
     }
 
+    if(this.pos.x < -this.r){ //wrapping left and right
+      this.pos.x = width + this.r;
+    }
+    if(this.pos.x > width + this.r){
+      this.pos.x = -this.r;
+    }
+
     this.angle += this.dir * this.vel.mag() / 200;
   }
 
@@ -81,6 +88,6 @@ class Snowflake {
   }
 
   offScreen(){
-    return (this.pos.y > height + this.r);
+    return (this.pos.y > height + this.r || this.pos.x < -this.r || this.pos.x > width + this.r);
   }
 }

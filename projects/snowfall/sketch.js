@@ -1,6 +1,8 @@
 let snow = [];
 let gravity;
 
+let zOff = 0;
+
 let spritesheet;
 let textures = [];
 function preload(){
@@ -17,7 +19,7 @@ function setup() {
       textures.push(img);
     }
   }
-  for(let i = 0; i < 300; i++){
+  for(let i = 0; i < 400; i++){
     let x = random(width);
     let y = random(height);
     let design = random(textures);
@@ -31,7 +33,14 @@ function draw(){
   background(0);
   //image(textures,0,0);
   //snow.push(new Snowflake());
+  zOff += 0.01;
   for (flake of snow) {
+    let xOff = flake.pos.x / width;
+    let yOff = flake.pos.y / height;
+    let wAngle = noise(xOff,yOff,zOff) * TWO_PI;
+    let wind = p5.Vector.formAngle(wAngle);
+    wind.mult(0.01);
+
     flake.applyForce(gravity);
     flake.update();
     flake.render();

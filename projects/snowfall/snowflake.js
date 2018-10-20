@@ -17,7 +17,7 @@ class Snowflake {
   constructor(sx,sy,img) {
     let x = sx || random(width);
     let y = sy || random(-100,-10);
-    this.img;
+    this.img = img;
     this.pos = createVector(x,y);
     this.vel = createVector(0, 0);
     this.acc = createVector();

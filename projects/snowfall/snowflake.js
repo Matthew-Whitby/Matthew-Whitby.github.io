@@ -22,6 +22,8 @@ class Snowflake {
     this.vel = createVector(0, 0);
     this.acc = createVector();
     this.angle = random(TWO_PI);
+    this.dir = (random(1 > 0.5) ? 1 : -1);
+
     this.r = getRandomSize();
   }
 
@@ -57,6 +59,8 @@ class Snowflake {
     if(this.pos.y > height + this.r){
       this.randomize();
     }
+
+    this.angle += this.dir * this.vel.mag() / 100;
   }
 
   render() {
@@ -70,7 +74,7 @@ class Snowflake {
     image(this.img,0,0,this.r,this.r);
     pop();
 
-    this.angle += this.vel.mag() / 100;
+
   }
 
   offScreen(){

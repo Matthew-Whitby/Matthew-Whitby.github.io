@@ -4,6 +4,11 @@ let gravity;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   gravity = createVector(0, 0.03);
+  for(let i = 0; i < 300; i ++){
+    let x = random(width);
+    let y = random(height);
+    snow.push(new Snowflake(x,y));
+  }
 }
 
 function draw(){

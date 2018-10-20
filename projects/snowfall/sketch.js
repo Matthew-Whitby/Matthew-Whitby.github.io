@@ -17,7 +17,7 @@ function setup() {
       textures.push(img);
     }
   }
-  for(let i = 0; i < 300; i ++){
+  for(let i = 0; i < 300; i++){
     let x = random(width);
     let y = random(height);
     let design = random(textures);

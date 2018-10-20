@@ -63,7 +63,7 @@ class Snowflake {
     strokeWeight(this.r);
     point(this.pos.x, this.pos.y);*/
     imageMode(CENTER);
-    image(this.img,this.pos.x,this.pos.y);
+    image(this.img);
   }
 
   offScreen(){

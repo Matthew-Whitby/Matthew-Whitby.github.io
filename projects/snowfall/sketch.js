@@ -10,7 +10,14 @@ function draw(){
   background(0);
   snow.push(new Snowflake());
   for (flake of snow) {
+    flake.applyForce(gravity);
     flake.update();
     flake.render();
+  }
+
+  for (let i = snow.lenght - 1;i >= 0; i--){
+    if(snow[i].offScreen()){
+      snow.splice(i,1);
+    }
   }
 }

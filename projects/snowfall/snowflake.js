@@ -9,15 +9,23 @@ class Snowflake {
     this.r = random(4,8);
   }
 
+  applyForce(force) {
+    this.acc.add(force);
+  }
+
   update() {
-    this.acc = gravity;
     this.vel.add(this.acc);
     this.pos.add(this.vel);
+    this.acc.mult(0);
   }
 
   render() {
     stroke(255);
     strokeWeight(this.r);
     point(this.pos.x, this.pos.y);
+  }
+
+  offScreen(){
+    return (this.pos.y > height + this.r);
   }
 }

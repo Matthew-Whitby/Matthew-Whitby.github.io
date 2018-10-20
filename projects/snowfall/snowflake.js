@@ -6,15 +6,21 @@ class Snowflake {
     this.pos = createVector(x,y);
     this.vel = createVector(0, 0);
     this.acc = createVector();
-    this.r = random(4,8);
+    this.r = random(1,36);
   }
 
   applyForce(force) {
-    this.acc.add(force);
+    //parallax effect //
+    let f = force.copy();
+    f.mult(this.r);
+    //let f = force.copy();
+    //f.div(this.mass);
+    this.acc.add(f);
   }
 
   update() {
     this.vel.add(this.acc);
+    this.vel.limit(this.r * 0.2);
     this.pos.add(this.vel);
     this.acc.mult(0);
   }

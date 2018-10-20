@@ -17,7 +17,7 @@ function draw(){
 
   for (let i = snow.length - 1;i >= 0; i--){
     if(snow[i].offScreen()){
-      snow[i].splice(i,1);
+      snow.splice(i,1);
     }
   }
 }

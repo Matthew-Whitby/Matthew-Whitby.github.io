@@ -1,6 +1,11 @@
 let snow = [];
 let gravity;
 
+let textures = [];
+function preload(){
+  textures = loadImage('snowflakes32.png');
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   gravity = createVector(0, 0.03);
@@ -13,6 +18,7 @@ function setup() {
 
 function draw(){
   background(0);
+  image(textures,0,0);
   //snow.push(new Snowflake());
   for (flake of snow) {
     flake.applyForce(gravity);

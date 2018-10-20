@@ -69,6 +69,8 @@ class Snowflake {
     imageMode(CENTER);
     image(this.img,0,0,this.r,this.r);
     pop();
+
+    this.angle += this.vel.mag() / 100;
   }
 
   offScreen(){

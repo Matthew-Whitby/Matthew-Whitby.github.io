@@ -13,7 +13,7 @@ function setup() {
   for(let x = 0; x < spritesheet.width; x+=32){
     for(let y = 0; y < spritesheet.height; y+=32){
       let img = spritesheet.get(x,y,32,32);
-      image(img,x,y);
+      //image(img,x,y);
       textures.push(img);
     }
   }
@@ -23,7 +23,7 @@ function setup() {
     let design = random(textures);
     snow.push(new Snowflake(x,y,design));
   }
-  background(0);
+  //background(0);
 
 }
 

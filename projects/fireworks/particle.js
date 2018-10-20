@@ -4,7 +4,7 @@ function Particle(x,y,hu,firework){
   this.lifespan = 255;
   this.hu = hu
   if(this.firework){
-    this.vel = createVector(0, random(-7,-10)); //Upwards velocity 2p
+    this.vel = createVector(0, random(-7,()(windowHeight / 10)/4))); //Upwards velocity 2p before -10
   } else {
     this.vel = p5.Vector.random2D();
     this.vel.mult(random(2,10)); //magnitude of explosion

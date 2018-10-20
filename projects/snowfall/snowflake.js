@@ -6,6 +6,7 @@ class Snowflake {
     this.pos = createVector(x,y);
     this.vel = createVector(0, 0);
     this.acc = createVector();
+    this.r = random(4,8);
   }
 
   update() {
@@ -16,7 +17,7 @@ class Snowflake {
 
   render() {
     stroke(255);
-    strokeWeight(4);
+    strokeWeight(this.r);
     point(this.pos.x, this.pos.y);
   }
 }

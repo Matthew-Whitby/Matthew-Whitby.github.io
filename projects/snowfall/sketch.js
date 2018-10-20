@@ -15,7 +15,7 @@ function draw(){
     flake.render();
   }
 
-  for (let i = snow.lenght - 1;i >= 0; i--){
+  for (let i = snow.length - 1;i >= 0; i--){
     if(snow[i].offScreen()){
       snow[i].splice(i,1);
     }

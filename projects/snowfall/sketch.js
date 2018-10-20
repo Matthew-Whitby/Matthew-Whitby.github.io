@@ -42,6 +42,7 @@ function draw(){
     wind.mult(1);
 
     flake.applyForce(gravity);
+    flake.applyForce(wind);
     flake.update();
     flake.render();
   }

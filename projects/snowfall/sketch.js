@@ -1,9 +1,10 @@
 let snow = [];
 let gravity;
 
+let spritesheet;
 let textures = [];
 function preload(){
-  textures = loadImage('snowflakes32.png');
+  spritesheet = loadImage('snowflakes32.png');
 }
 
 function setup() {
@@ -14,9 +15,17 @@ function setup() {
     let y = random(height);
     snow.push(new Snowflake(x,y));
   }
+  background(0);
+  for(let x = 0; x < spritesheet.width; x+=32){
+    for(let y = 0; y < spritesheet.height; y+=32){
+      let img = spritesheet.get(x,y,32,32);
+      image(img,x,y);
+      textures.push(img);
+    }
+  }
 }
 
-function draw(){
+/*function draw(){
   background(0);
   image(textures,0,0);
   //snow.push(new Snowflake());
@@ -26,9 +35,9 @@ function draw(){
     flake.render();
   }
 
-  /*for (let i = snow.length - 1;i >= 0; i--){
+  for (let i = snow.length - 1;i >= 0; i--){
     if(snow[i].offScreen()){
       snow.splice(i,1);
     }
-  }*/
-}
+  }
+}*/

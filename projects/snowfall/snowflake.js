@@ -60,7 +60,7 @@ class Snowflake {
       this.randomize();
     }
 
-    this.angle += this.dir * this.vel.mag() / 100;
+    this.angle += this.dir * this.vel.mag() / 200;
   }
 
   render() {

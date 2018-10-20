@@ -1,7 +1,7 @@
 class Snowflake {
 
   constructor() {
-    let x = randowm(width);
+    let x = random(width);
     let y = random(height);
     this.pos = createVector(x,y);
     this.vel = createVector();

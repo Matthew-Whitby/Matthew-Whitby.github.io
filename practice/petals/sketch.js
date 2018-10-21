@@ -28,7 +28,7 @@ function setup() {
 
 function draw(){
   background(0);
-  zOff += 0.05; //changes the wind parameter over time
+  zOff += 1; //changes the wind parameter over time
   for (petal of petals) {
     let xOff = petal.pos.x / width;
     let yOff = petal.pos.y / height;

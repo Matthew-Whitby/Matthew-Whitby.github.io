@@ -1,15 +1,6 @@
 function getRandomSize(){
   let r = pow(random(0,1),2);
   return constrain(r * 32,2,32);
-  //let r = randomGaussian() * 2.3;
-  //return constrain(abs(r*r),2,36);
-  /*while (true){
-    let r1 = random(1);
-    let r2 = random(1);
-    if(r2 > r1){
-      return r1 * 36;
-    }
-  }*/
 }
 
 class Petal {
@@ -29,11 +20,9 @@ class Petal {
   }
 
   applyForce(force) {
-    //parallax effect //
+    //parallax effect
     let f = force.copy();
     f.mult(this.r);
-    //let f = force.copy();
-    //f.div(this.mass);
     this.acc.add(f);
   }
 
@@ -73,10 +62,7 @@ class Petal {
     this.angle += this.dir * this.vel.mag() / 200;
   }
 
-  render() {
-    /*stroke(255);
-    strokeWeight(this.r);
-    point(this.pos.x, this.pos.y);*/
+  render() 
     push();
     translate(this.pos.x + this.xOff,this.pos.y);
     rotate(this.angle);

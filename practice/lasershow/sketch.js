@@ -16,6 +16,7 @@ function draw() {
     let ey;
     let dir = (random(1 > 0.5) ? 1 : -1);
     if(dir = 1){ //create 'vertical laser'
+    console.log(dir);
       sx = Math.round(random(windowWidth));
       ex = Math.round(random(windowWidth));
       sy = -100;
@@ -26,7 +27,6 @@ function draw() {
     sx = -100;
     ex = -100;
     }
-    console.log(sy);
     lasers.push(new Laser(sx,ex,sy,ey));
   }
     for (var i = lasers.length - 1; i >= 0; i--) {

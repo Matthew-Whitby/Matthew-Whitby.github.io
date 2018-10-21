@@ -5,10 +5,6 @@ class Laser {
     let ex = etx;
     let sy = sly;
     let ey = ery;
-console.log(sx);
-console.log(ex);
-console.log(sy);
-console.log(ey);
   }
 
   render() {

@@ -26,7 +26,6 @@ function draw() {
     sx = -100;
     ex = -100;
     }
-    console.log(dir);
     lasers.push(new Laser(sx,ex,sy,ey));
   }
     for (var i = lasers.length - 1; i >= 0; i--) {

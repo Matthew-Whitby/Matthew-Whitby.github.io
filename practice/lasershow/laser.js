@@ -40,7 +40,6 @@ class Laser {
     strokeWeight(25);
     line(x,y,w,h);
 
-    noStroke();
     strokeWeight(5);
     stroke(this.colour,255,255);
     line(x,y,w,h);

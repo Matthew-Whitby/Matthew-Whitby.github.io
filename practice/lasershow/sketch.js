@@ -11,8 +11,8 @@ function setup(){
 function draw() {
   if(random(1) < 0.1){
     if(lasers.length > 0){
+      clear();
       lasers.splice(0,1);
-      console.log(lasers);
     }
     let sx;
     let ex;

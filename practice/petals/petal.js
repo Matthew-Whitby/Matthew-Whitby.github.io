@@ -12,7 +12,7 @@ class Petal {
     this.vel = createVector(0, 0); //inital velocity
     this.acc = createVector();
     this.angle = random(TWO_PI); //randomizes the starting angle of petal
-    this.dir = (random(1 > 0.5) ? 1 : -1); //randomizes whether petal will spin clockwise or anti-clockwise
+    this.dir = (random(1) > 0.5) ? 1 : -1; //randomizes whether petal will spin clockwise or anti-clockwise
     this.xOff = 0; //x offput of petal
     this.r = getRandomSize(); //chooses a random size for the petal
   }

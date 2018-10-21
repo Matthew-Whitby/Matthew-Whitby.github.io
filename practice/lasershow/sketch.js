@@ -11,7 +11,7 @@ function setup(){
 function draw() {
   if(random(1) < 0.1){
     if(lasers.length > 0){
-      lasers.splice(lasers[0]);
+      lasers.splice(lasers[0],1);
     }
     let sx;
     let ex;

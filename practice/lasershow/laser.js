@@ -1,10 +1,10 @@
 class Laser {
 
   constructor(slx,etx,sly,ery){
-    let sx = slx;
-    let ex = etx;
-    let sy = sly;
-    let ey = ery;
+    this.sx = slx;
+    this.ex = etx;
+    this.sy = sly;
+    this.ey = ery;
   }
 
   render() {

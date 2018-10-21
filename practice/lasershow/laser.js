@@ -9,6 +9,7 @@ class Laser {
   }
 
   render() {
+    push();
     colorMode(HSB);
     stroke(this.colour,255,255);
     strokeWeight(5);
@@ -17,6 +18,11 @@ class Laser {
     }else{
       line(this.sx,0,this.ex,windowHeight);
     }
+    pop();
+  }
+
+  glow() {
+
   }
 
   done(){

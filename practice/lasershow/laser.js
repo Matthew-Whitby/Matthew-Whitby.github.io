@@ -6,6 +6,7 @@ class Laser {
     this.sy = sly;
     this.ey = ery;
     this.colour = colour;
+    this.thickness = 10;
   }
 
   render() {
@@ -26,22 +27,22 @@ class Laser {
   glow(x,y,w,h) {
     colorMode(HSB);
     stroke(this.colour,255,255,0.1);
-    strokeWeight(4);
+    strokeWeight(4 + this.thickness);
     line(x,y,w,h);
 
     stroke(this.colour,255,255,0.1);
-    strokeWeight(9);
+    strokeWeight(9 + this.thickness);
     line(x,y,w,h);
 
     stroke(this.colour,255,255,0.1);
-    strokeWeight(16);
+    strokeWeight(16 + this.thickness);
     line(x,y,w,h);
 
     stroke(this.colour,255,255,0.1);
-    strokeWeight(25);
+    strokeWeight(25 + this.thickness);
     line(x,y,w,h);
 
-    strokeWeight(5);
+    strokeWeight(5 + this.thickness);
     stroke(this.colour,255,255);
     line(x,y,w,h);
   }

@@ -10,7 +10,7 @@ class Laser {
 
   render() {
     stroke(this.colour);
-    strokeWeight(10);
+    strokeWeight(5);
     if(this.ex == -100){
       line(0,this.sy,windowWidth,this.ey);
     }else{

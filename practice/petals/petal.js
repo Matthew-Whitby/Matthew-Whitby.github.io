@@ -26,14 +26,7 @@ class Petal {
     this.acc.add(f);
   }
 
-  randomize() {
-    let x = random(width);
-    let y = random(-100,-10);
-    this.pos = createVector(x,y);
-    this.vel = createVector(0, 0);
-    this.acc = createVector();
-    this.r = getRandomSize();
-  }
+
 
   update() {
     this.xOff = sin(this.angle) * 2 * this.r;

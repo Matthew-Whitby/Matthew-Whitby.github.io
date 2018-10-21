@@ -12,7 +12,7 @@ function getRandomSize(){
   }*/
 }
 
-class Snowflake {
+class Petal {
 
   constructor(sx,sy,img) {
     let x = sx || random(width);

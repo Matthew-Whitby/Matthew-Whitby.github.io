@@ -14,7 +14,7 @@ function draw() {
     let ex;
     let sy;
     let ey;
-    let dir = (random(1 > 0.5) ? 1 : -1);
+    let dir = (random(1) > 0.5) ? 1 : -1;
     if(dir == 1){ //create 'vertical laser'
     console.log(dir);
       sx = Math.round(random(windowWidth));

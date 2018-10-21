@@ -22,7 +22,7 @@ class Snowflake {
     this.vel = createVector(0, 0);
     this.acc = createVector();
     this.angle = random(TWO_PI);
-    this.dir = (random(1 > 0.5) ? 1 : -1);
+    this.dir = (random(1) > 0.5) ? 1 : -1;
     this.xOff = 0;
 
     this.r = getRandomSize();

@@ -23,4 +23,5 @@ function draw() {
         fireworks.splice(i,1);
       }
   }
+  console.log(fireworks.length);
 }

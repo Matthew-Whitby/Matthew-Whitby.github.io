@@ -1,6 +1,6 @@
 function getRandomSize(){
   let r = pow(random(0,1),2); //generate small number
-  return constrain(r * 32,10,32); //expand number into suitable size range
+  return constrain(r * 32,5,32); //expand number into suitable size range
 }
 
 class Petal {

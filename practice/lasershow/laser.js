@@ -1,14 +1,15 @@
 class Laser {
 
-  constructor(slx,etx,sly,ery){
+  constructor(slx,etx,sly,ery,colour){
     this.sx = slx;
     this.ex = etx;
     this.sy = sly;
     this.ey = ery;
+    this.colour = colour;
   }
 
   render() {
-    stroke(255);
+    stroke(this.colour);
     strokeWeight(10);
     if(this.ex == -100){
       line(0,this.sy,windowWidth,this.ey);

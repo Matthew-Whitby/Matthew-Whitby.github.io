@@ -24,7 +24,7 @@ function draw() {
     sy = random(windowHeight);
     ey = random(windowHeight);
     sx = -100;
-    ey = -100;
+    ex = -100;
     }
     console.log(sy);
     lasers.push(new Laser(sx,ex,sy,ey));

@@ -12,9 +12,9 @@ class Laser {
     stroke(255);
     strokeWeight(10);
     if(ex == -100){
-      line(0,sy,windowWidth,ey);
+      line(0,this.sy,windowWidth,this.ey);
     }else{
-      line(sx,0,ex,windowHeight);
+      line(this.sx,0,this.ex,windowHeight);
     }
   }
 

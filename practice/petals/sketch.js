@@ -6,7 +6,7 @@ let zOff = 0;
 let spritesheet;
 let textures = [];
 function preload(){
-  spritesheet = loadImage('snowflakes32.png');
+  spritesheet = loadImage('petals32.png');
 }
 
 function setup() {

@@ -21,19 +21,12 @@ class Petal {
 
   applyForce(force) {
     //parallax effect
-    let f = force.copy();
-    f.mult(this.r);
+    let f = force.copy(); //copies gravity force
+    f.mult(this.r); //makes gravity act differently dependant on petal size
     this.acc.add(f);
   }
 
-  randomize() {
-    let x = random(width);
-    let y = random(-100,-10);
-    this.pos = createVector(x,y);
-    this.vel = createVector(0, 0);
-    this.acc = createVector();
-    this.r = getRandomSize();
-  }
+
 
   update() {
     this.xOff = sin(this.angle) * 2 * this.r;

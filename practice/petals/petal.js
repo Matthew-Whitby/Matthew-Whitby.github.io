@@ -1,22 +1,22 @@
 function getRandomSize(){
-  let r = pow(random(0,1),2);
-  return constrain(r * 32,2,32);
+  let r = pow(random(0,1),2); //generate small number
+  return constrain(r * 32,2,32); //expand number into suitable size range
 }
 
 class Petal {
 
   constructor(sx,sy,img) {
-    let x = sx || random(width);
-    let y = sy || random(-100,-10);
-    this.img = img;
+    let x = sx || random(width); //gets initial random x or generates a random x if no inital is given
+    let y = sy || random(-100,-10); //gets inital random y or generates a random y somewhere above the top of the screen so petals fall from differnt heights
+    this.img = img; //sets petal design
     this.pos = createVector(x,y);
-    this.vel = createVector(0, 0);
+    this.vel = createVector(0, 0); //inital velocity
     this.acc = createVector();
-    this.angle = random(TWO_PI);
-    this.dir = (random(1 > 0.5) ? 1 : -1);
-    this.xOff = 0;
+    this.angle = random(TWO_PI); //randomizes the starting angle of petal
+    this.dir = (random(1 > 0.5) ? 1 : -1); //randomizes whether petal will spin clockwise or anti-clockwise
+    this.xOff = 0; //x offput of petal
 
-    this.r = getRandomSize();
+    this.r = getRandomSize(); //chooses a random size for the petal
   }
 
   applyForce(force) {
@@ -62,7 +62,7 @@ class Petal {
     this.angle += this.dir * this.vel.mag() / 200;
   }
 
-  render() 
+  render()
     push();
     translate(this.pos.x + this.xOff,this.pos.y);
     rotate(this.angle);

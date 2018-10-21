@@ -16,13 +16,13 @@ function draw() {
     let ey;
     let dir = (random(1 > 0.5) ? 1 : -1);
     if(dir = 1){ //create 'vertical laser'
-      sx = random(windowWidth);
-      ex = random(windowWidth);
+      sx = Math.round(random(windowWidth));
+      ex = Math.round(random(windowWidth));
       sy = -100;
       ey = -100;
     }else{ //create 'horizontal laser'
-    sy = random(windowHeight);
-    ey = random(windowHeight);
+    sy = Math.round(random(windowHeight));
+    ey = Math.round(random(windowHeight));
     sx = -100;
     ex = -100;
     }

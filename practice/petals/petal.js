@@ -62,7 +62,7 @@ class Petal {
     this.angle += this.dir * this.vel.mag() / 200;
   }
 
-  render()
+  render() {
     push();
     translate(this.pos.x + this.xOff,this.pos.y);
     rotate(this.angle);

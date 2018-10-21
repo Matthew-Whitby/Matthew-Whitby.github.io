@@ -18,7 +18,7 @@ class Laser {
     }
   }
 
-  this.done = function() {
+  done(){
     return false;
   }
 }

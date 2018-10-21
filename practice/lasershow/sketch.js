@@ -1,27 +1,38 @@
-var fireworks = [];
-var gravity;
+var lasers = [];
 
 function setup(){
   createCanvas(windowWidth,windowHeight);
   colorMode(HSB);
-  gravity = createVector(0,0.2);
   stroke(255);
   strokeWeight(4);
   background(0);
 }
 
 function draw() {
-  colorMode(RGB);
-  background(0,0,0,25);
   if(random(1) < 0.1){
-    fireworks.push(new Firework());
+    let sx;
+    let ex;
+    let sy;
+    let ey;
+    let dir = (random(1 > 0.5) ? 1 : -1);
+    if(dir = 1){ //create 'vertical laser'
+      sx = random(windowWidth);
+      ex = random(windowWidth);
+      sy = -100;
+      ey = -100;
+    }else{ //create 'horizontal laser'
+    sy = random(windowHeight);
+    ey = random(windowHeight);
+    sx = -100;
+    ey = -100;
+    }
+    lasers.push(new Laser(sx,ex,sy,ey));
   }
-    for (var i = fireworks.length - 1; i >= 0; i--) {
-      fireworks[i].update();
-      fireworks[i].show();
-      if(fireworks[i].done()){
-        fireworks.splice(i,1);
+    for (var i = lasers.length - 1; i >= 0; i--) {
+      lasers[i].update();
+      lasers[i].render();
+      if(lasers[i].done()){
+        lasers.splice(i,1);
       }
   }
-  console.log(fireworks.length);
 }

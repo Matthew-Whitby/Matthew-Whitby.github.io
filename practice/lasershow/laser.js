@@ -14,15 +14,36 @@ class Laser {
     stroke(this.colour,255,255);
     strokeWeight(5);
     if(this.ex == -100){
-      line(0,this.sy,windowWidth,this.ey);
+      //line(0,this.sy,windowWidth,this.ey);
+      glow(0,this.sy,windowWidth,this.ey);
     }else{
-      line(this.sx,0,this.ex,windowHeight);
+    //  line(this.sx,0,this.ex,windowHeight);
+      glow(this.sx,0,this.ex,windowHeight);
     }
     pop();
   }
 
-  glow() {
+  glow(x,y,w,h) {
+    stroke(this.colour,10);
+    strokeWeight(4);
+    line(x,y,w,h);
 
+    stroke(this.colour,10);
+    strokeWeight(9);
+    line(x,y,w,h);
+
+    stroke(this.colour,10);
+    strokeWeight(16);
+    line(x,y,w,h);
+
+    stroke(this.colour,10);
+    strokeWeight(25);
+    line(x,y,w,h);
+
+    noStroke();
+    strokeWeight(5);
+    fill(this.colour);
+    line(x,y,w,h);
   }
 
   done(){

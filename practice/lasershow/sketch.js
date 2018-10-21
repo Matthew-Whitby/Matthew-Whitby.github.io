@@ -30,7 +30,7 @@ function draw() {
     lasers.push(new Laser(sx,ex,sy,ey));
   }
     for (var i = lasers.length - 1; i >= 0; i--) {
-      lasers[i].update();
+      //lasers[i].update();
       lasers[i].render();
       if(lasers[i].done()){
         lasers.splice(i,1);

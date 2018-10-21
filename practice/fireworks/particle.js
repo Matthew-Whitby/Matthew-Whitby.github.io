@@ -2,7 +2,7 @@ function Particle(x,y,hu,firework){
   this.pos = createVector(x,y);
   this.firework = firework;
   this.lifespan = 255;
-  this.hu = hu
+  this.hu = hu;
   if(this.firework){
     this.vel = createVector(0, random(-7,(windowHeight / 100)*-2)); //Upwards velocity 2p before -10
   } else {

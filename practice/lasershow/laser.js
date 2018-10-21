@@ -9,7 +9,8 @@ class Laser {
   }
 
   render() {
-    stroke(this.colour);
+    colorMode(HSB);
+    stroke(this.colour,255,255);
     strokeWeight(5);
     if(this.ex == -100){
       line(0,this.sy,windowWidth,this.ey);

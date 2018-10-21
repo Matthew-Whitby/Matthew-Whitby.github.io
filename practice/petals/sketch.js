@@ -6,50 +6,39 @@ let zOff = 0;
 let spritesheet;
 let textures = [];
 function preload(){
-  spritesheet = loadImage('petals32.png');
+  spritesheet = loadImage('petals32.png'); //gets image file
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  gravity = createVector(0, 0.3);
+  gravity = createVector(0, 0.3); //strength of gravity pushing down
   for(let x = 0; x < spritesheet.width; x+=32){
     for(let y = 0; y < spritesheet.height; y+=32){
-      let img = spritesheet.get(x,y,32,32);
-      //image(img,x,y);
+      let img = spritesheet.get(x,y,32,32); //loads images
       textures.push(img);
     }
   }
   for(let i = 0; i < 700; i++){
-    let x = random(width);
+    let x = random(width); //randomizes staring locations of petals
     let y = random(height);
-    let design = random(textures);
+    let design = random(textures); //gets random petal design
     petals.push(new Petal(x,y,design));
   }
-  //background(0);
-
 }
 
 function draw(){
   background(0);
-  //image(textures,0,0);
-  //snow.push(new Snowflake());
-  zOff += 0.05;
+  zOff += 0.05; //changes the wind parameter over time
   for (petal of petals) {
     let xOff = petal.pos.x / width;
     let yOff = petal.pos.y / height;
-    let wAngle = noise(xOff,yOff,zOff) * TWO_PI;
-    let wind = p5.Vector.fromAngle(wAngle);
-    wind.mult(0.1);
+    let wAngle = noise(xOff,yOff,zOff) * TWO_PI; //generates wind based off oscillating wave
+    let wind = p5.Vector.fromAngle(wAngle); //creates angle wind will blow in
+    wind.mult(0.1); //strength of wind manipulator
 
-    petal.applyForce(gravity);
-    petal.applyForce(wind);
-    petal.update();
-    petal.render();
+    petal.applyForce(gravity); //applies gravity
+    petal.applyForce(wind); //applies wind
+    petal.update(); //updates current wind/ gravity
+    petal.render(); //moves to new location
   }
-
-  /*for (let i = snow.length - 1;i >= 0; i--){
-    if(snow[i].offScreen()){
-      snow.splice(i,1);
-    }
-  }*/
 }

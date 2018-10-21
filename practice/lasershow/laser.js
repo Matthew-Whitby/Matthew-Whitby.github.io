@@ -24,19 +24,19 @@ class Laser {
   }
 
   glow(x,y,w,h) {
-    stroke(this.colour,10);
+    stroke(this.colour,,0,0,10);
     strokeWeight(4);
     line(x,y,w,h);
 
-    stroke(this.colour,10);
+    stroke(this.colour,0,0,10);
     strokeWeight(9);
     line(x,y,w,h);
 
-    stroke(this.colour,10);
+    stroke(this.colour,0,0,10);
     strokeWeight(16);
     line(x,y,w,h);
 
-    stroke(this.colour,10);
+    stroke(this.colour,0,0,10);
     strokeWeight(25);
     line(x,y,w,h);
 

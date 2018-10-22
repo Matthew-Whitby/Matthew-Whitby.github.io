@@ -9,10 +9,6 @@ function setup(){
   createCanvas(windowHeight,windowWidth);
   background(20);
   textFont(font);
-  textSize(192);
-  fill(255);
-  noStroke();
-  text('Whitby,100,200');
 
   var whitbyPoints = font.textToPoints('Whitby',100,200,192);
 
@@ -28,7 +24,7 @@ function setup(){
 function draw() {
   background(20);
   for (particle of particles){
-    particle.behavoirs();
+    particle.behaviors();
     particle.update();
     particle.show();
   }

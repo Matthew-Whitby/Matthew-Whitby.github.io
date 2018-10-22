@@ -56,3 +56,7 @@ function keyPressed() {
     }
   }
 }
+
+function touchStarted() {
+  keyPressed();
+}

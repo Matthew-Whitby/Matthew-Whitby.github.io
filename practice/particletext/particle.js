@@ -1,4 +1,5 @@
-function Particle(x,y){
+function Particle(x,y,jpx,jpy){
+  this.jtarget = createVector(jpx,jpy);
   this.pos = createVector(random(width),random(height));
   this.target = createVector(x,y);
   this.vel = p5.Vector.random2D();
@@ -6,6 +7,7 @@ function Particle(x,y){
   this.r = 8;
   this.maxspeed = 10;
   this.maxforce = 1;
+  this.settled = false;
 }
 
 Particle.prototype.update = function(){
@@ -14,8 +16,19 @@ Particle.prototype.update = function(){
   this.acc.mult(0);
 }
 
+Particle.prototype.setSettled = function(set) {
+  if(this.jtarget.x != -200 && this.jtarget.y != -200){
+    this.settled = set;
+  }
+}
+
 Particle.prototype.behaviors = function(){
-  var arrive = this.arrive(this.target);
+  var arrive;
+  if(this.settled == false){
+    arrive = this.arrive(this.target);
+  }else{
+    arrive = this.arrive(this.jtarget);
+  }
 
   var mouse = createVector(mouseX,mouseY);
   var flee = this.flee(mouse);

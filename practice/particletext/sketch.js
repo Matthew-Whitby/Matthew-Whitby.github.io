@@ -11,5 +11,13 @@ function setup(){
   textSize(128);
   fill(255);
   noStroke();
-  text('Whitby,10,200');
+  text('Whitby,100,200');
+
+  var whitbyPoints = font.textToPoints('Whitby',100,200);
+
+  for(pt of whitbyPoints){
+    stroke(0,255,0);
+    strokeWeight(4);
+    point(pt.x,pt.y);
+  }
 }

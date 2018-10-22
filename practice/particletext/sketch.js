@@ -28,6 +28,7 @@ function setup(){
 function draw() {
   background(20);
   for (particle of particles){
+    particle.behavoirs();
     particle.update();
     particle.show();
   }

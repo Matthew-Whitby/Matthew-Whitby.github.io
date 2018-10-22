@@ -12,11 +12,11 @@ function setup() {
 }
 
 function imageIndex(img, x, y) {
-  return (img.width * x + y) * 4;
+  return 4 * (x + y * img.width);
 }
 
 function getColorAtindex(img, x, y) {
-  let idx = (img.width * x + y) * 4;
+  let idx = 4 * (x + y * img.width);
   let pix = img.pixels;
   let red = pix[idx];
   let green = pix[idx + 1];
@@ -26,7 +26,7 @@ function getColorAtindex(img, x, y) {
 }
 
 function setColorAtIndex(img, x, y, clr) {
-  let idx = (img.width * x + y) * 4;
+  let idx = 4 * (x + y * img.width);
 
   let pix = img.pixels;
   pix[idx] = red(clr);

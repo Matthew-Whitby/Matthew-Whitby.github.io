@@ -8,6 +8,16 @@ function Particle(){
 Particle.prototype.update = function(){
   this.pos.add(this.vel);
   this.vel.add(this.acc);
+  this.acc.mult(0);
+}
+
+Particle.prototype.behaviors = function(){
+  var seek = this.seek(this.target);
+  this.applyForce(seek);
+}
+
+Particle.prototype.applyForce = function(f) {
+  this.acc.add(f);
 }
 
 Particle.prototype.show = function(){

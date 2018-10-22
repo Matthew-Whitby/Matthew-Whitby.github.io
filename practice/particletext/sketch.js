@@ -27,7 +27,7 @@ function setup(){
     if(whitbyjpPoints[i] != null){
       var particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,whitbyjpPoints[i].x,whitbyjpPoints[i].y);
     }else{
-      var particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,-100,-100);
+      var particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,-10,-10);
     }
 
     particles.push(particle);

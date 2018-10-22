@@ -11,10 +11,6 @@ function setup() {
   image(picture, picture.width, 0);
 }
 
-function imageIndex(img, x, y) {
-  return 4 * (x + y * img.width);
-}
-
 function getColorAtindex(img, x, y) {
   let idx = 4 * (x + y * img.width);
   let pix = img.pixels;
@@ -27,17 +23,12 @@ function getColorAtindex(img, x, y) {
 
 function setColorAtIndex(img, x, y, clr) {
   let idx = 4 * (x + y * img.width);
-
-  let pix = img.pixels;
-  pix[idx] = red(clr);
-  pix[idx + 1] = green(clr);
-  pix[idx + 2] = blue(clr);
-  pix[idx + 3] = alpha(clr);
+  img.pixels[idx] = red(clr);
+  img.pixels[idx + 1] = green(clr);
+  img.pixels[idx + 2] = blue(clr);
+  img.pixels[idx + 3] = alpha(clr);
 }
 
-// Finds the closest step for a given value
-// The step 0 is always included, so the number of steps
-// is actually steps + 1
 function closestStep(max, steps, value) {
   return round(steps * value / 255) * floor(255 / steps);
 }
@@ -80,6 +71,5 @@ function addError(img, factor, x, y, errR, errG, errB) {
   clr.setRed(r + errR * factor);
   clr.setGreen(g + errG * factor);
   clr.setBlue(b + errB * factor);
-
   setColorAtIndex(img, x, y, clr);
 }

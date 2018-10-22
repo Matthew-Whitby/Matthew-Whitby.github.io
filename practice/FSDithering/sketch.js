@@ -6,18 +6,17 @@ function preload() {
 
 function setup() {
   createCanvas(picture.width*2, picture.height);
-
   image(picture, 0, 0);
   makeDithered(picture, 1);
   image(picture, picture.width, 0);
 }
 
 function imageIndex(img, x, y) {
-  return 4 * (x + y * img.width);
+  return (img.width * x + y) * 4;
 }
 
 function getColorAtindex(img, x, y) {
-  let idx = imageIndex(img, x, y);
+  let idx = (img.width * x + y) * 4;
   let pix = img.pixels;
   let red = pix[idx];
   let green = pix[idx + 1];
@@ -27,7 +26,7 @@ function getColorAtindex(img, x, y) {
 }
 
 function setColorAtIndex(img, x, y, clr) {
-  let idx = imageIndex(img, x, y);
+  let idx = (img.width * x + y) * 4;
 
   let pix = img.pixels;
   pix[idx] = red(clr);

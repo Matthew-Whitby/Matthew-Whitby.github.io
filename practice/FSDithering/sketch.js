@@ -1,15 +1,15 @@
-let kitten;
+let picture;
 
 function preload() {
-  kitten = loadImage("cutepig.jpg");
+  picture = loadImage("cutepig.jpg");
 }
 
 function setup() {
-  createCanvas(1024, 512);
+  createCanvas(picture.width*2, picture.height);
 
-  image(kitten, 0, 0);
-  makeDithered(kitten, 1);
-  image(kitten, 512, 0);
+  image(picture, picture.width, picture.height);
+  makeDithered(picture, 1);
+  image(picture, 512, 0);
 }
 
 function imageIndex(img, x, y) {
@@ -45,7 +45,6 @@ function closestStep(max, steps, value) {
 
 function makeDithered(img, steps) {
   img.loadPixels();
-
   for (let y = 0; y < img.height; y++) {
     for (let x = 0; x < img.width; x++) {
       let clr = getColorAtindex(img, x, y);
@@ -55,18 +54,14 @@ function makeDithered(img, steps) {
       let newR = closestStep(255, steps, oldR);
       let newG = closestStep(255, steps, oldG);
       let newB = closestStep(255, steps, oldB);
-
       let newClr = color(newR, newG, newB);
       setColorAtIndex(img, x, y, newClr);
-
       let errR = oldR - newR;
       let errG = oldG - newG;
       let errB = oldB - newB;
-
       distributeError(img, x, y, errR, errG, errB);
     }
   }
-
   img.updatePixels();
 }
 

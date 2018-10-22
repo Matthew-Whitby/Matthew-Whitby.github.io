@@ -1,7 +1,7 @@
 let kitten;
 
 function preload() {
-  kitten = loadImage("kitten.jpg");
+  kitten = loadImage("cutepig.jpg");
 }
 
 function setup() {

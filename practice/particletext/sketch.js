@@ -8,15 +8,15 @@ function setup(){
   createCanvas(windowHeight,windowWidth);
   background(20);
   textFont(font);
-  textSize(128);
+  textSize(192);
   fill(255);
   noStroke();
   text('Whitby,100,200');
 
-  var whitbyPoints = font.textToPoints('Whitby',100,200);
+  var whitbyPoints = font.textToPoints('Whitby',100,200,192);
 
   for(pt of whitbyPoints){
-    stroke(0,255,0);
+    stroke(255);
     strokeWeight(4);
     point(pt.x,pt.y);
   }

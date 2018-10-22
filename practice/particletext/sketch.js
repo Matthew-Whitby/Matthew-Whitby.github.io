@@ -10,7 +10,7 @@ function setup(){
   background(20);
   textFont(font);
 
-  var instructionsPoints = font.textToPoints('press up/down arrows',100,200,192);
+  var instructionsPoints = font.textToPoints('press up/down arrows',100,200,100);
   var whitbyPoints = font.textToPoints('Whitby',100,400,192);
   var whitbyjpPoints = font.textToPoints('ウイトビー',100,600,192);
   console.log(whitbyPoints.length);

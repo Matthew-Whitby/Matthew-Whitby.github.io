@@ -9,7 +9,7 @@ function setup() {
 
   image(picture, picture.width, picture.height);
   makeDithered(picture, 1);
-  image(picture, 512, 0);
+  image(picture, picture.width, 0);
 }
 
 function imageIndex(img, x, y) {

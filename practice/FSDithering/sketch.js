@@ -7,7 +7,7 @@ function preload() {
 function setup() {
   createCanvas(picture.width*2, picture.height);
 
-  image(picture, picture.width, picture.height);
+  image(picture, 0, 0);
   makeDithered(picture, 1);
   image(picture, picture.width, 0);
 }

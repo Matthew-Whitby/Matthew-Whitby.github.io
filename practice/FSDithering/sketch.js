@@ -10,8 +10,6 @@ function setup() {
   image(kitten, 0, 0);
   makeDithered(kitten, 1);
   image(kitten, 512, 0);
-  // Apply gray filter to the whole canvas
-  filter(GRAY);
 }
 
 function imageIndex(img, x, y) {

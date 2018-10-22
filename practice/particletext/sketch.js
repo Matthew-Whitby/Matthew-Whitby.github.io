@@ -1,5 +1,6 @@
 var font;
 var particles = [];
+var tapped = false;
 
 function preload() {
   font = loadFont('07にくまるフォント.otf');
@@ -58,5 +59,15 @@ function keyPressed() {
 }
 
 function touchStarted() {
-  keyPressed();
+  if(tapped == false){
+    for(particle of particles){
+      particle.setSettled(true);
+    }
+    tapped = true;
+  }else{
+    for(particle of particles){
+      particle.setSettled(false);
+    }
+    tapped = false;
+  }
 }

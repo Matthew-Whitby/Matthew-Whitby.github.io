@@ -1,5 +1,5 @@
 function Particle(x,y){
-  this.pos = createVector(x,y);
+  this.pos = createVector(random(width),random(height));
   this.target = createVector(x,y);
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
@@ -15,8 +15,8 @@ Particle.prototype.update = function(){
 }
 
 Particle.prototype.behaviors = function(){
-  var seek = this.seek(this.target);
-  this.applyForce(seek);
+  var arrive = this.arrive(this.target);
+  this.applyForce(arrive);
 }
 
 Particle.prototype.applyForce = function(f) {

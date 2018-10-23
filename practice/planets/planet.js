@@ -7,15 +7,15 @@ class Planet {
   }
 }
 
-  Planet.prototype.applyForce = function(force) {
-    //var f = createVector(force,this.mass);
-    this.acceleration.add(createVector(force,this.mass));
-  }
-
   Planet.prototype.update = function() {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
     this.acceleration.mult(0);
+  }
+
+  Planet.prototype.applyForce = function(force) {
+    //var f = createVector(force,this.mass);
+    this.acceleration.add(createVector(force,this.mass));
   }
 
   Planet.prototype.display = function() {

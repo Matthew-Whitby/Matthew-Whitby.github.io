@@ -34,10 +34,8 @@ Star.prototype.applyForce = function(f){
 }
 
 Star.prototype.display = function(){
-  push();
   imageMode(CENTER);
   image(this.img,0,0,this.size,this.size);
-  pop();
 }
 
 Star.prototype.arrive = function(endpos){

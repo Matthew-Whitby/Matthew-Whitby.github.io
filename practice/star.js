@@ -8,6 +8,7 @@ function Star(sx,sy,ex,ey,img){
   this.maxspeed = 10;
   this.maxforce = 1;
   this.settled = false;
+  console.log("Created");
 }
 
 Star.prototype.checkSettled = function(){

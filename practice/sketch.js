@@ -15,10 +15,9 @@ function draw(){
   if(random(1) < 0.1){
     stars.push(new Star(random(windowWidth),random(windowHeight),random(windowWidth),random(windowHeight),starimg));
   }
-  console.log(stars.length);
   for (var i = stars.length - 1; i >= 0; i--) {
     stars[i].update();
-    stars[i].display();
+    stars[i].show();
     if(stars[i].settled){
       stars.splice(i,1);
     }

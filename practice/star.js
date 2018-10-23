@@ -33,7 +33,7 @@ Star.prototype.applyForce = function(f){
   this.acc.add(f);
 }
 
-Star.prototype.display = function(){
+Star.prototype.show = function(){
   imageMode(CENTER);
   image(this.img,0,0,this.size,this.size);
 }

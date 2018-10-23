@@ -31,5 +31,33 @@
     <td><a href="http://matthewwhitby.co.uk/practice/FSDithering/">image dithering</a></td>
   </tr>
   </table>
+
+
+
+  <table id="contentsTable" style="border:1px solid black; text-align:center;" align="center">
+    <tr>
+    <th>Project</th>
+  </tr>
+  </table>
+
+  <script>
+  var array = [
+    ["http://matthewwhitby.co.uk/practice/fireworks/", "Fireworks"],
+    ["http://matthewwhitby.co.uk/practice/snowfall/", "Snowfall"],
+    ["http://matthewwhitby.co.uk/practice/Petals/", "Petals"],
+    ["http://matthewwhitby.co.uk/practice/Lasers/", "Lasers"],
+    ["http://matthewwhitby.co.uk/practice/particletext/", "Particle Text"],
+    ["http://matthewwhitby.co.uk/practice/planets/", "Star/ Planet"],
+    ["http://matthewwhitby.co.uk/practice/FSDithering/", "Image Dithering"],
+  ]
+  var table = '';
+  var rows = array.length;
+  var tableElement = document.getElementById("contentsTable");
+  for(var i = 0; i < rows; i++){
+    var row = table.insertRow(0);
+    var cell = row.insertCell(0);
+    cell.innerHTML = '<a href="'array[i][0]'">'array[i][1]'</a>'
+  }
+  </script>
 </body>
 </html>

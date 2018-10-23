@@ -1,5 +1,5 @@
 function Attractor(){
-  this.position = createVector(width/2,height/2);
+  this.pos = createVector(width/2,height/2);
   this.mass = 20;
   this.grav = 1;
   this.dragOffset = createVector(0.0,0.0);
@@ -8,7 +8,7 @@ function Attractor(){
 }
 
 Attractor.prototype.attract = function(mover){
-  var force = p5.Vector.sub(this.position,mover.position);
+  var force = p5.Vector.sub(this.pos,mover.pos);
   var d = force.mag();
   d = constrain(d,5,25);
   force.normalize();
@@ -24,20 +24,20 @@ Attractor.prototype.display = function(){
   if(this.dragging) fill(50);
   else if(this.rollover) fill(100);
   else fill(172,200);
-  ellipse(this.position.x,this.position.y,this.mass*2,this.mass*2);
+  ellipse(this.pos.x,this.pos.y,this.mass*2,this.mass*2);
 }
 
 Attractor.prototype.clicked = function(mx,my){
-  var d = dist(mx,my,this.position.x,this.position.y);
+  var d = dist(mx,my,this.pos.x,this.pos.y);
   if(d < this.mass){
     this.dragging = true;
-    this.dragOffset.x = this.position.x-mx;
-    this.dragOffset.y = this.position.y-my;
+    this.dragOffset.x = this.pos.x-mx;
+    this.dragOffset.y = this.pos.y-my;
   }
 }
 
 Attractor.prototype.hover = function(mx,my){
-  var d = dist(mx,my,this.position.x,this.position.y);
+  var d = dist(mx,my,this.pos.x,this.pos.y);
   this.rollover = (d < this.mass) ? true : false;
 }
 
@@ -47,7 +47,7 @@ Attractor.prototype.stopDragging = function(){
 
 Attractor.prototype.drag = function(){
   if(this.dragging){
-    this.position.x = mouseX + this.dragOffset.x;
-    this.position.y = mouseY + this.dragOffset.y;
+    this.pos.x = mouseX + this.dragOffset.x;
+    this.pos.y = mouseY + this.dragOffset.y;
   }
 }

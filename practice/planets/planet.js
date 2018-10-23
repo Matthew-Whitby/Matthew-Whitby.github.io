@@ -1,6 +1,6 @@
 class Planet {
   Planet(m, x, y) {
-    this.acceleration = createVector(1,1);
+    this.acceleration = createVector(0,0);
     this.mass = m;
     this.position = createVector(x,y);
     this.velocity = createVector(0,0);
@@ -18,10 +18,17 @@ class Planet {
     this.acceleration.add(createVector(force,this.mass));
   }
 
+  Planet.prototype.declareGravity = function(m, x, y){
+    this.acceleration = createVector(0,0);
+    this.mass = m;
+    this.position = createVector(x,y);
+    this.velocity = createVector(0,0);
+  }
+
   Planet.prototype.display = function() {
-    stroke(0);
-    strokeWeight(2);
-    fill(0,127);
+    stroke(255);
+    strokeWeight(4);
+
     ellipse(this.position.x,this.position.y,this.mass*16,this.mass*16);
   }
 

@@ -34,7 +34,7 @@
 
 
 
-  <table id="contentsTable" style="border:1px solid black; text-align:center;" align="center">
+  <table style="border:1px solid black; text-align:center;" align="center">
     <tr>
     <th>Project</th>
   </tr>
@@ -53,11 +53,11 @@
   var table = '';
   var rows = array.length;
   var tableElement = document.getElementById("contentsTable");
+  table += '<tr><th>Project</th></tr>'
   for(var i = 0; i < rows; i++){
-    var row = table.insertRow(0);
-    var cell = row.insertCell(0);
-    cell.innerHTML = '<a href="' + array[i][0] + '">' + array[i][1] + '</a>';
+    table+='<td><a href="' + array[i][0] + '">' + array[i][1] + '</a></td>';
   }
+  document.write('<table style="border:1px solid black; text-align:center;" align="center">' + table + '</table>')
   </script>
 </body>
 </html>

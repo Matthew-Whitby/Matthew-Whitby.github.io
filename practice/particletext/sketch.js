@@ -14,8 +14,6 @@ function setup(){
   var instructionsPoints = font.textToPoints('press up/down arrows',100,200,100);
   var whitbyPoints = font.textToPoints('Whitby',100,400,192);
   var whitbyjpPoints = font.textToPoints('ウイトビー',100,600,192);
-  console.log(whitbyPoints.length);
-  console.log(whitbyjpPoints.length);
   for(ipoint of instructionsPoints){
     var particle = new Particle(ipoint.x,ipoint.y,-200,-200);
     particles.push(particle);

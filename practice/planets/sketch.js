@@ -1,30 +1,27 @@
-var mover;
-var attractor;
+var planet;
+var star;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  mover = new Mover();
-  attractor = new Attractor();
+  planet = new Planet();
+  star = new Star();
 }
 
 function draw() {
   background(0);
-
-  var force = attractor.attract(mover);
-  mover.applyForce(force);
-  mover.update();
-
-  attractor.drag();
-  attractor.hover(mouseX,mouseY);
-
-  attractor.display();
-  mover.display();
+  var force = star.attract(planet);
+  planet.applyForce(force);
+  planet.update();
+  star.drag();
+  star.hover(mouseX,mouseY);
+  star.display();
+  planet.display();
 }
 
 function mousePressed() {
-  attractor.clicked(mouseX,mouseY);
+  star.clicked(mouseX,mouseY);
 }
 
 function mouseReleased() {
-  attractor.stopDragging();
+  star.stopDragging();
 }

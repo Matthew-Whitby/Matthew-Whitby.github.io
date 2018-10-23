@@ -1,10 +1,9 @@
-let planets;
+let planets = [];
 
 function setup() {
-  planets = new Planet[20];
   createCanvas(640, 360);
-  for (planet of planets) {
-    planet = new Planet(random(1, 4), 0, 0);
+  for (var i = 0; i < 20; i++) {
+    planets.push(new Planet(random(1, 4), 0, 0));
   }
 }
 
@@ -13,8 +12,8 @@ function draw() {
 
   for (planet of planets) {
 
-    var wind = new PVector(0.01, 0);
-    var gravity = new PVector(0, 0.1*planet.mass);
+    var wind = createVector(0.01, 0);
+    var gravity = createVector(0, 0.1*planet.mass);
 
     planet.applyForce(wind);
     planet.applyForce(gravity);

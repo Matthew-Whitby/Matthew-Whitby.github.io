@@ -1,42 +1,41 @@
 class Planet {
-    constructor(radius, distance, orbitspeed, angle) {
-        this.radius = radius;
-        this.distance = distance;
-        this.orbitspeed = orbitspeed;
-        this.angle = angle;
-        this.planets = [];
-    }
 
-    orbit() {
-        this.angle += this.orbitspeed;
-        for (let i in this.planets) {
-            this.planets[i].orbit();
-        }
-    }
+  Planet(m, x , y) {
+    this.acceleration = createVector(0,0);
+    this.mass = m;
+    this.position = createVector(x,y);
+    this.velocity = createVector(0,0);
+  }
 
-    spawnMoons(total, level) {
-        for (let i = 0; i < total; i++) {
-            let radius = this.radius/(level*2);
-            let distance = random(50, 150);
-            let orbitspeed = random(-0.1, 0.1);
-            let angle = random(TWO_PI);
-            this.planets.push(new Planet(radius, distance/level, orbitspeed, angle));
-            if (level < 3) {
-                let num = Math.floor(random(0, 4));
-                this.planets[i].spawnMoons(num, level+1);
-            }
-        }
-    }
+  applyForce(force) {
+    var f = createVector(force,this.mass);
+    this.acceleration.add(f);
+  }
 
-    show() {
-        push();
-        fill(255, 100);
-        rotate(this.angle);
-        translate(this.distance, 0);
-        ellipse(0, 0, this.radius*2);
-        for (let i in this.planets) {
-            this.planets[i].show();
-        }
-        pop();
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  display() {
+    stroke(0);
+    strokeWeight(2);
+    fill(0,127);
+    ellipse(this.position.x,this.position.y,this.mass*16,this.mass*16);
+  }
+
+  checkEdges() {
+    if (this.position.x > width) {
+      this.position.x = width;
+      this.velocity.x *= -1;
+    } else if (this.position.x < 0) {
+      this.velocity.x *= -1;
+      this.position.x = 0;
     }
+    if (this.position.y > height) {
+      this.velocity.y *= -1;
+      this.position.y = height;
+    }
+  }
 }

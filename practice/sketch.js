@@ -17,7 +17,7 @@ function draw(){
   }
   for (var i = stars.length - 1; i >= 0; i--) {
     stars[i].update();
-    stars[i].show();
+    stars[i].display();
     if(stars[i].settled){
       stars.splice(i,1);
     }

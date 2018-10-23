@@ -52,4 +52,5 @@ Star.prototype.arrive = function(endpos){
     return steer;
   }else{
   return createVector(0,0);
+  }
 }

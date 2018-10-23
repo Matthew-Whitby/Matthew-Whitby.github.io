@@ -1,19 +1,19 @@
 function Mover(){
   this.pos = createVector(400,50);
-  this.velocity = createVector(1,0);
-  this.acceleration = createVector(0,0);
+  this.vel = createVector(1,0);
+  this.acc = createVector(0,0);
   this.mass = 1;
 }
 
 Mover.prototype.applyForce = function(force){
   var f = p5.Vector.div(force,this.mass);
-  this.acceleration.add(f);
+  this.acc.add(f);
 }
 
 Mover.prototype.update = function(){
-  this.velocity.add(this.acceleration);
-  this.pos.add(this.velocity);
-  this.acceleration.mult(0);
+  this.vel.add(this.acc);
+  this.pos.add(this.vel);
+  this.acc.mult(0);
 }
 
 Mover.prototype.display = function(){
@@ -29,7 +29,7 @@ Mover.prototype.checkEdges = function(){
     this.pos.x = width;
   }
   if (this.pos.y > height) {
-    this.velocity.y *= -1;
+    this.vel.y *= -1;
     this.pos.y = height;
   }
 }

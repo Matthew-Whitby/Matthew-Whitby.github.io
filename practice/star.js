@@ -20,7 +20,7 @@ Star.prototype.update = function(){
   this.pos.add(this.vel);
   this.vel.add(this.acc);
   this.acc.mult(0);
-  checkSettled();
+  this.checkSettled();
 }
 
 Star.prototype.behaviors = function(){

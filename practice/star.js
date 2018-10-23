@@ -10,17 +10,17 @@ function Star(sx,sy,ex,ey,img){
   this.settled = false;
 }
 
+Star.prototype.checkSettled = function(){
+  if(this.pos.x > this.endpos.x - 1 && this.pos.y > this.endpos.y - 1 && this.pos.x < this.endpos.x + 1 && this.pos.y < this.endpos.y + 1){
+    this.settled = true;
+  }
+}
+
 Star.prototype.update = function(){
   this.pos.add(this.vel);
   this.vel.add(this.acc);
   this.acc.mult(0);
   checkSettled();
-}
-
-Star.prototype.checkSettled = function(){
-  if(this.pos.x > this.endpos.x - 1 && this.pos.y > this.endpos.y - 1 && this.pos.x < this.endpos.x + 1 && this.pos.y < this.endpos.y + 1){
-    this.settled = true;
-  }
 }
 
 Star.prototype.behaviors = function(){

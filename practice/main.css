@@ -5,3 +5,6 @@ body{
   background-repeat: repeat;
   background-image: url("StarBackground.png");
 }
+h1{
+  color: white;
+}

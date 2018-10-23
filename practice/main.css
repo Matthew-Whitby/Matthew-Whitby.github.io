@@ -6,6 +6,9 @@ body{
   background-image: url("StarBackground.png");
 }
 h1{
-  border: 5px solid red;
+  text-shadow: :-1px -1px 0 #ff0000,
+  1px -1px #ff0000,
+  -1px 1px #ff0000,
+  1px 1px #ff0000;
   color: white;
 }

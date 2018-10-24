@@ -1,4 +1,5 @@
 td {
+  text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   border: 1px solid #FF91A4;
   color: #FF91A4;
 }
@@ -11,14 +12,18 @@ h1{
   color: #FF91A4;
 }
 h2{
+  text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   color:#FF91A4;
 }
 u{
+  text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   color: #FF91A4;
 }
 a{
+  text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   color:#FF91A4;
 }
 text{
+  text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   color:#FF91A4;
 }

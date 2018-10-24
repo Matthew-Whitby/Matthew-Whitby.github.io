@@ -37,9 +37,11 @@ Star.prototype.applyForce = function(f){
 }
 
 Star.prototype.show = function(){
+  push();
   imageMode(CENTER);
   rotate(this.angle);
   image(this.img,this.pos.x,this.pos.y,this.size,this.size);
+  pop();
 }
 
 Star.prototype.arrive = function(endpos){

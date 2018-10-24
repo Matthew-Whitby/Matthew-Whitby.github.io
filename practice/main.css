@@ -19,10 +19,12 @@ body{
 h1{
   text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   color: #FF91A4;
+  font-size: 40;
 }
 h2{
   text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   color:#FF91A4;
+  font-size: 35;
 }
 u{
   text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;

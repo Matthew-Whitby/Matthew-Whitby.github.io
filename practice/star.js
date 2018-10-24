@@ -8,7 +8,6 @@ function Star(sx,sy,ex,ey,img){
   this.maxspeed = 10;
   this.maxforce = 1;
   this.settled = false;
-  console.log("Created");
 }
 
 Star.prototype.checkSettled = function(){
@@ -36,7 +35,7 @@ Star.prototype.applyForce = function(f){
 
 Star.prototype.show = function(){
   imageMode(CENTER);
-  image(this.img,0,0,this.size,this.size);
+  image(this.img,this.pos.x,this.pos.y,this.size,this.size);
 }
 
 Star.prototype.arrive = function(endpos){

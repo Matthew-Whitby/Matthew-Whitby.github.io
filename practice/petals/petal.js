@@ -58,7 +58,7 @@ class Petal {
       this.pos.x = -this.r;
     }
 
-    this.angle += this.dir * random(1,5);
+    this.angle += this.dir * random(1);
   }
 
   render() {

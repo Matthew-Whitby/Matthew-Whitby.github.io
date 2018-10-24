@@ -44,9 +44,9 @@ Star.prototype.arrive = function(endpos){
   var speed = this.maxspeed;
   if(distance < 100){
     speed = map(distance,0,100,0,this.maxspeed);
-    desired.setMag(speed);
-    var steer = p5.Vector.sub(desired,this.vel);
-    steer.limit(this.maxforce);
-    return steer;
   }
+  desired.setMag(speed);
+  var steer = p5.Vector.sub(desired,this.vel);
+  steer.limit(this.maxforce);
+  return steer;
 }

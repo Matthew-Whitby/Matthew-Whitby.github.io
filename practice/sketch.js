@@ -12,6 +12,7 @@ function setup(){
 }
 
 function draw(){
+  clear();
   if(random(1) < 0.1){
     stars.push(new Star(random(windowWidth),random(windowHeight),random(windowWidth),random(windowHeight),starimg));
   }

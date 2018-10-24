@@ -22,7 +22,7 @@ Star.prototype.update = function(){
   this.pos.add(this.vel);
   this.vel.add(this.acc);
   this.acc.mult(0);
-  this.angle += this.dir * this.vel.mag() / 200;
+  this.angle += this.dir * random(1);
   this.checkSettled();
 }
 

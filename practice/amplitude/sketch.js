@@ -22,7 +22,7 @@ function toggleGraph(){
 
 function setup(){
   createCanvas(windowWidth,windowHeight);
-  button = createButton('toggle');
+  button = createButton('play/pause');
   button2 = createButton('Graph Type');
   button2.position(100,0);
   button2.mousePressed(toggleGraph);

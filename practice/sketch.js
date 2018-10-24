@@ -17,6 +17,7 @@ function draw(){
     stars.push(new Star(random(windowWidth),random(windowHeight),random(windowWidth),random(windowHeight),starimg));
   }
   for (var i = stars.length - 1; i >= 0; i--) {
+    stars[i].behaviors();
     stars[i].update();
     stars[i].show();
     if(stars[i].settled){

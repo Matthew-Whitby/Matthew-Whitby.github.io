@@ -1,6 +1,6 @@
 td {
-  border: 1px solid white;
-  color: white;
+  border: 1px solid #FF91A4;
+  color: #FF91A4;
 }
 body{
   background-repeat: repeat;
@@ -11,17 +11,17 @@ h1{
   1px -1px #ff0000,
   -1px 1px #ff0000,
   1px 1px #ff0000;
-  color: white;
+  color: #FF91A4;
 }
 h2{
-  color:white;
+  color:#FF91A4;
 }
 u{
-  color: white;
+  color: #FF91A4;
 }
 a{
-  color:white;
+  color:#FF91A4;
 }
 text{
-  color:white;
+  color:#FF91A4;
 }

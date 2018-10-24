@@ -69,3 +69,7 @@ function touchStarted() {
     tapped = false;
   }
 }
+
+function windowResized(){
+  resizeCanvas(windowWidth,windowHeight);
+}

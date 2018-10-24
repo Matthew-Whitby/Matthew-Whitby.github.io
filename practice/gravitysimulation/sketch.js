@@ -22,11 +22,8 @@ function draw() {
         planets[i].applyForce(force);
       }
     }
-
     planets[i].update();
     //var zoomint = -1 * (zoom.x + zoom.y);
-
-
     planets[i].display();
   }
 
@@ -38,4 +35,8 @@ function mouseWheel(event){
   scale(zoom);
   resizeCanvas(windowWidth,windowHeight);
   return false;
+}
+
+function windowResized(){
+  resizeCanvas(windowWidth,windowHeight);
 }

@@ -42,3 +42,7 @@ function draw(){
     petal.render(); //moves to new location
   }
 }
+
+function windowResized(){
+  resizeCanvas(windowWidth,windowHeight);
+}

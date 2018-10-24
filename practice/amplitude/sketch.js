@@ -69,6 +69,6 @@ function ampDraw(){
   }
 }
 
-function resizeCanvas(){
+function windowResized(){
   resizeCanvas(windowWidth,windowHeight);
 }

@@ -25,3 +25,7 @@ function mousePressed() {
 function mouseReleased() {
   star.stopDragging();
 }
+
+function windowResized(){
+  resizeCanvas(windowWidth,windowHeight);
+}

@@ -48,7 +48,5 @@ Star.prototype.arrive = function(endpos){
     var steer = p5.Vector.sub(desired,this.vel);
     steer.limit(this.maxforce);
     return steer;
-  }else{
-  return createVector(0,0);
   }
 }

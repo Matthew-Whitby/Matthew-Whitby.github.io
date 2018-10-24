@@ -6,7 +6,7 @@ function Star(sx,sy,ex,ey,img){
   this.vel = p5.Vector.random2D();
   this.acc = createVector(0,0);
   this.maxspeed = 2;
-  this.maxforce = 0.5;
+  this.maxforce = 1;
   this.settled = false;
 }
 

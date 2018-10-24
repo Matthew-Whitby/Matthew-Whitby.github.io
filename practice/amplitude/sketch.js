@@ -15,9 +15,17 @@ function toggleSong(){
   else song.play();
 }
 
+function toggleGraph(){
+  if(ampPath == false) ampPath = true;
+  else ampPath = false;
+}
+
 function setup(){
   createCanvas(windowWidth,windowHeight);
   button = createButton('toggle');
+  button2 = createButton('Graph Type');
+  button2.position(100,0);
+  button2.mousePressed(toggleGraph);
   colorMode(HSB);
   button.position(0,0);
   button.mousePressed(toggleSong);
@@ -30,6 +38,8 @@ function setup(){
 
 function draw(){
   background(0);
+  var vol = amp.getLevel();
+  volhistory.push(vol);
   if(ampPath == true) ampDraw();
   else fftDraw();
 }
@@ -46,8 +56,6 @@ function fftDraw(){
 }
 
 function ampDraw(){
-  var vol = amp.getLevel();
-  volhistory.push(vol);
   stroke(255);
   noFill();
   beginShape();

@@ -9,6 +9,9 @@ th{
   color: #FF91A4;
   font-size: 30px;
 }
+table{
+  border: 1px solid #FF91A4;
+}
 body{
   background-repeat: repeat;
   background-image: url("StarBackground.png");

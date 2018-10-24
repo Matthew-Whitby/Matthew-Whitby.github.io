@@ -3,6 +3,12 @@ td {
   border: 1px solid #FF91A4;
   color: #FF91A4;
 }
+th{
+  text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
+  border: 1px solid #FF91A4;
+  color: #FF91A4;
+  font-size: 30px;
+}
 body{
   background-repeat: repeat;
   background-image: url("StarBackground.png");

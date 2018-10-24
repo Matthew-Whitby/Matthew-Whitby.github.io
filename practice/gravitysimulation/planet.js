@@ -14,10 +14,12 @@ Planet.prototype.update = function(){
   this.vel.add(this.acc);
   this.pos.add(this.vel);
   this.acc.mult(0);
-  if(this.pos.x > windowWidth) this.pos.x = 0;
-  else if(this.pos.x < 0) this.pos.x = windowWidth;
-  if(this.pos.y > windowHeight) this.pos.y = 0;
-  else if(this.pos.y < 0) this.pos.y = windowHeight;
+  /*var zoom = createVector(0,0);
+  if(this.pos.x > windowWidth) zoom.x = this.pos.x;
+  else if(this.pos.x < 0) zoom.x = abs(this.pos.x);
+  if(this.pos.y > windowHeight) zoom.y = this.pos.y;
+  else if(this.pos.y < 0) zoom.y = abs(this.pos.y);
+  return zoom;*/
 }
 
 Planet.prototype.display = function(){

@@ -1,4 +1,8 @@
 var planets = [];
+var zoom = 1;
+var zmin = 0.05;
+var zmax = 9;
+var sensativity = 0.005;
 //20
 var g = 0.4;
 
@@ -11,8 +15,6 @@ function setup() {
 
 function draw() {
   background(0);
-
-
   for (var i = 0; i < planets.length; i++) {
     for (var j = 0; j < planets.length; j++) {
       if (i != j) {
@@ -22,7 +24,18 @@ function draw() {
     }
 
     planets[i].update();
+    //var zoomint = -1 * (zoom.x + zoom.y);
+
+
     planets[i].display();
   }
 
+}
+
+function mouseWheel(event){
+  zoom += sensativity * event.delta;
+  zoom = constrain(zoom,zmin,zmax);
+  scale(zoom);
+  resizeCanvas(windowWidth,windowHeight);
+  return false;
 }

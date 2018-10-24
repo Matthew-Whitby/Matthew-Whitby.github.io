@@ -36,9 +36,9 @@ function changeSpinAxis(){
 function draw() {
   background(0);
   //translate(width/2, height/2);
-  if(toggleXYZ == 0) rotateZ(-PI/2);
+  if(toggleXYZ == 0) rotateY(-PI/2);
   else if(toggleXYZ == 1) rotateX(-PI/2);
-  else rotateY(-PI/2);
+  else rotateZ(-PI/2);
   var projected3d = []; //16
 
   for (var i = 0; i < points.length; i++) {

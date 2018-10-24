@@ -1,6 +1,7 @@
 <html>
 <head lang="en">
 <title>Practice</title>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="main.css"/>
 <script src="http://matthewwhitby.co.uk/practice/p5/p5.min.js"></script>
 <script src="http://matthewwhitby.co.uk/practice/p5/p5.dom.js"></script>
@@ -10,6 +11,7 @@
 <body>
   <b><u><h1 style="text-align:center;">Really Advanced Contents Page</h1></u></b>
   <b><h2 style="text-align:center;">I mean.. it does have a bubble sort in it!!</h2></b>
+  <div id="contentBackground"></div>
   <script>
   var array = [
     ["http://matthewwhitby.co.uk/practice/fireworks/", "Fireworks"],
@@ -40,7 +42,18 @@
   for(var i = 0; i < rows; i++){
     table+='<tr><td><a href="' + array[i][0] + '">' + array[i][1] + '</a></td></tr>';
   }
-  document.write('<table style="border:1px solid black; text-align:center;" align="center">' + table + '</table>')
+  var div = document.getElementById('contentBackground');
+  div.innerHTML = '<table id="ctable" style="border:1px solid black; text-align:center;" align="center">' + table + '</table>';
+  //document.write('<table style="border:1px solid black; text-align:center;" align="center">' + table + '</table>');
+  var marginset = (window.innerWidth/2) - (250/2);
+  div.style.marginLeft = marginset;
+  </script>
+  <script>
+    window.onresize = function(event){
+      var div = document.getElementById('contentBackground');
+      var marginset = (window.innerWidth/2) - (250/2);
+      div.style.marginLeft = marginset;
+    }
   </script>
 </body>
 </html>

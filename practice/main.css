@@ -20,6 +20,7 @@ u{
   color: #FF91A4;
 }
 a{
+  font-size: 16px;
   text-shadow: -0.5px -0.5px #808080,0.5px -0.5px #808080, -0.5px 0.5px #808080,0.5px 0.5px #808080;
   color:#FF91A4;
 }

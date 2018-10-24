@@ -1,7 +1,10 @@
 var angle = 0;
 var points = [];
+var toggleXYZ = 0;
+var button;
 
 function setup() {
+  colorMode(RGB);
   createCanvas(windowWidth,windowHeight,WEBGL);
   points.push(new P4Vector(-1, -1, -1, 1));
   points.push(new P4Vector(1, -1, -1, 1));
@@ -19,12 +22,23 @@ function setup() {
   points.push(new P4Vector(1, -1, 1, -1));
   points.push(new P4Vector(1, 1, 1, -1));
   points.push(new P4Vector(-1, 1, 1, -1));
+  button = createButton('Change Spin Axis');
+  button.position(0,0);
+  button.mousePressed(changeSpinAxis);
+}
+
+function changeSpinAxis(){
+  if(toggleXYZ == 0) toggleXYZ = 1;
+  else if(toggleXYZ == 1) toggleXYZ = 2;
+  else toggleXYZ = 0;
 }
 
 function draw() {
   background(0);
   //translate(width/2, height/2);
-  rotateX(-PI/2);
+  if(toggleXYZ == 0) rotateZ(-PI/2);
+  else if(toggleXYZ == 1) rotateX(-PI/2);
+  else rotateY(-PI/2);
   var projected3d = []; //16
 
   for (var i = 0; i < points.length; i++) {
@@ -62,8 +76,8 @@ function draw() {
     projected.mult(windowWidth/8);
     projected3d.push(projected);
 
-    stroke(255, 200);
-    strokeWeight(32);
+    stroke(255,255,0);
+    strokeWeight(12);
     noFill();
 
     point(projected.x, projected.y, projected.z);
@@ -93,8 +107,8 @@ function draw() {
 function connect(offset,i,j,points) {
   var a = points[i+offset];
   var b = points[j+offset];
-  strokeWeight(4);
-  stroke(255);
+  strokeWeight(3);
+  stroke(255,0,0);
   line(a.x, a.y, a.z, b.x, b.y, b.z);
 }
 

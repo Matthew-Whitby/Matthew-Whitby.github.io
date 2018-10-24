@@ -2,7 +2,7 @@ function Star(sx,sy,ex,ey,img){
   this.img = img;
   this.pos = createVector(sx,sy);
   this.endpos = createVector(ex,ey);
-  this.size = random(10,30);
+  this.size = random(20,35);
   this.vel = createVector(random(-7,7),random(-7,7));
   this.acc = createVector(0,0);
   this.maxspeed = 2;

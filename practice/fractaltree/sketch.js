@@ -13,7 +13,7 @@ function draw(){
     angle = slider.value();
     stroke(255);
     translate(windowWidth/2,height);
-    branch(100,0);
+    branch(windowHeight/4,0);
 }
 
 function branch(len,color){

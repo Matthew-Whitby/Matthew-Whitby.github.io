@@ -13,7 +13,6 @@ function setup(){
 
 function draw(){
   clear();
-  console.log(stars.length);
   if(random(1) < 0.1){
     stars.push(new Star(random(windowWidth),random(windowHeight),random(windowWidth),random(windowHeight),starimg));
   }

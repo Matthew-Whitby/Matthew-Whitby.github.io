@@ -19,3 +19,7 @@ function draw(){
     planet.checkEdges();
   }
 }
+
+function windowResized(){
+  resizeCanvas(windowWidth,windowHeight);
+}

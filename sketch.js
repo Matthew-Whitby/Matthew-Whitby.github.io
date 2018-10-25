@@ -1,7 +1,6 @@
 let bldrimg;
 let builders = [];
 
-
 function preload(){
   bldrimg = loadImage('Resources/builder.png');
 }
@@ -17,7 +16,7 @@ function draw(){
   if(random(1) < 0.01){
     builders.push(new Builder(random(windowWidth),random(windowHeight),random(windowWidth),random(windowHeight),bldrimg));
   }
-  for (var i = builders.length - 1; i >= 0; i--) {
+  for (var i = builders.length - 1; i >= 0; i--){
     builders[i].behaviors();
     builders[i].update();
     builders[i].show();

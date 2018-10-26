@@ -16,14 +16,14 @@ function toggleSong(){
 }
 
 function toggleGraph(){
-  if(ampPath == false) ampPath = true;
+  if(!ampPath) ampPath = true;
   else ampPath = false;
 }
 
 function setup(){
   createCanvas(windowWidth,windowHeight);
   button = createButton('play/pause');
-  button2 = createButton('Graph Type');
+  button2 = createButton('Change Graph');
   button2.position(100,0);
   button2.mousePressed(toggleGraph);
   colorMode(HSB);
@@ -38,19 +38,19 @@ function setup(){
 
 function draw(){
   background(0);
-  var vol = amp.getLevel();
+  let vol = amp.getLevel();
   volhistory.push(vol);
-  if(ampPath == true) ampDraw();
+  if(ampPath) ampDraw();
   else fftDraw();
 }
 
 function fftDraw(){
   noStroke();
-  var spectrum = fft.analyze();
-  for(var i = 0; i < spectrum.length;i++){
-    var amplit = spectrum[i];
+  let spectrum = fft.analyze();
+  for(let i = 0; i < spectrum.length;i++){
+    let amplit = spectrum[i];
     fill(i,255,255);
-    var y = map(amplit,0,256,height,0);
+    let y = map(amplit,0,256,height,0);
     rect(i*w,y,w -2,height-y);
   }
 }
@@ -60,7 +60,13 @@ function ampDraw(){
   noFill();
   beginShape();
   for(var i = 0; i < volhistory.length;i++){
-    var y = map(volhistory[i],0,1,height/2,0);
+    let y = map(volhistory[i],0,0.45,height/2,-height/2);
+    vertex(i,y);
+  }
+  endShape();
+  beginShape();
+  for(let i = 0; i < volhistory.length;i++){
+    let y = map(volhistory[i],0,0.45,height/2,height*1.5);
     vertex(i,y);
   }
   endShape();

@@ -7,7 +7,7 @@ var ampPath = false;
 var w;
 
 function preload(){
-  song = loadSound('03_BLAST_.mp3');
+  song = loadSound('05 Again×Again.mp3');
 }
 
 function toggleSong(){

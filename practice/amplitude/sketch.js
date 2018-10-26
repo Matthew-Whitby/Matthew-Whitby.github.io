@@ -7,7 +7,7 @@ var ampPath = false;
 var w;
 
 function preload(){
-  song = loadSound('Youtube Outro Long Ver.mp3');
+  song = loadSound('Hashire End.mp3');
 }
 
 function toggleSong(){

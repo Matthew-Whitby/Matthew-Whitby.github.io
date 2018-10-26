@@ -32,7 +32,7 @@ function setup(){
   song.setVolume(0.4);
   song.play();
   amp = new p5.Amplitude();
-  fft = new p5.FFT(0.8,128);
+  fft = new p5.FFT(0.1,128);
   w = windowWidth / 100;
 }
 

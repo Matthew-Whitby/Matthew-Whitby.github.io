@@ -6,11 +6,8 @@ function Firework(){
 
 
   this.done = function(){
-    if(this.exploded && this.particles.length === 0){
-      return true;
-    }else{
-      return false;
-    }
+    if(this.exploded && this.particles.length === 0) return true;
+    else return false;
   }
 
   this.update = function() {
@@ -40,9 +37,7 @@ function Firework(){
 
   this.show = function(){
     colorMode(HSB);
-    if(!this.exploded){
-      this.firework.show();
-    }
+    if(!this.exploded) this.firework.show();
     for(var i = 0; i < this.particles.length; i++){
       this.particles[i].show();
     }

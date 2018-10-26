@@ -23,15 +23,12 @@ Particle.prototype.setSettled = function(set) {
 }
 
 Particle.prototype.behaviors = function(){
-  var arrive;
-  if(this.settled == false){
-    arrive = this.arrive(this.target);
-  }else{
-    arrive = this.arrive(this.jtarget);
-  }
+  let arrive;
+  if(!this.settled) arrive = this.arrive(this.target);
+  else arrive = this.arrive(this.jtarget);
 
-  var mouse = createVector(mouseX,mouseY);
-  var flee = this.flee(mouse);
+  let mouse = createVector(mouseX,mouseY);
+  let flee = this.flee(mouse);
   arrive.mult(1);
   flee.mult(5);
   this.applyForce(arrive);
@@ -49,29 +46,24 @@ Particle.prototype.show = function(){
 }
 
 Particle.prototype.arrive = function(target){
-  var desired = p5.Vector.sub(target,this.pos);
-  var distance = desired.mag();
-  var speed = this.maxspeed;
-  if(distance < 100) {
-    speed = map(distance,0,100,0,this.maxspeed);
-  }
+  let desired = p5.Vector.sub(target,this.pos);
+  let distance = desired.mag();
+  let speed = this.maxspeed;
+  if(distance < 100) speed = map(distance,0,100,0,this.maxspeed);
   desired.setMag(speed);
-  var steer = p5.Vector.sub(desired,this.vel);
+  let steer = p5.Vector.sub(desired,this.vel);
   steer.limit(this.maxforce);
   return steer;
 }
 
 Particle.prototype.flee = function(target){
-  var desired = p5.Vector.sub(target,this.pos);
-  var distance = desired.mag();
+  let desired = p5.Vector.sub(target,this.pos);
+  let distance = desired.mag();
   if(distance < 50){
     desired.setMag(this.maxspeed);
     desired.mult(-1);
-    var steer = p5.Vector.sub(desired,this.vel);
+    let steer = p5.Vector.sub(desired,this.vel);
     steer.limit(this.maxforce);
     return steer;
-  }else{
-    return createVector(0,0);
-  }
-
+  }else return createVector(0,0);
 }

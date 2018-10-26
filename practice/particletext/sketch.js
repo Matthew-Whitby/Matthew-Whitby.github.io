@@ -11,22 +11,19 @@ function setup(){
   background(20);
   textFont(font);
 
-  var instructionsPoints = font.textToPoints('press up/down arrows',100,200,100);
-  var whitbyPoints = font.textToPoints('Whitby',100,400,192);
-  var whitbyjpPoints = font.textToPoints('ウイトビー',100,600,192);
+  let instructionsPoints = font.textToPoints('press up/down arrows',100,200,100);
+  let whitbyPoints = font.textToPoints('Whitby',100,400,192);
+  let whitbyjpPoints = font.textToPoints('ウイトビー',100,600,192);
   for(ipoint of instructionsPoints){
-    var particle = new Particle(ipoint.x,ipoint.y,-200,-200);
+    let particle = new Particle(ipoint.x,ipoint.y,-200,-200);
     particles.push(particle);
     stroke(255);
     strokeWeight(4);
     point(ipoint.x,ipoint.y);
   }
-  for(var i = 0; i < whitbyPoints.length; i++){
-    if(whitbyjpPoints[i] != null){
-      var particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,whitbyjpPoints[i].x,whitbyjpPoints[i].y);
-    }else{
-      var particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,-10,-10);
-    }
+  for(let i = 0; i < whitbyPoints.length; i++){
+    if(whitbyjpPoints[i] != null) let particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,whitbyjpPoints[i].x,whitbyjpPoints[i].y);
+    else let particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,-10,-10);
 
     particles.push(particle);
     stroke(255);
@@ -57,7 +54,7 @@ function keyPressed() {
 }
 
 function touchStarted() {
-  if(tapped == false){
+  if(!tapped){
     for(particle of particles){
       particle.setSettled(true);
     }

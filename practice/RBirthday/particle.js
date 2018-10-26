@@ -12,8 +12,7 @@ function Particle(x,y,hu,firework,explosionNo){
     this.vel.mult(random(2,10)); //magnitude of explosion
   }
   this.acc = createVector(0,0);
-
-this.applyForce = function(force) {
+  this.applyForce = function(force) {
   this.acc.add(force);
 }
 

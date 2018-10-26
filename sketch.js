@@ -6,7 +6,7 @@ function preload(){
 }
 
 function setup(){
-  var canvas = createCanvas(windowWidth,windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
   canvas.position(0,0);
   canvas.style('z-index','-1');
 }
@@ -16,13 +16,11 @@ function draw(){
   if(random(1) < 0.01){
     builders.push(new Builder(random(windowWidth),random(windowHeight),random(windowWidth),random(windowHeight),bldrimg));
   }
-  for (var i = builders.length - 1; i >= 0; i--){
+  for (let i = builders.length - 1; i >= 0; i--){
     builders[i].behaviors();
     builders[i].update();
     builders[i].show();
-    if(builders[i].settled){
-      builders.splice(i,1);
-    }
+    if(builders[i].settled) builders.splice(i,1);
   }
 }
 

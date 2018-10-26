@@ -23,11 +23,8 @@ Planet.prototype.display = function(){
 }
 
 Planet.prototype.checkEdges = function(){
-  if (this.pos.x > width) {
-    this.pos.x = 0;
-  } else if (this.pos.x < 0) {
-    this.pos.x = width;
-  }
+  if (this.pos.x > width) this.pos.x = 0;
+  else if (this.pos.x < 0) this.pos.x = width;
   if (this.pos.y > height) {
     this.vel.y *= -1;
     this.pos.y = height;

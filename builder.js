@@ -24,7 +24,7 @@ Builder.prototype.update = function(){
 }
 
 Builder.prototype.behaviors = function(){
-  var arrive = this.arrive(this.endpos);
+  let arrive = this.arrive(this.endpos);
   arrive.mult(1);
   this.applyForce(arrive);
 }
@@ -39,14 +39,12 @@ Builder.prototype.show = function(){
 }
 
 Builder.prototype.arrive = function(endpos){
-  var desired = p5.Vector.sub(endpos,this.pos);
-  var distance = desired.mag();
-  var speed = this.maxspeed;
-  if(distance < 100){
-    speed = map(distance,0,100,0,this.maxspeed);
-  }
+  let desired = p5.Vector.sub(endpos,this.pos);
+  let distance = desired.mag();
+  let speed = this.maxspeed;
+  if(distance < 100) speed = map(distance,0,100,0,this.maxspeed);
   desired.setMag(speed);
-  var steer = p5.Vector.sub(desired,this.vel);
+  let steer = p5.Vector.sub(desired,this.vel);
   steer.limit(this.maxforce);
   return steer;
 }

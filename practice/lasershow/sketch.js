@@ -33,7 +33,7 @@ function draw() {
     }
     lasers.push(new Laser(sx,ex,sy,ey,colour));
   }
-    for (var i = lasers.length - 1; i >= 0; i--) {
+    for (let i = lasers.length - 1; i >= 0; i--) {
       //lasers[i].update();
       lasers[i].render();
       if(lasers[i].done()){

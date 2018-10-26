@@ -19,13 +19,13 @@ function setup(){
   stroke(255);
   strokeWeight(4);
 
-  var happyPoints = font.textToPoints('Happy',100,200,192);
-  var birthdayPoints = font.textToPoints('Birthday',100,200,192);
-  var robertPoints = font.textToPoints('Robert',100,200,192);
+  let happyPoints = font.textToPoints('Happy',100,200,192);
+  let birthdayPoints = font.textToPoints('Birthday',100,200,192);
+  let robertPoints = font.textToPoints('Robert',100,200,192);
 
-  var happyPointsLength = counterplz(happyPoints);
-  var birthdayPointsLength = counterplz(birthdayPoints);
-  var robertPointsLength = counterplz(robertPoints);
+  let happyPointsLength = counterplz(happyPoints);
+  let birthdayPointsLength = counterplz(birthdayPoints);
+  let robertPointsLength = counterplz(robertPoints);
 
   happyPoints = font.textToPoints('Happy',(windowWidth/2)-(happyPointsLength/2),200,192);
   birthdayPoints = font.textToPoints('Birthday',(windowWidth/2)-(birthdayPointsLength/2),200,192);
@@ -43,13 +43,13 @@ function setup(){
 }
 
 function counterplz(pointList){
-  var maxX = 0;
-  var minX = 0;
+  let maxX = 0;
+  let minX = 0;
   for(ipoint of pointList){
     if(ipoint.x > maxX) maxX = ipoint.x;
     else if(ipoint.x < minX) minX = ipoint.x;
   }
-  var lengthOfText = maxX - minX;
+  let lengthOfText = maxX - minX;
   return lengthOfText;
 }
 
@@ -60,15 +60,11 @@ function draw(){
   else if(stage == 1) drawBirthday();
   else if(stage == 2) drawRobert();
   else{
-    if(random(1) < 0.1){
-      fireworks.push(new Firework(-1000,-1000));
-    }
-      for (var i = fireworks.length - 1; i >= 0; i--) {
-        fireworks[i].update();
-        fireworks[i].show();
-        if(fireworks[i].done()){
-          fireworks.splice(i,1);
-        }
+    if(random(1) < 0.1) fireworks.push(new Firework(-1000,-1000));
+    for (let i = fireworks.length - 1; i >= 0; i--) {
+      fireworks[i].update();
+      fireworks[i].show();
+      if(fireworks[i].done()) fireworks.splice(i,1);
     }
   }
 }

@@ -14,7 +14,6 @@ function matmul(a, b) {
 
 function matmul4(a, b, fourth) {
   var m = vecToMatrix(b);
-
   return matrixToVec4(matmul(a, m));
 }
 
@@ -34,23 +33,18 @@ function matmul(a, b) {
   var colsB = (b[0] == null) ? 1 : b[0].length;
   if(b.length == null)  b = vecToMatrix(b);
   var rowsB = b.length;
-  if (colsA != rowsB) {
-    return null;
-  }
-
+  if (colsA != rowsB) return null;
   var result = [];
-  for(var i = 0; i < rowsA; i++){
+  for(let i = 0; i < rowsA; i++){
     result.push([0]);
-    for(var j = 0; j < colsB; j++){
+    for(let j = 0; j < colsB; j++){
       result[i].push([0]);
     }
   }
-
-
-  for (var i = 0; i < rowsA; i++) {
-    for (var j = 0; j < colsB; j++) {
+  for (let i = 0; i < rowsA; i++) {
+    for (let j = 0; j < colsB; j++) {
       var sum = 0;
-      for (var k = 0; k < colsA; k++) {
+      for (let k = 0; k < colsA; k++) {
         sum += a[i][k] * b[k][j];
       }
       result[i][j] = sum;

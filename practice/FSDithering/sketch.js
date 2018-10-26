@@ -55,14 +55,14 @@ function makeDithered(img, steps) {
   img.updatePixels();
 }
 
-function distributeError(img, x, y, errR, errG, errB) {
-  addError(img, 7 / 16.0, x + 1, y, errR, errG, errB);
-  addError(img, 3 / 16.0, x - 1, y + 1, errR, errG, errB);
-  addError(img, 5 / 16.0, x, y + 1, errR, errG, errB);
-  addError(img, 1 / 16.0, x + 1, y + 1, errR, errG, errB);
+function distributeError(img,x,y,errR,errG,errB) {
+  addError(img, 7 / 16.0, x + 1,y,errR,errG,errB);
+  addError(img, 3 / 16.0, x - 1, y + 1,errR,errG,errB);
+  addError(img, 5 / 16.0, x, y + 1,errR,errG,errB);
+  addError(img, 1 / 16.0, x + 1, y + 1,errR,errG,errB);
 }
 
-function addError(img, factor, x, y, errR, errG, errB) {
+function addError(img,factor,x,y,errR,errG,errB) {
   if (x < 0 || x >= img.width || y < 0 || y >= img.height) return;
   let clr = getColorAtindex(img, x, y);
   let r = red(clr);

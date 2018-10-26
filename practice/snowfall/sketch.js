@@ -1,8 +1,6 @@
 let snow = [];
 let gravity;
-
 let zOff = 0;
-
 let spritesheet;
 let textures = [];
 function preload(){

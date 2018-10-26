@@ -9,7 +9,7 @@ function setup() {
 
 function draw() {
   background(0);
-  var force = star.attract(planet);
+  let force = star.attract(planet);
   planet.applyForce(force);
   planet.update();
   star.drag();

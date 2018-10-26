@@ -31,7 +31,6 @@ function branch(len,color){
     branch(len*0.67);
     pop();
   }
-  //line(0,0,0,-len*0.67);
 }
 
 function windowResized(){

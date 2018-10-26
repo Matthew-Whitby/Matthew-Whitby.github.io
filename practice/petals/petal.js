@@ -35,29 +35,14 @@ class Petal {
 
   update() {
     this.xOff = sin(this.angle) * 2 * this.r; //uses sin wave to make petals move left and right
-
     this.vel.add(this.acc);
     this.vel.limit(this.r * 0.2); //stops petals going too fast
-
-    if(this.vel.mag() < 1){
-      this.vel.normalize();
-    }
-
+    if(this.vel.mag() < 1) this.vel.normalize();
     this.pos.add(this.vel);
     this.acc.mult(0);
-
-    if(this.pos.y > height + this.r){
-      this.randomize();
-    }
-
-    if(this.pos.x < -this.r){ //wrapping left and right
-      this.pos.x = width + this.r;
-    }
-
-    if(this.pos.x > width + this.r){
-      this.pos.x = -this.r;
-    }
-
+    if(this.pos.y > height + this.r) this.randomize();
+    if(this.pos.x < -this.r) this.pos.x = width + this.r; //wrapping left and right
+    if(this.pos.x > width + this.r) this.pos.x = -this.r;
     this.angle += this.dir * this.vel.mag() / 200;
   }
 

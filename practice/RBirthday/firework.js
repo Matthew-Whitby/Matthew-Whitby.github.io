@@ -9,8 +9,6 @@ function Firework(x,y){
   this.firework = new Particle(x,y+windowHeight,this.hu,true,this.explosionNo);
   this.exploded = false;
   this.particles = [];
-
-
   this.done = function(){
     if(this.exploded && this.particles.length === 0) return true;
     else return false;
@@ -25,7 +23,7 @@ function Firework(x,y){
         this.explode();
       }
     }
-    for(var i = this.particles.length - 1; i >= 0; i--){
+    for(let i = this.particles.length - 1; i >= 0; i--){
       this.particles[i].applyForce(gravity);
       this.particles[i].update();
       if(this.particles[i].done()) this.particles.splice(i,1);
@@ -33,8 +31,8 @@ function Firework(x,y){
   }
 
   this.explode = function(){
-    for (var i = 0; i < this.explosionNo; i++){
-      var p = new Particle(this.firework.pos.x,this.firework.pos.y, this.hu, false);
+    for (let i = 0; i < this.explosionNo; i++){
+      let p = new Particle(this.firework.pos.x,this.firework.pos.y, this.hu, false);
       this.particles.push(p);
     }
   }
@@ -42,7 +40,7 @@ function Firework(x,y){
   this.show = function(){
     colorMode(HSB);
     if(!this.exploded) this.firework.show();
-    for(var i = 0; i < this.particles.length; i++){
+    for(let i = 0; i < this.particles.length; i++){
       this.particles[i].show();
     }
   }

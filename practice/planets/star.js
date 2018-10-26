@@ -8,11 +8,11 @@ function Star(){
 }
 
 Star.prototype.attract = function(mover){
-  var force = p5.Vector.sub(this.pos,mover.pos);
-  var d = force.mag();
+  let force = p5.Vector.sub(this.pos,mover.pos);
+  let d = force.mag();
   d = constrain(d,5,25);
   force.normalize();
-  var strength = (this.grav * this.mass) / (d*d);
+  let strength = (this.grav * this.mass) / (d*d);
   force.mult(strength);
   return force;
 }
@@ -28,7 +28,7 @@ Star.prototype.display = function(){
 }
 
 Star.prototype.clicked = function(mx,my){
-  var d = dist(mx,my,this.pos.x,this.pos.y);
+  let d = dist(mx,my,this.pos.x,this.pos.y);
   if(d < this.mass){
     this.dragging = true;
     this.dragOffset.x = this.pos.x-mx;
@@ -37,7 +37,7 @@ Star.prototype.clicked = function(mx,my){
 }
 
 Star.prototype.hover = function(mx,my){
-  var d = dist(mx,my,this.pos.x,this.pos.y);
+  let d = dist(mx,my,this.pos.x,this.pos.y);
   this.rollover = (d < this.mass) ? true : false;
 }
 

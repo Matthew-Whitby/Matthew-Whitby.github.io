@@ -13,9 +13,9 @@ function setup(){
   h = windowHeight*2;
   cols = w/scl;
   rows = h/scl;
-  for(var i = 0;i < cols;i++){
+  for(let i = 0;i < cols;i++){
     terrain.push([]);
-    for(var j = 0;j<rows;j++){
+    for(let j = 0;j<rows;j++){
       terrain[i].push(0.0);
     }
   }
@@ -30,16 +30,16 @@ function resetup(newW,newH){
   h = newH*2;
   cols = w/scl;
   rows = h/scl;
-  for(var i = 0;i < cols;i++){
+  for(let i = 0;i < cols;i++){
     terrain.push([]);
-    for(var j = 0;j<rows;j++){
+    for(let j = 0;j<rows;j++){
       terrain[i].push(0.0);
     }
   }
 }
 
 function changeSize(){
-  if(changesizebtn == false){
+  if(!changesizebtn){
     resetup(900,350);
     canvas.position(windowWidth/4,windowHeight/4);
     changesizebtn = true;
@@ -52,9 +52,9 @@ function changeSize(){
 
 function draw(){
   flying -= 0.1;
-  var yoff = flying;
+  let yoff = flying;
   for(var y = 0; y < rows; y++){
-    var xoff = 0;
+    let xoff = 0;
     for(var x = 0; x < cols;x++){
       terrain[x][y] = map(noise(xoff,yoff),0,1,-120,120);
       xoff += 0.15;
@@ -66,9 +66,9 @@ function draw(){
   noFill();
   rotateX(PI/3);
   translate(w/-2,h/-2);
-  for(var y = 0; y < rows; y++){
+  for(let y = 0; y < rows; y++){
     beginShape(TRIANGLE_STRIP);
-    for(var x = 1; x < cols;x++){
+    for(let x = 1; x < cols;x++){
       vertex(x*scl,y*scl,terrain[x][y]);
       vertex(x*scl,(y+1)*scl,terrain[x][y+1]);
       vertex((x-1)*scl,y*scl,terrain[x-1][y]);

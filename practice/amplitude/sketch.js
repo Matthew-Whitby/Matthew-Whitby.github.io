@@ -33,7 +33,7 @@ function setup(){
   song.play();
   amp = new p5.Amplitude();
   fft = new p5.FFT(0.85,128);
-  w = windowWidth / 100;
+  w = windowWidth / 110;
 }
 
 function draw(){

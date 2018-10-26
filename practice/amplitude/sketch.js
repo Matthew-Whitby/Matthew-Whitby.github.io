@@ -7,7 +7,7 @@ var ampPath = false;
 var w;
 
 function preload(){
-  song = loadSound('Hashire End.mp3');
+  song = loadSound('03_BLAST_.mp3');
 }
 
 function toggleSong(){

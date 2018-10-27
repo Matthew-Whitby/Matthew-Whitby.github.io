@@ -47,11 +47,25 @@ function keyPressed() {
     for(particle of particles){
       particle.setSettled(true);
     }
-  } else if (keyCode === DOWN_ARROW) {
+  }else if (keyCode === DOWN_ARROW) {
     for(particle of particles){
       particle.setSettled(false);
     }
+  }else if(keyCode === 75){
+    var x = document.getElementsByTagName("Button");
+    if(x.length > 0){
+       if(x[0].hidden == false){
+          for(var i = 0; i < x.length; i++){
+             x[i].hidden = true;
+           }
+       }else{
+          for(var i = 0; i < x.length; i++){
+             x[i].hidden = false;
+           }
+       }
+    }
   }
+  
 }
 
 function touchStarted() {

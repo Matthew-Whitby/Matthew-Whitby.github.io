@@ -5,9 +5,12 @@ var zoff=0;
 var fr;
 var particles=[];
 var flowfield;
+var button;
+var changesizebtn = 0;
+var canvas;
 
 function setup(){
-  var canvas=createCanvas(windowWidth,windowHeight);
+  canvas=createCanvas(windowWidth,windowHeight);
   canvas.position(0,0);
   canvas.style('z-index','-1');
   colorMode(HSB,255);
@@ -19,6 +22,9 @@ function setup(){
     particles[i]=new Particle();
   }
   background(30);
+  button=createButton('Change Size');
+  button.position(0,0);
+  button.mousePressed(changeSize);
 }
 
 function draw(){
@@ -44,4 +50,23 @@ function draw(){
     particles[i].show();
   }
   fr.html(floor(frameRate()));
+}
+
+function changeSize(){
+   if(changesizebtn == 0){
+      resizeCanvas(400,400);
+      canvas.position(windowWidth/4,windowHeight/4);
+      background(30);
+      changesizebtn = 1;
+    }else if(changesizebtn == 1){
+      resizeCanvas(800,600);
+      changesizebtn = 2;
+      canvas.position(windowWidth/4,windowHeight/4);
+      background(30);
+    }else{
+      resizeCanvas(windowWidth,windowHeight);
+      changesizebtn = 0;
+      canvas.position(0,0);
+      background(30);
+    }
 }

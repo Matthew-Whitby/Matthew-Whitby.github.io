@@ -52,6 +52,8 @@ function keyPressed() {
     for(particle of particles){
       particle.setSettled(false);
     }
+  }else if(keyCode === 107){
+    document.getElementsByTagName('button').style.visabilty = 'hidden';
   }
 }
 

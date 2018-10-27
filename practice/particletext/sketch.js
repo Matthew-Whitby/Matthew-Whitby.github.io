@@ -51,8 +51,14 @@ function keyPressed() {
     for(particle of particles){
       particle.setSettled(false);
     }
-  }else if(keyCode === 107){
-    document.getElementsByTagName('button').style.visabilty = 'hidden';
+  }else if(keyCode === 75){
+    var x = document.getElementsByTagName("Button");
+    for(var i = 0; i < x.length; i++){
+      console.log(x[i]);
+      x[i].style.visbility = "collapse";
+      console.log(x[i]);
+    }
+    
   }
 }
 

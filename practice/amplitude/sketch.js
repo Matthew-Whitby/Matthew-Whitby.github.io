@@ -80,3 +80,4 @@ function ampDraw(){
 function windowResized(){
   resizeCanvas(windowWidth,windowHeight);
 }
+

@@ -62,13 +62,13 @@ function ampDraw(){
   noFill();
   beginShape();
   for(var i = 0; i < volhistory.length;i++){
-    let y = map(volhistory[i],0,0.4,height/2,-height/2);
+    let y = map(volhistory[i],0,0.45,height/2,-height/2);
     vertex(i,y);
   }
   endShape();
   beginShape();
   for(let i = 0; i < volhistory.length;i++){
-    let y = map(volhistory[i],0,0.4,height/2,height*1.5);
+    let y = map(volhistory[i],0,0.45,height/2,height*1.5);
     vertex(i,y);
   }
   endShape();

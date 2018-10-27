@@ -26,7 +26,6 @@ function setup(){
   for(let i = 0; i < whitbyPoints.length; i++){
     if(whitbyjpPoints[i] != null) let particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,whitbyjpPoints[i].x,whitbyjpPoints[i].y);
     else let particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,-10,-10);
-
     particles.push(particle);
     stroke(255);
     strokeWeight(4);
@@ -52,9 +51,9 @@ function keyPressed() {
     for(particle of particles){
       particle.setSettled(false);
     }
-  }else if(keyCode === 107){
+  }/*else if(keyCode === 107){
     document.getElementsByTagName('button').style.visabilty = 'hidden';
-  }
+  }*/
 }
 
 function touchStarted() {

@@ -67,7 +67,6 @@ function draw() {
     ];
     let projected = createVector(0,0,0);
     projected = matmul(projection, rotated);
-    console.log(projected);
     projected = createVector(projected[0][0],projected[1][0],projected[2][0]);
     projected.mult(windowWidth/8);
     projected3d.push(projected);

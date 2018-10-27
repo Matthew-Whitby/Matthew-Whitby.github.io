@@ -1,7 +1,9 @@
 let planets = [];
 
 function setup(){
-  createCanvas(windowWidth,windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   for(var i = 0; i < 20; i++){
     planets.push(new Planet(random(1,4),0,0));
   }

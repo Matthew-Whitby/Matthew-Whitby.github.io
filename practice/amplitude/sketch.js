@@ -21,7 +21,9 @@ function toggleGraph(){
 }
 
 function setup(){
-  createCanvas(windowWidth,windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   button = createButton('play/pause');
   button2 = createButton('Change Graph');
   button2.position(100,0);

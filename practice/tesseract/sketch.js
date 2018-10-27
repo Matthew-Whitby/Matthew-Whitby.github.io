@@ -5,7 +5,9 @@ var button;
 
 function setup() {
   colorMode(RGB);
-  createCanvas(windowWidth,windowHeight,WEBGL);
+  let canvas = createCanvas(windowWidth,windowHeight,WEBGL);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   points.push(new P4Vector(-1, -1, -1, 1));
   points.push(new P4Vector(1, -1, -1, 1));
   points.push(new P4Vector(1, 1, -1, 1));

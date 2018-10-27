@@ -7,7 +7,9 @@ var sensativity = 0.005;
 var g = 0.4;
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   for (let i = 0; i < 10; i++) {
     planets.push(new Planet(random(0.1,2),random(width),random(height)));
   }

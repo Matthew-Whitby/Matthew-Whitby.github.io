@@ -10,7 +10,9 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   gravity = createVector(0, 0.3); //strength of gravity pushing down
   for(let x = 0; x < spritesheet.width; x+=32){
     for(let y = 0; y < spritesheet.height; y+=32){

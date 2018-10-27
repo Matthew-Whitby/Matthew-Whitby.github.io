@@ -5,7 +5,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(picture.width*2, picture.height);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   image(picture, 0, 0);
   makeDithered(picture, 1);
   image(picture, picture.width, 0);

@@ -9,6 +9,8 @@ var canvas;
 
 function setup(){
   canvas = createCanvas(windowWidth,windowHeight,WEBGL);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   w = windowWidth*2;
   h = windowHeight*2;
   cols = w/scl;

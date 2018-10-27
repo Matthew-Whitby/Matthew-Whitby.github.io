@@ -1,7 +1,9 @@
 var lasers = [];
 
 function setup(){
-  createCanvas(windowWidth,windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   colorMode(HSB);
   stroke(255);
   strokeWeight(4);

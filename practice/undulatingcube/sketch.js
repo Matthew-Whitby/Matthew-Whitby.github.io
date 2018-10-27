@@ -6,6 +6,8 @@ var changesizebtn = 0;
 
 function setup(){
   canvas = createCanvas(windowWidth,windowHeight,WEBGL);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   mangle = atan(1/sqrt(2));
   maxD = dist(0,0,200,200);
   button = createButton('Change Size');

@@ -11,7 +11,9 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(windowWidth,windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   colorMode(HSB);
   gravity = createVector(0,0.1);
   background(0);

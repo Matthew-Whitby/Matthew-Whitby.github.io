@@ -2,7 +2,9 @@ var angle = 0;
 var slider;
 
 function setup(){
-  createCanvas(windowWidth,windowHeight);
+  let canvas = createCanvas(windowWidth,windowHeight);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
   slider = createSlider(0,TWO_PI,PI/4,0.01);
   slider.position(0,0);
   colorMode(HSB);

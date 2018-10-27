@@ -82,7 +82,7 @@ function windowResized(){
 }
 
 function keyPressed(){
-  if(keyCode === 75){
+  if(keyCode === 72){
     var x = document.getElementsByTagName("Button");
     if(x.length > 0){
        if(x[0].hidden == false){

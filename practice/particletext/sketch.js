@@ -51,7 +51,7 @@ function keyPressed() {
     for(particle of particles){
       particle.setSettled(false);
     }
-  }else if(keyCode === 75){
+  }else if(keyCode === 72){
     var x = document.getElementsByTagName("Button");
     if(x.length > 0){
        if(x[0].hidden == false){

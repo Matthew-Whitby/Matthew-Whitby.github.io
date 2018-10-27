@@ -107,3 +107,20 @@ function drawRobert(){
 function windowResized(){
   resizeCanvas(windowWidth,windowHeight);
 }
+
+function keyPressed(){
+  if(keyCode === 72){
+    var x = document.getElementsByTagName("Button");
+    if(x.length > 0){
+       if(x[0].hidden == false){
+          for(var i = 0; i < x.length; i++){
+             x[i].hidden = true;
+           }
+       }else{
+          for(var i = 0; i < x.length; i++){
+             x[i].hidden = false;
+           }
+       }
+    }
+  }
+}

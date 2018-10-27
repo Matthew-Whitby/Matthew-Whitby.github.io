@@ -23,7 +23,7 @@ function setup(){
     strokeWeight(4);
     point(ipoint.x,ipoint.y);
   }
-  for(let i = 0; i < whitbyPoints.length; i++){
+  for(var i = 0; i < whitbyPoints.length; i++){
     if(whitbyjpPoints[i] != null) let particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,whitbyjpPoints[i].x,whitbyjpPoints[i].y);
     else let particle = new Particle(whitbyPoints[i].x,whitbyPoints[i].y,-10,-10);
     particles.push(particle);

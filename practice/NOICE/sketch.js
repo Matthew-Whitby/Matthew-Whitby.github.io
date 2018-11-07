@@ -2,19 +2,15 @@ var fireworks = [];
 var gravity;
 var gif;
 
-function preload(){
-  gif = loadGif('rob-happy2.gif');
-}
-
 function setup(){
-  
+  gif = createImage("rob.gif");
   let canvas = createCanvas(windowWidth,windowHeight);
   canvas.position(0,0);
   canvas.style('z-index','-1');
   colorMode(HSB);
   gravity = createVector(0,0.2);
-  stroke(255);
-  strokeWeight(4);
+  //stroke(255);
+  //strokeWeight(4);
   background(0);
 }
 
@@ -26,13 +22,13 @@ function draw() {
   }
     for (var i = fireworks.length - 1; i >= 0; i--) {
       fireworks[i].update();
-      if(gif.loaded()){
+      
         fireworks[i].show();
-      }
+      
       if(fireworks[i].done()){
         fireworks.splice(i,1);
       }
-  }
+    }
 }
 
 function windowResized(){

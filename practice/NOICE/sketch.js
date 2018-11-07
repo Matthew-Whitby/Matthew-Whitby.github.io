@@ -1,13 +1,13 @@
 var fireworks = [];
 var gravity;
-var img;
+var gif;
 
 function preload(){
-  
+  gif = loadGif('rob-happy2.gif');
 }
 
 function setup(){
-  img = loadGif('rob-happy2.gif');
+  
   let canvas = createCanvas(windowWidth,windowHeight);
   canvas.position(0,0);
   canvas.style('z-index','-1');
@@ -22,11 +22,13 @@ function draw() {
   colorMode(RGB);
   background(0,0,0,25);
   if(random(1) < 0.1){
-    fireworks.push(new Firework(img));
+    fireworks.push(new Firework(gif));
   }
     for (var i = fireworks.length - 1; i >= 0; i--) {
       fireworks[i].update();
-      fireworks[i].show();
+      if(gif.loaded()){
+        fireworks[i].show();
+      }
       if(fireworks[i].done()){
         fireworks.splice(i,1);
       }

@@ -1,9 +1,9 @@
-function Particle(x,y,hu,img,firework){
+function Particle(x,y,hu,gif,firework){
   this.pos = createVector(x,y);
   this.firework = firework;
   this.lifespan = 255;
   this.hu = hu;
-  this.img = img;
+  this.gif = gif;
   if(this.firework){
     this.vel = createVector(0, random(-7,(windowHeight / 100)*-2)); //Upwards velocity 2p before -10
   } else {
@@ -28,11 +28,8 @@ this.applyForce = function(force) {
   }
 
   this.done = function() {
-    if (this.lifespan < 0){
-      return true;
-    }else{
-      return false;
-    }
+    if (this.lifespan < 0) return true;
+    else return false;
   }
 
   this.show = function(){
@@ -49,7 +46,12 @@ this.applyForce = function(force) {
       //strokeWeight(4);
       //stroke(hu,255,255);
     }
-    image(this.img,this.pos.x,this.pos.y,width,height);
+    
+      image(this.gif,this.pos.x,this.pos.y);
+    
+      
+    
+    
     //point(this.pos.x,this.pos.y);
   }
 }

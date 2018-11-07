@@ -1,9 +1,9 @@
-function Firework(img){
+function Firework(gif){
   this.hu = random(255);
-  this.firework = new Particle(random(width),height,this.hu,img,true);
+  this.gif = gif;
+  this.firework = new Particle(random(width),height,this.hu,this.gif,true);
   this.exploded = false;
   this.particles = [];
-  this.img = img;
 
 
   this.done = function(){

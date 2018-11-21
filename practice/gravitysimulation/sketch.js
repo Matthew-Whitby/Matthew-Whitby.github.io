@@ -17,15 +17,14 @@ function setup() {
 
 function draw() {
   background(0);
-  for (let i = 0; i < planets.length; i++) {
-    for (let j = 0; j < planets.length; j++) {
+  for (let i=0;i<planets.length; i++) {
+    for (let j=0;j< planets.length; j++) {
       if (i != j) {
         force = planets[j].attract(planets[i]);
         planets[i].applyForce(force);
       }
     }
     planets[i].update();
-    //var zoomint = -1 * (zoom.x + zoom.y);
     planets[i].display();
   }
 

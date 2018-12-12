@@ -29,7 +29,7 @@ function mouseDragged() {
 function draw() {
   background(51);
 
-  if (random(1) < 0.2) {
+  if (random(1) < 0.15) {
     food.push(createVector(random(width), random(height)));
   }
 

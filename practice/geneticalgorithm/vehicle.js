@@ -31,7 +31,7 @@ function Vehicle(x,y,dna){
   }
 
   //Method to update location
-  this.update=function(){
+  this.update=()=>{
     this.health-=0.005;
     //Update velocity
     this.vel.add(this.acc);
@@ -42,12 +42,12 @@ function Vehicle(x,y,dna){
     this.acc.mult(0);
   }
 
-  this.applyForce=function(force){
+  this.applyForce=(force)=>{
     //We could add mass here if we want A = F / M
     this.acc.add(force);
   }
 
-  this.behaviors=function(good,bad){
+  this.behaviors=(good,bad)=>{
     var steerG=this.eat(good,0.2,this.dna[2]);
     var steerB=this.eat(bad,-1,this.dna[3]);
     steerG.mult(this.dna[0]);
@@ -61,7 +61,7 @@ function Vehicle(x,y,dna){
     return null;
   }
 
-  this.eat=function(list,nutrition,perception){
+  this.eat=(list,nutrition,perception)=>{
     var record=Infinity;
     var closest=null;
     for(var i=list.length-1;i>=0;i--){
@@ -77,13 +77,13 @@ function Vehicle(x,y,dna){
       }
     }
     //This is the moment of eating!
-    if(closest!=null)returnthis.seek(closest);
+    if(closest!=null)return this.seek(closest);
     return createVector(0,0);
   }
 
   //A method that calculates a steering force towards a target
   //STEER=DESIRED MINUS VELOCITY
-  this.seek=function(target){
+  this.seek=(target)=>{
     var desired=p5.Vector.sub(target,this.pos);//A vector pointing from the location to the target
     desired.setMag(this.maxspeed);
     var steer=p5.Vector.sub(desired,this.vel);
@@ -91,11 +91,11 @@ function Vehicle(x,y,dna){
     return steer;
   }
 
-  this.dead=function(){
+  this.dead=()=>{
     return(this.health<0)
   }
 
-  this.display=function(){
+  this.display=()=>{
     //Draw a triangle rotated in the direction of velocity
     var angle=this.vel.heading()+PI/2;
     push();
@@ -126,10 +126,10 @@ function Vehicle(x,y,dna){
     pop();
   }
 
-  this.boundaries=function(){
+  this.boundaries=()=>{
     var d=25;
     var desired=null;
-    if (this.pos.x<d)desired=createVector(this.maxspeed,this.vel.y);
+    if(this.pos.x<d)desired=createVector(this.maxspeed,this.vel.y);
     else if(this.pos.x>width-d)desired=createVector(-this.maxspeed,this.vel.y);
     if(this.pos.y<d)desired=createVector(this.vel.x,this.maxspeed);
     else if(this.pos.y>height-d)desired=createVector(this.vel.x,-this.maxspeed);

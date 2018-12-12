@@ -1,9 +1,4 @@
-var vehicles=[];
-var food=[];
-var poison=[];
-var debug;
-var births=0;
-var deaths=0;
+var vehicles=[],food=[],poison=[],debug,births=0,deaths=0;
 
 function setup(){
   let canvas=createCanvas(windowWidth,windowHeight);
@@ -16,9 +11,7 @@ function setup(){
   debug.position(0,0);
 }
 
-function mouseDragged(){
-  vehicles.push(new Vehicle(mouseX,mouseY));
-}
+function mouseDragged(){vehicles.push(new Vehicle(mouseX,mouseY));}
 
 function draw(){
   background(51);

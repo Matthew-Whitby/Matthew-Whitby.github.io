@@ -5,25 +5,25 @@ function Planet(m,x,y){
   this.acc=createVector(0,0);
 }
 
-Planet.prototype.applyForce=function(force){
+Planet.prototype.applyForce=(force)=>{
   let f=p5.Vector.div(force,this.mass);
   this.acc.add(f);
 }
 
-Planet.prototype.update=function(){
+Planet.prototype.update=()=>{
   this.vel.add(this.acc);
   this.pos.add(this.vel);
   this.acc.mult(0);
 }
 
-Planet.prototype.display=function(){
+Planet.prototype.display=()=>{
   stroke(255);
   strokeWeight(2);
   fill(0,100);
   ellipse(this.pos.x,this.pos.y,this.mass*24,this.mass*24);
 }
 
-Planet.prototype.attract = function(p){
+Planet.prototype.attract=(p)=>{
   let force=p5.Vector.sub(this.pos,p.pos);
   let distance=force.mag();
   distance=constrain(distance,5,25);

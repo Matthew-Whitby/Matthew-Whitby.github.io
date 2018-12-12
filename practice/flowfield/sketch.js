@@ -1,13 +1,4 @@
-var inc=0.1;
-var scl=10;
-var cols,rows;
-var zoff=0;
-var fr;
-var particles=[];
-var flowfield;
-var button;
-var changesizebtn = 0;
-var canvas;
+var inc=0.1,scl=10,cols,rows,zoff=0,fr,particles=[],flowfield,button,changesizebtn=0,canvas;
 
 function setup(){
   canvas=createCanvas(windowWidth,windowHeight);
@@ -18,9 +9,7 @@ function setup(){
   rows=floor(height/scl);
   fr=createP('');
   flowfield=new Array(cols*rows);
-  for(var i=0;i<300;i++){
-    particles[i]=new Particle();
-  }
+  for(var i=0;i<300;i++)particles[i]=new Particle();
   background(30);
   button=createButton('Change Size');
   button.position(0,0);
@@ -53,19 +42,19 @@ function draw(){
 }
 
 function changeSize(){
-   if(changesizebtn == 0){
+   if(changesizebtn==0){
       resizeCanvas(400,400);
       canvas.position(windowWidth/4,windowHeight/4);
       background(30);
-      changesizebtn = 1;
-    }else if(changesizebtn == 1){
+      changesizebtn=1;
+    }else if(changesizebtn==1){
       resizeCanvas(800,600);
-      changesizebtn = 2;
+      changesizebtn=2;
       canvas.position(windowWidth/4,windowHeight/4);
       background(30);
     }else{
       resizeCanvas(windowWidth,windowHeight);
-      changesizebtn = 0;
+      changesizebtn=0;
       canvas.position(0,0);
       background(30);
     }
@@ -75,15 +64,8 @@ function keyPressed(){
    if(keyCode===72){
      var x=document.getElementsByTagName("Button");
      if(x.length>0){
-        if(x[0].hidden==false){
-           for(var i=0;i<x.length;i++){
-              x[i].hidden=true;
-            }
-        }else{
-           for(var i=0;i<x.length;i++){
-              x[i].hidden=false;
-            }
-        }
+        if(x[0].hidden==false)for(var i=0;i<x.length;i++)x[i].hidden=true;
+        else for(var i=0;i<x.length;i++)x[i].hidden=false;
      }
    }
  }

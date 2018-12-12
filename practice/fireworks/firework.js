@@ -5,12 +5,12 @@ function Firework(){
   this.particles = [];
 
 
-  this.done = function(){
+  this.done=()=>{
     if(this.exploded && this.particles.length === 0) return true;
     else return false;
   }
 
-  this.update = function() {
+  this.update=()=>{
     if(!this.exploded){
       this.firework.applyForce(gravity);
       this.firework.update();
@@ -28,17 +28,17 @@ function Firework(){
     }
   }
 
-  this.explode = function(){
+  this.explode=()=>{
     for (var i = 0; i < 100; i++){
       var p = new Particle(this.firework.pos.x,this.firework.pos.y, this.hu, false);
       this.particles.push(p);
     }
   }
 
-  this.show = function(){
+  this.show=()=>{
     colorMode(HSB);
-    if(!this.exploded) this.firework.show();
-    for(var i = 0; i < this.particles.length; i++){
+    if(!this.exploded)this.firework.show();
+    for(var i=0;i<this.particles.length;i++){
       this.particles[i].show();
     }
   }

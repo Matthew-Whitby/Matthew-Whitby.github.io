@@ -3,6 +3,7 @@ function Planet(m,x,y){
   this.pos=createVector(x,y);
   this.velocity=createVector(0,0);
   this.acceleration=createVector(0,0);
+  console.log(this.acceleration);
 }
 
 Planet.prototype.update=()=>{

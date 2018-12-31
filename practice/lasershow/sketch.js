@@ -1,5 +1,4 @@
-var lasers = [];
-
+var lasers=[];
 function setup(){
   let canvas = createCanvas(windowWidth,windowHeight);
   canvas.position(0,0);
@@ -11,31 +10,27 @@ function setup(){
 }
 
 function draw() {
-  if(random(1) < 1){
-    if(lasers.length > 0){
+  if(random(1)<1){
+    if(lasers.length>0){
       clear();
       lasers.splice(0,1);
     }
-    let sx;
-    let ex;
-    let sy;
-    let ey;
-    let colour = random(255);
-    let dir = (random(1) > 0.5) ? 1 : -1;
-    if(dir == 1){ //create 'vertical laser'
-      sx = Math.round(random(windowWidth));
-      ex = Math.round(random(windowWidth));
-      sy = -100;
-      ey = -100;
-    }else{ //create 'horizontal laser'
-    sy = Math.round(random(windowHeight));
-    ey = Math.round(random(windowHeight));
-    sx = -100;
-    ex = -100;
+    let colour=random(255);
+    let dir=(random(1)>0.5)?1:-1;
+    if(dir==1){//create 'vertical laser'
+      sx=Math.round(random(windowWidth));
+      ex=Math.round(random(windowWidth));
+      sy=-100;
+      ey=-100;
+    }else{//create 'horizontal laser'
+    sy=Math.round(random(windowHeight));
+    ey=Math.round(random(windowHeight));
+    sx=-100;
+    ex=-100;
     }
     lasers.push(new Laser(sx,ex,sy,ey,colour));
   }
-    for (let i = lasers.length - 1; i >= 0; i--) {
+    for(let i=lasers.length-1;i>=0;i--){
       //lasers[i].update();
       lasers[i].render();
       if(lasers[i].done()){
@@ -50,17 +45,10 @@ function windowResized(){
 
 function keyPressed(){
   if(keyCode === 72){
-    var x = document.getElementsByTagName("Button");
-    if(x.length > 0){
-       if(x[0].hidden == false){
-          for(var i = 0; i < x.length; i++){
-             x[i].hidden = true;
-           }
-       }else{
-          for(var i = 0; i < x.length; i++){
-             x[i].hidden = false;
-           }
-       }
+    var x=document.getElementsByTagName("Button");
+    if(x.length>0){
+       if(!x[0].hidden)for(var i=0;i<x.length;i++)x[i].hidden=true;
+       else for(var i = 0; i < x.length; i++)x[i].hidden=false;
     }
   }
 }

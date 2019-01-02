@@ -31,7 +31,7 @@ function setup(){
 
   happyPoints = font.textToPoints('Happy',(windowWidth/2)-(happyPointsLength/2),200,192);
   birthdayPoints = font.textToPoints('Birthday',(windowWidth/2)-(birthdayPointsLength/2),200,192);
-  robertPoints = font.textToPoints('Mum',(windowWidth/2)-(birthdayPointsLength/2),200,192);
+  robertPoints = font.textToPoints('Mum',(windowWidth/2)-(robertPointsLength/2),200,192);
 
   for(ipoint of happyPoints){
     happyFireworks.push(new Firework(ipoint.x,ipoint.y));

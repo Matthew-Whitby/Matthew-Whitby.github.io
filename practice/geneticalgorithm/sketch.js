@@ -4,14 +4,14 @@ function setup(){
   let canvas=createCanvas(windowWidth,windowHeight);
   canvas.position(0,0);
   canvas.style('z-index','-1');
-  for(let i=0;i<50;i++)vehicles[i]=new Vehicle(random(width),random(height));
+  for(let i=0;i<50;i++)vehicles[i]=new Vehicle(random(width),random(height),new createVector(random(-2,2),random(-2,2)));
   for(let i=0;i<40;i++)food.push(createVector(random(width),random(height)));
   for(let i=0;i<20;i++)poison.push(createVector(random(width),random(height)));
   debug=createCheckbox();
   debug.position(0,0);
 }
 
-function mouseDragged(){vehicles.push(new Vehicle(mouseX,mouseY));}
+function mouseDragged(){vehicles.push(new Vehicle(mouseX,mouseY,createVector(random(-2,2),random(-2,2))));}
 
 function draw(){
   background(51);

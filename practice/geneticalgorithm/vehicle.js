@@ -1,8 +1,8 @@
 var mr=0.01;
 
-function Vehicle(x,y,dna){
+function Vehicle(x,y,vel,dna){
   this.acc=createVector(0,0);
-  this.vel=createVector(0,-2);
+  this.vel=vel;
   this.pos=createVector(x,y);
   this.r=4;
   this.maxspeed=5;
@@ -57,7 +57,7 @@ function Vehicle(x,y,dna){
   }
 
   this.clone=function(){
-    if(random(1)<0.002)return new Vehicle(this.pos.x,this.pos.y,this.dna);
+    if(random(1)<0.002)return new Vehicle(this.pos.x,this.pos.y,createVector(random(-2,2),random(-2,2),this.dna));
     return null;
   }
 

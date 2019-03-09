@@ -1,4 +1,4 @@
-var lasers = [];
+var lasers=[];
 
 function setup(){
   createCanvas(windowWidth,windowHeight);

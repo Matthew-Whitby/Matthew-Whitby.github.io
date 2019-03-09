@@ -17,7 +17,7 @@ function setup(){
   colorMode(HSB);
   button.position(0,0);
   button.mousePressed(toggleSong);
-  song.setVolume(0.4);
+  song.setVolume(0.1);
   song.play();
   amp=new p5.Amplitude();
   fft=new p5.FFT(0.85,128);

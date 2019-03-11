@@ -14,8 +14,7 @@
       <option value="cross">Cross</option>
     </select>
     <button type="button" onclick="Generate()">Generate</button>
-  </div>
-    <br>
+  </div><br>
     <textarea id="answer"></textarea>
     <script>
         $("#kernalType").change(function(){
@@ -30,9 +29,7 @@
             document.getElementById("settings").appendChild(sizeText);
             }
           }else{
-            alert("Else");
             if(typeof(element) != 'undefined' && element != null){
-              alert("Exists");
               var node=document.getElementById("crossSize");
               node.parentNode.removeChild(node);
             }

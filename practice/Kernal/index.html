@@ -17,25 +17,36 @@
   </div><br>
     <textarea id="answer"></textarea>
     <script>
-        $("#kernalType").change(function(){
-          var element = document.getElementById("crossSize");
-          let selectionBox=document.getElementById("kernalType");
-            let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
-          if(selectedOption=="cross"){
-            if(typeof(element) == 'undefined' || element == null){
-              var sizeText=document.createElement("input");
-            sizeText.type="text";
-            sizeText.id="crossSize";
-            document.getElementById("settings").appendChild(sizeText);
-            }
-          }else{
-            if(typeof(element) != 'undefined' && element != null){
-              var node=document.getElementById("crossSize");
-              node.parentNode.removeChild(node);
-            }
+      var element = document.getElementById("crossSize");
+      let selectionBox=document.getElementById("kernalType");
+      let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
+      if(selectedOption=="cross"){
+        if(typeof(element) == 'undefined' || element == null){
+          var sizeText=document.createElement("input");
+          sizeText.type="text";
+          sizeText.id="crossSize";
+          document.getElementById("settings").appendChild(sizeText);
+        }
+      }
+      $("#kernalType").change(function(){
+        var element = document.getElementById("crossSize");
+        let selectionBox=document.getElementById("kernalType");
+        let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
+        if(selectedOption=="cross"){
+          if(typeof(element) == 'undefined' || element == null){
+            var sizeText=document.createElement("input");
+          sizeText.type="text";
+          sizeText.id="crossSize";
+          document.getElementById("settings").appendChild(sizeText);
           }
-        });
-      </script>
+        }else{
+          if(typeof(element) != 'undefined' && element != null){
+            var node=document.getElementById("crossSize");
+            node.parentNode.removeChild(node);
+          }
+        }
+      });
+    </script>
     <script>
         function Generate(){
           let NbyM=parseInt(document.getElementById("inputText").value);
@@ -78,10 +89,6 @@
             let answerText="crossKernal"+NbyM+"=[";
             let middle=(NbyM+1)/2;
             let crossWidthSize=(crossWidth-1)/2;
-            console.log("NbyM: "+NbyM);
-            console.log("Middle: "+middle);
-            console.log("crossWidth: "+crossWidth);
-            console.log("crossWidthSize: "+crossWidthSize);
             for(var i=0;i<NbyM;i++){
               for(var j=0;j<NbyM;j++){
                 if(i>=middle-crossWidthSize-1&&i<=middle+crossWidthSize-1)answerText+="1";

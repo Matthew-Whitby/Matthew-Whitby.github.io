@@ -3,6 +3,15 @@
     <title>KernalGen</title>
     <meta charset="UTF-8">
     <script src="music.matthewwhitby.co.uk/jquery-1.7.1.min.js"></script>
+    <script>
+        $("input").change(function(){
+          alert("Changed");
+          var sizeText=document.createElement("input");
+          sizeText.type="text";
+          sizeText.id="crossSize";
+          document.getElementById("settings").appendChile(sizeText);
+        });
+      </script>
   </head>
 <body>
   <b><u><h1 style="text-align:center;">Simple Kernal Gen (For Comp Vision)</h1></u></b>
@@ -17,15 +26,7 @@
   </div>
     <br>
     <textarea id="answer"></textarea>
-    <script>
-      $("input").change(function(){
-        alert("Changed");
-        var sizeText=document.createElement("input");
-        sizeText.type="text";
-        sizeText.id="crossSize";
-        document.getElementById("settings").appendChile(sizeText);
-      });
-    </script>
+    
     <script>
         function Generate(){
           let NbyM=parseInt(document.getElementById("inputText").value);

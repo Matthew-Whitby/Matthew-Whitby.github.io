@@ -33,21 +33,21 @@
         }
 
         function GenerateCross(NbyM){
-          let answerText="";
+          let answerText="crossLernal"+NbyM+"=[";
           let middle=(NbyM+1)/2;
           for(var i=0;i<NbyM;i++){//rows
             let numOf0;
             if(i>=middle)numOf0=i-middle;
             else numOf0=i;
-            for(var j=0;j<middle-1-i;j++){
+            for(var j=0;j<middle-1-numOf0;j++){
               answerText+="0,";
             }
             for(var j=0;j<i+1;j++){
               answerText+="1";
               if(i!=middle-1)answerText+=",";
-              else answerText+=";";
+              else answerText+=";\r\n";
             }
-            for(var j=0;j<middle-1-i;j++){
+            for(var j=0;j<middle-1-numOf0;j++){
               answerText+="0";
               if(i!=NbyM-1)answerText+=",";
               else if(i!=NbyM-1)answerText+=";\r\n";

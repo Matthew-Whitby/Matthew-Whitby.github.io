@@ -84,8 +84,8 @@
             console.log("crossWidthSize: "+crossWidthSize);
             for(var i=0;i<NbyM;i++){
               for(var j=0;j<NbyM;j++){
-                if(i<middle-crossWidthSize&&i>middle+crossWidthSize)answerText+="1";
-                else if(j<middle-crossWidthSize&&j>middle+crossWidthSize)answerText+="1";
+                if(i<middle-crossWidthSize||i>middle+crossWidthSize)answerText+="1";
+                else if(j<middle-crossWidthSize||j>middle+crossWidthSize)answerText+="1";
                 else answerText+="0";
                 if(j!=NbyM-1)answerText+=",";
                 else if(i!=NbyM-1)answerText+=";\r\n";

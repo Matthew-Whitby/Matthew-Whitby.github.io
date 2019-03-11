@@ -19,10 +19,22 @@
     <textarea id="answer"></textarea>
     <script>
         $("#kernalType").change(function(){
-          var sizeText=document.createElement("input");
-          sizeText.type="text";
-          sizeText.id="crossSize";
-          document.getElementById("settings").appendChild(sizeText);
+          var element = document.getElementById("test");
+          let selectionBox=document.getElementById("kernalType");
+            let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
+          if(selectedOption=="cross"){
+            if(typeof(element) == 'undefined' || element == null){
+              var sizeText=document.createElement("input");
+            sizeText.type="text";
+            sizeText.id="crossSize";
+            document.getElementById("settings").appendChild(sizeText);
+            }
+          }else{
+            if(typeof(element) != 'undefined' && element != null){
+              var node=document.getElementById("crossSize");
+              node.parentNode.removeChild(node);
+            }
+          }
         });
       </script>
     <script>

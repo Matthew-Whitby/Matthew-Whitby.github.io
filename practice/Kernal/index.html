@@ -35,9 +35,6 @@
         function GenerateCross(NbyM){
           let answerText="crossKernal"+NbyM+"=[";
           let middle=(NbyM+1)/2;
-          console.log("NbyM: "+NbyM);
-          console.log("NbyM+1: "+NbyM+1);
-          console.log("(NbyM+1)/2: "+(NbyM+1)/2);
           for(var i=0;i<NbyM;i++){//rows
             let numOf0;
             if(i>=middle)numOf0=i-middle;
@@ -55,7 +52,7 @@
             }
             for(var j=0;j<middle-1-numOf0;j++){
               answerText+="0";
-              if(i!=NbyM-1)answerText+=",";
+              if(j!=NbyM-middle-1)answerText+=",";
               else if(i!=NbyM-1)answerText+=";\r\n";
               else answerText+=";";
             }

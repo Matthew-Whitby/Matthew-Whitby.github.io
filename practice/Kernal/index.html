@@ -78,6 +78,10 @@
             let answerText="crossKernal"+NbyM+"=[";
             let middle=(NbyM+1)/2;
             let crossWidthSize=(crossWidth-1)/2;
+            console.log("NbyM: "+NbyM);
+            console.log("Middle: "+middle);
+            console.log("crossWidth: "+crossWidth);
+            console.log("crossWidthSize: "+crossWidthSize);
             for(var i=0;i<NbyM;i++){
               for(var j=0;j<NbyM;j++){
                 if(i<middle-crossWidthSize&&i>middle+crossWidthSize)answerText+="1";

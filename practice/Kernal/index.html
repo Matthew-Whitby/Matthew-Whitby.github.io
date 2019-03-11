@@ -7,7 +7,10 @@
   <b><u><h1 style="text-align:center;">Simple Kernal Gen (For Comp Vision)</h1></u></b>
   <div id="generator"></div>
     <input type="text" id="inputText">
-    <button type="button" onclick="Generate()">Generate</button>
+    <select id="kernalType">
+      <option selected value="cross">Cross</option>
+    </select>
+    <button type="button" onclick="Generate()">Generate</button><br>
     <textarea id="answer"></textarea>
     <script>
       
@@ -16,15 +19,28 @@
         function Generate(){
           let NbyM=document.getElementById("inputText").value;
           if(NbyM%2==1){
-            let middle=(NbyM+1)/2;
             let answerBox=document.getElementById("answer");
-            answerBox.value = "hello\r\nhow are you?";
-            for(var i=0;i<NbyM;i++){
-              for(var j=0;j<NbyM;j++){
-
-              }
+            let selectionBox=document.getElementById("kernalType");
+            let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
+            let answerText="textKernal"+NbyM+" = [";
+            switch(selectedOption){
+              case "cross":
+                answerBox.value=GenerateCross(NbyM);
+              break;
             }
+            
           }else alert("Please make number odd");
+        }
+
+        function GenerateCross(NbyM){
+          alert("Reached");
+          let middle=(NbyM+1)/2;
+          for(var i=0;i<NbyM;i++){
+            for(var j=0;j<NbyM;j++){
+
+            }
+          }
+          return "Hello\r\nit worked";
         }
     </script>
   </body>

@@ -22,10 +22,12 @@
             let answerBox=document.getElementById("answer");
             let selectionBox=document.getElementById("kernalType");
             let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
-            let answerText="textKernal"+NbyM+" = [";
             switch(selectedOption){
               case "cross":
                 answerBox.value=GenerateCross(NbyM);
+              break;
+              case "ones":
+                answerBox.value=
               break;
             }
             
@@ -33,7 +35,7 @@
         }
 
         function GenerateCross(NbyM){
-          alert("Reached");
+          let answerText="";
           let middle=(NbyM+1)/2;
           for(var i=0;i<NbyM;i++){
             for(var j=0;j<NbyM;j++){
@@ -41,6 +43,19 @@
             }
           }
           return "Hello\r\nit worked";
+        }
+
+        function GenerateOnes(NbyM){
+          let answerText="onesKernal"+NbyM+"=[";
+          for(var i=0;i<NbyM;i++){
+            for(var j=0;j<NbyM;j++){
+              answerText+="1";
+              if(j!=NbyM-1)answerText+=",";
+              else answerText+=";";
+            }
+          }
+          answerText+="];";
+          return answerText;
         }
     </script>
   </body>

@@ -33,12 +33,15 @@
         }
 
         function GenerateCross(NbyM){
-          let answerText="crossLernal"+NbyM+"=[";
+          let answerText="crossKernal"+NbyM+"=[";
           let middle=(NbyM+1)/2;
           for(var i=0;i<NbyM;i++){//rows
             let numOf0;
             if(i>=middle)numOf0=i-middle;
             else numOf0=i;
+            console.log("middle: "+middle);
+            console.log("i: "+i);
+            console.log("numOf0: "+numOf0);
             for(var j=0;j<middle-1-numOf0;j++){
               answerText+="0,";
             }

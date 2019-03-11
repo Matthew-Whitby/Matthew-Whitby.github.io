@@ -67,8 +67,7 @@
         function GenerateDiamond(NbyM){
           let uniqueName=document.querySelector('#uniqueNameCheck').checked;
           let answerText;
-          console.log(uniqueName);
-          if(uniqueName!=null)answerText="diamondKernal"+NbyM+"=[";
+          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
           else answerText="diamondKernal=[";
           let middle=(NbyM+1)/2;
           for(var i=0;i<NbyM;i++){
@@ -92,9 +91,9 @@
         function GenerateCross(NbyM){
           let crossWidth=parseInt(document.getElementById("crossSize").value);
           if(crossWidth<NbyM&&crossWidth%2==1){
-            let uniqueName=document.querySelector('#uniqueNameCheck:checked').value;
+            let uniqueName=document.querySelector('#uniqueNameCheck').checked;
             let answerText;
-            if(uniqueName!=null)answerText="diamondKernal"+NbyM+"=[";
+            if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
             else answerText="diamondKernal=[";
             let middle=(NbyM+1)/2;
             let crossWidthSize=(crossWidth-1)/2;
@@ -111,9 +110,9 @@
           }else alert("Cross wdith can't be bigger than grid size and must be odd");
         }
         function GenerateOnes(NbyM){
-          let uniqueName=document.querySelector('#uniqueNameCheck:checked').value;
+          let uniqueName=document.querySelector('#uniqueNameCheck').checked;
           let answerText;
-          if(uniqueName!=null)answerText="diamondKernal"+NbyM+"=[";
+          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
           else answerText="diamondKernal=[";
           for(var i=0;i<NbyM;i++){
             for(var j=0;j<NbyM;j++){

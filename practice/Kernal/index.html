@@ -6,16 +6,16 @@
 <body>
   <b><u><h1 style="text-align:center;">Simple Kernal Gen (For Comp Vision)</h1></u></b>
   <div id="generator"></div>
-    <form action="Generate">
-        NxM: <input type="text" name="NbyM">
-        <input type="submit" value="Generate">
-    </form>
+    <input type="text" id="inputText">
+    <button type="button" onclick="Generate">Generate</button>
     <script>
       
     </script>
     <script>
         function Generate(){
-            alert("button Clicked");
+            let NbyM=document.getElementById("inputText").value;
+
+            alert(NbyM);
         }
     </script>
   </body>

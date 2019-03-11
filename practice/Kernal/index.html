@@ -8,14 +8,23 @@
   <div id="generator"></div>
     <input type="text" id="inputText">
     <button type="button" onclick="Generate()">Generate</button>
+    <textarea id="answer"></textarea>
     <script>
       
     </script>
     <script>
         function Generate(){
-            let NbyM=document.getElementById("inputText").value;
+          let NbyM=document.getElementById("inputText").value;
+          if(NbyM%2==1){
+            let middle=(NbyM+1)/2;
+            let answerBox=document.getElementById("answer");
+            answerBox.value = "hello\r\nhow are you?";
+            for(var i=0;i<NbyM;i++){
+              for(var j=0;j<NbyM;j++){
 
-            alert(NbyM);
+              }
+            }
+          }else alert("Please make number odd");
         }
     </script>
   </body>

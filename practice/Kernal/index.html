@@ -7,13 +7,16 @@
 <body>
   <b><u><h1 style="text-align:center;">Simple Kernal Gen (For Comp Vision)</h1></u></b>
   <div id="settings">
-    <input type="text" id="inputText">
-    <select id="kernalType">
-      <option selected value="diamond">Diamond</option>
-      <option value="ones">Ones</option>
-      <option value="cross">Cross</option>
-    </select>
+    <div id="inputSettings">
+        <input type="text" id="inputText">
+        <select id="kernalType">
+          <option selected value="diamond">Diamond</option>
+          <option value="ones">Ones</option>
+          <option value="cross">Cross</option>
+        </select>
+    </div>
     <button type="button" onclick="Generate()">Generate</button>
+    <input type="checkbox" id="uniqueNameCheck">
   </div><br>
     <textarea id="answer"></textarea>
     <script>
@@ -25,7 +28,7 @@
           var sizeText=document.createElement("input");
           sizeText.type="text";
           sizeText.id="crossSize";
-          document.getElementById("settings").appendChild(sizeText);
+          document.getElementById("inputSettings").appendChild(sizeText);
         }
       }
       $("#kernalType").change(function(){
@@ -37,7 +40,7 @@
             var sizeText=document.createElement("input");
           sizeText.type="text";
           sizeText.id="crossSize";
-          document.getElementById("settings").appendChild(sizeText);
+          document.getElementById("inputSettings").appendChild(sizeText);
           }
         }else{
           if(typeof(element) != 'undefined' && element != null){

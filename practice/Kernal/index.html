@@ -30,7 +30,9 @@
             document.getElementById("settings").appendChild(sizeText);
             }
           }else{
+            alert("Else");
             if(typeof(element) != 'undefined' && element != null){
+              alert("Exists");
               var node=document.getElementById("crossSize");
               node.parentNode.removeChild(node);
             }

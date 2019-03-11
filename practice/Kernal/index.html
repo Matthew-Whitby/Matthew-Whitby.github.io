@@ -21,30 +21,20 @@
             let selectionBox=document.getElementById("kernalType");
             let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
             switch(selectedOption){
-              case "diamond":
-                answerBox.value=GenerateDiamond(NbyM);
-              break;
-              case "ones":
-                answerBox.value=GenerateOnes(NbyM);
-              break;
+              case "diamond":answerBox.value=GenerateDiamond(NbyM);break;
+              case "ones":answerBox.value=GenerateOnes(NbyM);break;
             }
             
           }else alert("Please make number odd");
         }
-
         function GenerateDiamond(NbyM){
           let answerText="diamondKernal"+NbyM+"=[";
           let middle=(NbyM+1)/2;
-          for(var i=0;i<NbyM;i++){//rows
+          for(var i=0;i<NbyM;i++){
             let numOf0;
             if(i>=middle)numOf0=NbyM-i-1;
             else numOf0=i;
-            console.log("middle: "+middle);
-            console.log("i: "+i);
-            console.log("numOf0: "+numOf0);
-            for(var j=0;j<middle-1-numOf0;j++){
-            answerText+="0,";
-            }
+            for(var j=0;j<middle-1-numOf0;j++)answerText+="0,";
             for(var j=0;j<(2*numOf0)+1;j++){
               answerText+="1";
               if(j!=NbyM-1)answerText+=",";
@@ -57,9 +47,8 @@
               else answerText+=";";
             }
           }
-          return answerText;
+          return answerText+="];";
         }
-
         function GenerateOnes(NbyM){
           let answerText="onesKernal"+NbyM+"=[";
           for(var i=0;i<NbyM;i++){
@@ -70,8 +59,7 @@
               else answerText+=";";
             }
           }
-          answerText+="];";
-          return answerText;
+          return answerText+="];";
         }
     </script>
   </body>

@@ -65,7 +65,7 @@
           }else alert("Please make number odd");
         }
         function GenerateDiamond(NbyM){
-          let uniqueName=document.getElementById("uniqueNameCheck").value;
+          let uniqueName=document.querySelector('#uniqueNameCheck:checked').value;
           console.log(uniqueName);
           let answerText="diamondKernal"+NbyM+"=[";
           let middle=(NbyM+1)/2;

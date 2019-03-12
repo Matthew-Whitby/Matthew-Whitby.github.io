@@ -1,0 +1,143 @@
+<html>
+  <head lang="en">
+    <title>KernalGen</title>
+    <meta charset="UTF-8">
+    <script src="http://music.matthewwhitby.co.uk/jquery-1.7.1.min.js"></script>
+  </head>
+<body>
+  <b><u><h1 style="text-align:center;">Simple Kernal Gen (For Comp Vision)</h1></u></b>
+  <div id="settings">
+    <div id="inputSettings">
+        <input type="text" id="inputText">
+        <select id="kernalType">
+          <option selected value="diamond">Diamond</option>
+          <option value="cross">Cross</option>
+          <option value="ones">Ones</option>
+          <option value="zeros">Zeros</option>
+        </select>
+    </div>
+    <button type="button" onclick="Generate()">Generate</button>
+    <input type="checkbox" id="uniqueNameCheck">Uniques Name
+  </div><br>
+    <textarea id="answer"></textarea>
+    <script>
+      var element = document.getElementById("crossSize");
+      let selectionBox=document.getElementById("kernalType");
+      let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
+      if(selectedOption=="cross"){
+        if(typeof(element) == 'undefined' || element == null){
+          var sizeText=document.createElement("input");
+          sizeText.type="text";
+          sizeText.id="crossSize";
+          document.getElementById("inputSettings").appendChild(sizeText);
+        }
+      }
+      $("#kernalType").change(function(){
+        var element = document.getElementById("crossSize");
+        let selectionBox=document.getElementById("kernalType");
+        let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
+        if(selectedOption=="cross"){
+          if(typeof(element) == 'undefined' || element == null){
+            var sizeText=document.createElement("input");
+          sizeText.type="text";
+          sizeText.id="crossSize";
+          document.getElementById("inputSettings").appendChild(sizeText);
+          }
+        }else{
+          if(typeof(element) != 'undefined' && element != null){
+            var node=document.getElementById("crossSize");
+            node.parentNode.removeChild(node);
+          }
+        }
+      });
+    </script>
+    <script>
+        function Generate(){
+          let NbyM=parseInt(document.getElementById("inputText").value);
+          if(NbyM%2==1){
+            let answerBox=document.getElementById("answer");
+            let selectionBox=document.getElementById("kernalType");
+            let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
+            switch(selectedOption){
+              case "diamond":answerBox.value=GenerateDiamond(NbyM);break;
+              case "ones":answerBox.value=GenerateOnes(NbyM);break;
+              case "cross":answerBox.value=GenerateCross(NbyM);break;
+              case "zeros":answerBox.value=GenerateZeros(NbyM);break;
+            }
+          }else alert("Please make number odd");
+        }
+        function GenerateDiamond(NbyM){
+          let uniqueName=document.querySelector('#uniqueNameCheck').checked;
+          let answerText;
+          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
+          else answerText="myKernal=[";
+          let middle=(NbyM+1)/2;
+          for(var i=0;i<NbyM;i++){
+            let numOf0;
+            if(i>=middle)numOf0=NbyM-i-1;
+            else numOf0=i;
+            for(var j=0;j<middle-1-numOf0;j++)answerText+="0,";
+            for(var j=0;j<(2*numOf0)+1;j++){
+              answerText+="1";
+              if(j!=NbyM-1)answerText+=",";
+              else answerText+=";\r\n";
+            }
+            for(var j=0;j<middle-1-numOf0;j++){
+              answerText+="0";
+              if(j!=middle-2-numOf0)answerText+=",";
+              else if(i!=NbyM-1)answerText+=";\r\n";
+            }
+          }
+          return answerText+="];";
+        }
+        function GenerateCross(NbyM){
+          let crossWidth=parseInt(document.getElementById("crossSize").value);
+          if(crossWidth<NbyM&&crossWidth%2==1){
+            let uniqueName=document.querySelector('#uniqueNameCheck').checked;
+            let answerText;
+            if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
+            else answerText="myKernal=[";
+            let middle=(NbyM+1)/2;
+            let crossWidthSize=(crossWidth-1)/2;
+            for(var i=0;i<NbyM;i++){
+              for(var j=0;j<NbyM;j++){
+                if((i>=middle-crossWidthSize-1&&i<=middle+crossWidthSize-1)||(j>=middle-crossWidthSize-1&&j<=middle+crossWidthSize-1))answerText+="1";
+                else answerText+="0";
+                if(j!=NbyM-1)answerText+=",";
+                else if(i!=NbyM-1)answerText+=";\r\n";
+              }
+            }
+            return answerText+="];";
+          }else alert("Cross wdith can't be bigger than grid size and must be odd");
+        }
+        function GenerateOnes(NbyM){
+          let uniqueName=document.querySelector('#uniqueNameCheck').checked;
+          let answerText;
+          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
+          else answerText="myKernal=[";
+          for(var i=0;i<NbyM;i++){
+            for(var j=0;j<NbyM;j++){
+              answerText+="1";
+              if(j!=NbyM-1)answerText+=",";
+              else if(i!=NbyM-1)answerText+=";\r\n";
+            }
+          }
+          return answerText+="];";
+        }
+        function GenerateZeros(NbyM){
+          let uniqueName=document.querySelector('#uniqueNameCheck').checked;
+          let answerText;
+          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
+          else answerText="myKernal=[";
+          for(var i=0;i<NbyM;i++){
+            for(var j=0;j<NbyM;j++){
+              answerText+="0";
+              if(j!=NbyM-1)answerText+=",";
+              else if(i!=NbyM-1)answerText+=";\r\n";
+            }
+          }
+          return answerText+="];";
+        }
+    </script>
+  </body>
+</html>

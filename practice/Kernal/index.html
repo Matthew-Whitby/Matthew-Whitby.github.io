@@ -99,8 +99,7 @@
             let crossWidthSize=(crossWidth-1)/2;
             for(var i=0;i<NbyM;i++){
               for(var j=0;j<NbyM;j++){
-                if(i>=middle-crossWidthSize-1&&i<=middle+crossWidthSize-1)answerText+="1";
-                else if(j>=middle-crossWidthSize-1&&j<=middle+crossWidthSize-1)answerText+="1";
+                if((i>=middle-crossWidthSize-1&&i<=middle+crossWidthSize-1)||(j>=middle-crossWidthSize-1&&j<=middle+crossWidthSize-1))answerText+="1";
                 else answerText+="0";
                 if(j!=NbyM-1)answerText+=",";
                 else if(i!=NbyM-1)answerText+=";\r\n";

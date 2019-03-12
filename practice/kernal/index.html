@@ -21,35 +21,29 @@
   </div><br>
     <textarea readonly cols="100" rows="40" id="answer"></textarea>
     <script>
-      var element = document.getElementById("crossSize");
       let selectionBox=document.getElementById("kernalType");
       let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
       if(selectedOption=="cross"){
-        if(typeof(element) == 'undefined' || element == null){
+        var element=document.getElementById("crossSize");
+        if(typeof(element)=='undefined' || element == null){
           var sizeText=document.createElement("input");
           sizeText.type="text";
           sizeText.id="crossSize";
-          document.getElementById("inputSettings").appendChild(sizeText);
-        }
-      }
+          document.getElementById("inputSettings").appendChild(sizeText);}}
       $("#kernalType").change(function(){
-        var element = document.getElementById("crossSize");
+        var element=document.getElementById("crossSize");
         let selectionBox=document.getElementById("kernalType");
         let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
         if(selectedOption=="cross"){
-          if(typeof(element) == 'undefined' || element == null){
+          if(typeof(element)=='undefined'||element==null){
             var sizeText=document.createElement("input");
-          sizeText.type="text";
-          sizeText.id="crossSize";
-          document.getElementById("inputSettings").appendChild(sizeText);
-          }
+            sizeText.type="text";
+            sizeText.id="crossSize";
+            document.getElementById("inputSettings").appendChild(sizeText);}
         }else{
-          if(typeof(element) != 'undefined' && element != null){
+          if(typeof(element) != 'undefined'&&element != null){
             var node=document.getElementById("crossSize");
-            node.parentNode.removeChild(node);
-          }
-        }
-      });
+            node.parentNode.removeChild(node);}}});
     </script>
     <script>
         function Generate(){
@@ -59,11 +53,10 @@
             let selectionBox=document.getElementById("kernalType");
             let selectedOption=selectionBox.options[selectionBox.selectedIndex].value;
             switch(selectedOption){
-              case "diamond":answerBox.value=GenerateDiamond(NbyM);break;
-              case "ones":answerBox.value=GenerateOnes(NbyM);break;
-              case "cross":answerBox.value=GenerateCross(NbyM);break;
-              case "zeros":answerBox.value=GenerateZeros(NbyM);break;
-            }
+              case"diamond":answerBox.value=GenerateDiamond(NbyM);break;
+              case"ones":answerBox.value=GenerateOnes(NbyM);break;
+              case"cross":answerBox.value=GenerateCross(NbyM);break;
+              case"zeros":answerBox.value=GenerateZeros(NbyM);break;}
           }else alert("Please make number odd");
         }
         function GenerateDiamond(NbyM){
@@ -80,14 +73,11 @@
             for(var j=0;j<(2*numOf0)+1;j++){
               answerText+="1";
               if(j!=NbyM-1)answerText+=",";
-              else answerText+=";\r\n";
-            }
+              else answerText+=";\r\n";}
             for(var j=0;j<middle-1-numOf0;j++){
               answerText+="0";
               if(j!=middle-2-numOf0)answerText+=",";
-              else if(i!=NbyM-1)answerText+=";\r\n";
-            }
-          }
+              else if(i!=NbyM-1)answerText+=";\r\n";}}
           return answerText+="];";
         }
         function GenerateCross(NbyM){
@@ -104,9 +94,7 @@
                 if((i>=middle-crossWidthSize-1&&i<=middle+crossWidthSize-1)||(j>=middle-crossWidthSize-1&&j<=middle+crossWidthSize-1))answerText+="1";
                 else answerText+="0";
                 if(j!=NbyM-1)answerText+=",";
-                else if(i!=NbyM-1)answerText+=";\r\n";
-              }
-            }
+                else if(i!=NbyM-1)answerText+=";\r\n";}}
             return answerText+="];";
           }else alert("Cross wdith can't be bigger than grid size and must be odd");
         }
@@ -119,9 +107,7 @@
             for(var j=0;j<NbyM;j++){
               answerText+="1";
               if(j!=NbyM-1)answerText+=",";
-              else if(i!=NbyM-1)answerText+=";\r\n";
-            }
-          }
+              else if(i!=NbyM-1)answerText+=";\r\n";}}
           return answerText+="];";
         }
         function GenerateZeros(NbyM){
@@ -133,9 +119,7 @@
             for(var j=0;j<NbyM;j++){
               answerText+="0";
               if(j!=NbyM-1)answerText+=",";
-              else if(i!=NbyM-1)answerText+=";\r\n";
-            }
-          }
+              else if(i!=NbyM-1)answerText+=";\r\n";}}
           return answerText+="];";
         }
     </script>

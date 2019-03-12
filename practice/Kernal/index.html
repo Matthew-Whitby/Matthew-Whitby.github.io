@@ -11,8 +11,9 @@
         <input type="text" id="inputText">
         <select id="kernalType">
           <option selected value="diamond">Diamond</option>
-          <option value="ones">Ones</option>
           <option value="cross">Cross</option>
+          <option value="ones">Ones</option>
+          <option value="zeros">Zeros</option>
         </select>
     </div>
     <button type="button" onclick="Generate()">Generate</button>
@@ -61,6 +62,7 @@
               case "diamond":answerBox.value=GenerateDiamond(NbyM);break;
               case "ones":answerBox.value=GenerateOnes(NbyM);break;
               case "cross":answerBox.value=GenerateCross(NbyM);break;
+              case "zeros":answerBox.value=GenerateZeros(NbyM);break;
             }
           }else alert("Please make number odd");
         }
@@ -116,6 +118,20 @@
           for(var i=0;i<NbyM;i++){
             for(var j=0;j<NbyM;j++){
               answerText+="1";
+              if(j!=NbyM-1)answerText+=",";
+              else if(i!=NbyM-1)answerText+=";\r\n";
+            }
+          }
+          return answerText+="];";
+        }
+        function GenerateZeros(NbyM){
+          let uniqueName=document.querySelector('#uniqueNameCheck').checked;
+          let answerText;
+          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
+          else answerText="myKernal=[";
+          for(var i=0;i<NbyM;i++){
+            for(var j=0;j<NbyM;j++){
+              answerText+="0";
               if(j!=NbyM-1)answerText+=",";
               else if(i!=NbyM-1)answerText+=";\r\n";
             }

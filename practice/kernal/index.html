@@ -61,19 +61,17 @@
         }
         function GenerateDiamond(NbyM){
           let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-          let answerText;
-          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
-          else answerText="myKernal=[";
+          let answerText=(uniqueName==true)?answerText="diamondKernal"+NbyM+"=[":answerText="myKernal=[";
           let middle=(NbyM+1)/2;
           for(var i=0;i<NbyM;i++){
-            let numOf0;
-            if(i>=middle)numOf0=NbyM-i-1;
-            else numOf0=i;
+            let numOf0=(i>=middle)?NbyM-i-1:i;
             for(var j=0;j<middle-1-numOf0;j++)answerText+="0,";
             for(var j=0;j<(2*numOf0)+1;j++){
               answerText+="1";
-              if(j!=NbyM-1)answerText+=",";
-              else answerText+=";\r\n";}
+              answerText+=(j!=NbyM-1)?",":";\r\n";
+              //if(j!=NbyM-1)answerText+=",";
+              //else answerText+=";\r\n";
+            }
             for(var j=0;j<middle-1-numOf0;j++){
               answerText+="0";
               if(j!=middle-2-numOf0)answerText+=",";
@@ -84,9 +82,7 @@
           let crossWidth=parseInt(document.getElementById("crossSize").value);
           if(crossWidth<NbyM&&crossWidth%2==1){
             let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-            let answerText;
-            if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
-            else answerText="myKernal=[";
+            let answerText = (uniqueName==true)?"crossKernal"+NbyM+"=[":"myKernal=[";
             let middle=(NbyM+1)/2;
             let crossWidthSize=(crossWidth-1)/2;
             for(var i=0;i<NbyM;i++){
@@ -100,9 +96,7 @@
         }
         function GenerateOnes(NbyM){
           let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-          let answerText;
-          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
-          else answerText="myKernal=[";
+          let answerText=(uniqueName==true)?answerText="onesKernal"+NbyM+"=[":answerText="myKernal=[";
           for(var i=0;i<NbyM;i++){
             for(var j=0;j<NbyM;j++){
               answerText+="1";
@@ -112,9 +106,7 @@
         }
         function GenerateZeros(NbyM){
           let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-          let answerText;
-          if(uniqueName==true)answerText="diamondKernal"+NbyM+"=[";
-          else answerText="myKernal=[";
+          let answerText=(uniqueName==true)?answerText="zerosKernal"+NbyM+"=[":answerText="myKernal=[";
           for(var i=0;i<NbyM;i++){
             for(var j=0;j<NbyM;j++){
               answerText+="0";

@@ -68,10 +68,7 @@
             for(var j=0;j<middle-1-numOf0;j++)answerText+="0,";
             for(var j=0;j<(2*numOf0)+1;j++){
               answerText+="1";
-              answerText+=(j!=NbyM-1)?",":";\r\n";
-              //if(j!=NbyM-1)answerText+=",";
-              //else answerText+=";\r\n";
-            }
+              answerText+=(j!=NbyM-1)?",":";\r\n";}
             for(var j=0;j<middle-1-numOf0;j++){
               answerText+="0";
               if(j!=middle-2-numOf0)answerText+=",";
@@ -87,8 +84,7 @@
             let crossWidthSize=(crossWidth-1)/2;
             for(var i=0;i<NbyM;i++){
               for(var j=0;j<NbyM;j++){
-                if((i>=middle-crossWidthSize-1&&i<=middle+crossWidthSize-1)||(j>=middle-crossWidthSize-1&&j<=middle+crossWidthSize-1))answerText+="1";
-                else answerText+="0";
+                answerText+=((i>=middle-crossWidthSize-1&&i<=middle+crossWidthSize-1)||(j>=middle-crossWidthSize-1&&j<=middle+crossWidthSize-1))?"1":"0";
                 if(j!=NbyM-1)answerText+=",";
                 else if(i!=NbyM-1)answerText+=";\r\n";}}
             return answerText+="];";

@@ -79,7 +79,7 @@
           let crossWidth=parseInt(document.getElementById("crossSize").value);
           if(crossWidth<NbyM&&crossWidth%2==1){
             let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-            let answerText = (uniqueName==true)?"crossKernal"+NbyM+"=[":"myKernal=[";
+            let answerText=(uniqueName==true)?"crossKernal"+NbyM+"=[":"myKernal=[";
             let middle=(NbyM+1)/2;
             let crossWidthSize=(crossWidth-1)/2;
             for(var i=0;i<NbyM;i++){

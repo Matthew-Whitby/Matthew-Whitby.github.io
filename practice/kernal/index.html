@@ -61,7 +61,7 @@
         }
         function GenerateDiamond(NbyM){
           let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-          let answerText=(uniqueName==true)?answerText="diamondKernal"+NbyM+"=[":answerText="myKernal=[";
+          let answerText=(uniqueName==true)?"diamondKernal"+NbyM+"=[":"myKernal=[";
           let middle=(NbyM+1)/2;
           for(var i=0;i<NbyM;i++){
             let numOf0=(i>=middle)?NbyM-i-1:i;
@@ -96,7 +96,7 @@
         }
         function GenerateOnes(NbyM){
           let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-          let answerText=(uniqueName==true)?answerText="onesKernal"+NbyM+"=[":answerText="myKernal=[";
+          let answerText=(uniqueName==true)?"onesKernal"+NbyM+"=[":"myKernal=[";
           for(var i=0;i<NbyM;i++){
             for(var j=0;j<NbyM;j++){
               answerText+="1";
@@ -106,7 +106,7 @@
         }
         function GenerateZeros(NbyM){
           let uniqueName=document.querySelector('#uniqueNameCheck').checked;
-          let answerText=(uniqueName==true)?answerText="zerosKernal"+NbyM+"=[":answerText="myKernal=[";
+          let answerText=(uniqueName==true)?"zerosKernal"+NbyM+"=[":"myKernal=[";
           for(var i=0;i<NbyM;i++){
             for(var j=0;j<NbyM;j++){
               answerText+="0";

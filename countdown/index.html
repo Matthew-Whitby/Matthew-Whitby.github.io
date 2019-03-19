@@ -2,10 +2,9 @@
   <head lang="en">
     <title>Countdowns</title>
     <meta charset="UTF-8">
-    <script src="https://music.matthewwhitby.co.uk/jquery-1.7.1.min.js"></script>
     <style>
         body{
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family:Verdana,Geneva,Tahoma,sans-serif;
             text-align:center;
         }
     .cd{
@@ -53,11 +52,11 @@
           <div class="dd">(17/05/19)</div>
         </div>
           <script>
-              var dissDate=new Date("apr 29, 2019 14:00:00").getTime();
-              var compvisionDate=new Date("apr 30, 2019 14:00:00").getTime();
-              var distributedDate=new Date("apr 29, 2019 14:00:00").getTime();
-              var distributedExamDate=new Date("may 08, 2019 14:00:00").getTime();
-              var compvisionExamDate=new Date("may 17, 2019 14:00:00").getTime();
+              let dissDate=new Date("apr 29, 2019 14:00:00").getTime();
+              let compvisionDate=new Date("apr 30, 2019 14:00:00").getTime();
+              let distributedDate=new Date("apr 29, 2019 14:00:00").getTime();
+              let distributedExamDate=new Date("may 08, 2019 14:00:00").getTime();
+              let compvisionExamDate=new Date("may 17, 2019 14:00:00").getTime();
               var x=setInterval(function(){
                   GetTime(dissDate,"dissertation");
                   GetTime(compvisionDate,"compvision");
@@ -66,16 +65,14 @@
                   GetTime(distributedExamDate,"distributedexam");
               },1000);
               function GetTime(countDownDate,id){
-                  var now=new Date().getTime();
-                  var distance=countDownDate-now;
-                  var time=[];
-                  time[0]=Math.floor(distance/(1000*60*60*24));//days
-                  time[1]=Math.floor((distance%(1000*60*60*24))/(1000*60*60));//hrs
-                  time[2]=Math.floor((distance%(1000*60*60))/(1000*60));//mins
-                  time[3]=Math.floor((distance%(1000*60))/1000);//secs
-                  time[4]=distance;
-                  document.getElementById(id).innerHTML=time[0]+"d "+time[1]+"h "+time[2]+"m "+time[3]+"s ";
-                  if(time[4]<0){
+                  let now=new Date().getTime();
+                  let distance=countDownDate-now;
+                  let days=Math.floor(distance/(1000*60*60*24));
+                  let hrs=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+                  let mins=Math.floor((distance%(1000*60*60))/(1000*60));
+                  let secs=Math.floor((distance%(1000*60))/1000);
+                  document.getElementById(id).innerHTML=days+"d "+hrs+"h "+mins+"m "+secs+"s ";
+                  if(distance<0){
                       clearInterval(x);
                       document.getElementById(id).innerHTML="OH NO!";}
               }

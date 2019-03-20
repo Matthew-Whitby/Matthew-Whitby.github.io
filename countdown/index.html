@@ -52,12 +52,16 @@
       <div class="dd">(17/05/19)</div>
     </div>
     <script>
-      let dissDate=new Date("apr 29, 2019 14:00:00").getTime();
-      let compvisionDate=new Date("apr 30, 2019 14:00:00").getTime();
-      let distributedDate=new Date("apr 29, 2019 14:00:00").getTime();
-      let distributedExamDate=new Date("may 08, 2019 14:00:00").getTime();
-      let compvisionExamDate=new Date("may 17, 2019 14:00:00").getTime();
+      let dates=[new Date("apr 29, 2019 14:00:00").getTime(),new Date("apr 30, 2019 14:00:00").getTime(),
+        new Date("apr 29, 2019 14:00:00").getTime(),new Date("may 08, 2019 14:00:00").getTime(),new Date("may 17, 2019 14:00:00").getTime()];
+      //let dissDate=new Date("apr 29, 2019 14:00:00").getTime();
+      //let compvisionDate=new Date("apr 30, 2019 14:00:00").getTime();
+      //let distributedDate=new Date("apr 29, 2019 14:00:00").getTime();
+      //let distributedExamDate=new Date("may 08, 2019 14:00:00").getTime();
+      //let compvisionExamDate=new Date("may 17, 2019 14:00:00").getTime();
+      let tags=["dissertation","compvision","distributed","distributedexam","compvisionexam"]
       var x=setInterval(function(){
+        for(var i=0;i<tags.length;i++)GetTime(dates[i],tags[i]);
         GetTime(dissDate,"dissertation");
         GetTime(compvisionDate,"compvision");
         GetTime(distributedDate,"distributed");
@@ -67,11 +71,12 @@
       function GetTime(countDownDate,id){
         let now=new Date().getTime();
         let distance=countDownDate-now;
-        let days=Math.floor(distance/(1000*60*60*24));
-        let hrs=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-        let mins=Math.floor((distance%(1000*60*60))/(1000*60));
-        let secs=Math.floor((distance%(1000*60))/1000);
-        document.getElementById(id).innerHTML=days+"d "+hrs+"h "+mins+"m "+secs+"s";
+        let t=[];
+        t[0]=Math.floor(distance/(1000*60*60*24));//dhms
+        t[1]=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        t[2]=Math.floor((distance%(1000*60*60))/(1000*60));
+        t[3]=Math.floor((distance%(1000*60))/1000);
+        document.getElementById(id).innerHTML=t[0]+"d "+t[1]+"h "+t[2]+"m "+t[3]+"s";
         if(distance<0){
           clearInterval(x);
           document.getElementById(id).innerHTML="OH NO!";}

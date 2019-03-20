@@ -63,14 +63,13 @@
       },1000);
       function GetTime(d){
         let now=new Date().getTime();
-        let distance=d[1]-now;
-        let t=[];
-        t[0]=Math.floor(distance/(1000*60*60*24));//dhms
-        t[1]=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-        t[2]=Math.floor((distance%(1000*60*60))/(1000*60));
-        t[3]=Math.floor((distance%(1000*60))/1000);
-        document.getElementById(d[0]).innerHTML=t[0]+"d "+t[1]+"h "+t[2]+"m "+t[3]+"s";
-        if(distance<0){
+        let b=d[1]-now;
+        day=Math.floor(b/(1000*60*60*24));//dhms
+        hr=Math.floor((b%(1000*60*60*24))/(1000*60*60));
+        min=Math.floor((b%(1000*60*60))/(1000*60));
+        sec=Math.floor((b%(1000*60))/1000);
+        document.getElementById(d[0]).innerHTML=day+"d "+hr+"h "+min+"m "+sec+"s";
+        if(b<0){
           clearInterval(x);
           document.getElementById(d[0]).innerHTML="OH NO!";}
       }

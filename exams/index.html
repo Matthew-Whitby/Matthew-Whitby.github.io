@@ -22,6 +22,7 @@
       }
       .title{
         margin-top:7px;
+        margin-bottom:5px;
       }
     </style>
   </head>
@@ -49,32 +50,28 @@
     <div class="section">
       <h1 class="title">Comp Vision Exam</h1>
       <p class="cd" id="compvisionexam"></p>
-      <div class="dd">(17/05/19)</div>
-    </div>-->
+      <div class="dd">(17/05/19)</div>-->
+    </div>
     <script>
-      let dissDate=new Date("apr 29, 2019 14:00:00").getTime();
-      let compvisionDate=new Date("apr 30, 2019 14:00:00").getTime();
-      let distributedDate=new Date("apr 29, 2019 14:00:00").getTime();
-      let distributedExamDate=new Date("may 08, 2019 14:00:00").getTime();
-      let compvisionExamDate=new Date("may 17, 2019 14:00:00").getTime();
-      var x=setInterval(function(){
-        /*GetTime(dissDate,"dissertation");
-        GetTime(compvisionDate,"compvision");
-        GetTime(distributedDate,"distributed");
-        GetTime(compvisionExamDate,"compvisionexam");
-        GetTime(distributedExamDate,"distributedexam");*/
+      /*let d=[["dissertation",new Date("apr 29, 2019 14:00:00").getTime()],
+        ["distributed",new Date("apr 29, 2019 14:00:00").getTime()],
+        ["compvision",new Date("apr 30, 2019 14:00:00").getTime()],
+        ["distributedexam",new Date("may 08, 2019 14:00:00").getTime()],
+        ["compvisionexam",new Date("may 17, 2019 14:00:00").getTime()]];*/
+        var x=setInterval(()=>{
+        //for(var i=0;i<d.length;i++)GetTime(d[i]);
       },1000);
-      function GetTime(countDownDate,id){
+      function GetTime(d){
         let now=new Date().getTime();
-        let distance=countDownDate-now;
-        let days=Math.floor(distance/(1000*60*60*24));
-        let hrs=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-        let mins=Math.floor((distance%(1000*60*60))/(1000*60));
-        let secs=Math.floor((distance%(1000*60))/1000);
-        document.getElementById(id).innerHTML=days+"d "+hrs+"h "+mins+"m "+secs+"s";
-        if(distance<0){
+        let b=d[1]-now;
+        day=Math.floor(b/(1000*60*60*24));//dhms
+        hr=Math.floor((b%(1000*60*60*24))/(1000*60*60));
+        min=Math.floor((b%(1000*60*60))/(1000*60));
+        sec=Math.floor((b%(1000*60))/1000);
+        document.getElementById(d[0]).innerHTML=day+"d "+hr+"h "+min+"m "+sec+"s";
+        if(b<0){
           clearInterval(x);
-          document.getElementById(id).innerHTML="OH NO!";}
+          document.getElementById(d[0]).innerHTML="OH NO!";}
       }
     </script>
   </body>

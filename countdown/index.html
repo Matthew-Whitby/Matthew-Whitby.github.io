@@ -61,19 +61,17 @@
         for(var i=0;i<d.length;i++)GetTime(d[i]);
       },1000);
       function GetTime(d){
-        let id=d[0];
-        let countDownDate=d[1];
         let now=new Date().getTime();
-        let distance=countDownDate-now;
+        let distance=d[1]-now;
         let t=[];
         t[0]=Math.floor(distance/(1000*60*60*24));//dhms
         t[1]=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
         t[2]=Math.floor((distance%(1000*60*60))/(1000*60));
         t[3]=Math.floor((distance%(1000*60))/1000);
-        document.getElementById(id).innerHTML=t[0]+"d "+t[1]+"h "+t[2]+"m "+t[3]+"s";
+        document.getElementById(d[0]).innerHTML=t[0]+"d "+t[1]+"h "+t[2]+"m "+t[3]+"s";
         if(distance<0){
           clearInterval(x);
-          document.getElementById(id).innerHTML="OH NO!";}
+          document.getElementById(d[0]).innerHTML="OH NO!";}
       }
     </script>
   </body>

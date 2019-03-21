@@ -2,15 +2,31 @@
   <head lang="en">
     <title>Scroll</title>
     <meta charset="UTF-8">
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
   </head>
   <body style="margin: 0px;padding: 0px;">
-      <div id="scroll" style="display:inline;overflow-x: scroll;margin: 0px;padding: 0px;">
-            <img style="margin: 0px;padding: 0px;" src="full.png">
+      <div id="scroll" style="display:inline;overflow-y: scroll;">
+            <img src="full.png">
       </div>
       <script>
-          let div=document.getElementById("scroll");
-          div.style.transition="transform 0.3s ease";
-          div.style.transform="translateX(30px)";
+          function animatethis(targetElement,speed){
+            var scrollWidth=$(targetElement).get(0).scrollWidth;
+            var clientWidth=$(targetElement).get(0).clientWidth;
+            $(targetElement).animate({scrollLeft:scrollWidth-clientWidth},
+            {
+                duration:speed,
+                complete:function(){
+                    targetElement.animate({scrollLeft:0},
+                    {
+                        duration:speed,
+                        complete:function(){
+                            animatethis(targetElement, speed);
+                        }
+                    });
+                }
+            });     
+        };
+        animatethis($('#scroll'), 5000);
       </script>
   </body>
 </html>

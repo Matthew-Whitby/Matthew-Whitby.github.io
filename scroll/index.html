@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
   </head>
   <body style="margin: 0px;padding: 0px;">
-      <div style="display:inline;overflow-x: scroll;margin: 0px;padding: 0px;">
+      <div id="scroll" style="display:inline;overflow-x: scroll;margin: 0px;padding: 0px;">
             <img style="margin: 0px;padding: 0px;" src="full.png">
       </div>
+      <script>
+          let div=document.getElementById("scroll");
+          div.style.transition="transform 0.3s ease";
+          div.style.transform="translateX(30px)";
+      </script>
   </body>
 </html>

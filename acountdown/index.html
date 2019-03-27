@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+  <head lang="en">
+    <title>Countdowns</title>
+    <meta charset="UTF-8">
+    <style>
+      body{
+        font-family:Verdana,Geneva,Tahoma,sans-serif;
+        text-align:center;
+      }
+      .cd{
+        font-size:50px;
+        margin-top:0px;
+        margin-bottom:5px;
+      }
+      .section{
+        border:solid;
+        border-width:5px;
+      }
+      .dd{
+        font-size:25px;
+        margin-bottom:10px;
+      }
+      .title{
+        margin-top:7px;
+        margin-bottom:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--<div class="section">
+      <h1 class="title">Health and Social Unit 3</h1>
+      <p class="cd" id="HSU3"></p>
+      <div class="dd">(17/05/19 13:30)</div>
+    </div>
+    <div class="section">
+      <h1 class="title">History USA</h1>
+      <p class="cd" id="HISUSA"></p>
+      <div class="dd">(21/05/19 13:30)</div>
+    </div>
+    <div class="section">
+      <h1 class="title">Health and Social unit 4</h1>
+      <p class="cd" id="HSU4"></p>
+      <div class="dd">(22/05/19 9:00)</div>
+    </div>
+    <div class="section">
+      <h1 class="title">History South Africa</h1>
+      <p class="cd" id="HISSA"></p>
+      <div class="dd">(05/06/19 13:30)</div>
+    </div>
+    <div class="section">
+      <h1 class="title">Applied Science Unit 1</h1>
+      <p class="cd" id="APPSCIU1"></p>
+      <div class="dd">(11/06/19 13:30)</div>
+    </div>
+    <div class="section">
+      <h1 class="title">History p3</h1>
+      <p class="cd" id="HISP3"></p>
+      <div class="dd">(12/06/19 13:30)</div>
+    </div>
+    <div class="section">
+      <h1 class="title">Applied Science Unit 3</h1>
+      <p class="cd" id="APPSCIU3"></p>
+      <div class="dd">(13/06/19 9:00)</div>
+    </div>
+    <div class="section">
+      <h1 class="title">Applied Science Unit 4</h1>
+      <p class="cd" id="APPSCIU4"></p>
+      <div class="dd">(19/06/19 9:00)</div>
+    </div>-->
+    <script>
+      let d=[["HSU3",new Date("may 17, 2019 13:30:00").getTime()],
+        ["HISUSA",new Date("may 21, 2019 13:30:00").getTime()],
+        ["HSU4",new Date("may 22, 2019 09:00:00").getTime()],
+        ["HISSA",new Date("jun 05, 2019 13:30:00").getTime()],
+        ["APPSCIU1",new Date("jun 11, 2019 13:30:00").getTime()],
+        ["HISP3",new Date("jun 12, 2019 13:30:00").getTime()],
+        ["APPSCIU3",new Date("jun 13, 2019 09:00:00").getTime()],
+        ["APPSCIU4",new Date("jun 19, 2019 09:00:00").getTime()]];
+        var x=setInterval(()=>{
+        //for(var i=0;i<d.length;i++)GetTime(d[i]);
+      },1000);
+      function GetTime(d){
+        let now=new Date().getTime();
+        let b=d[1]-now;
+        day=Math.floor(b/(1000*60*60*24));//dhms
+        hr=Math.floor((b%(1000*60*60*24))/(1000*60*60));
+        min=Math.floor((b%(1000*60*60))/(1000*60));
+        sec=Math.floor((b%(1000*60))/1000);
+        document.getElementById(d[0]).innerHTML=day+"d "+hr+"h "+min+"m "+sec+"s";
+        if(b<0){
+          clearInterval(x);
+          document.getElementById(d[0]).innerHTML="OH NO!";}
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+body{
+    font-family:Verdana,Geneva,Tahoma,sans-serif;
+    text-align:center;
+  }
+  .cd{
+    font-size:50px;
+    margin-top:0px;
+    margin-bottom:5px;
+  }
+  .section{
+    border:solid;
+    border-width:5px;
+  }
+  .dd{
+    font-size:25px;
+    margin-bottom:10px;
+  }
+  .title{
+    margin-top:7px;
+    margin-bottom:5px;
+  }

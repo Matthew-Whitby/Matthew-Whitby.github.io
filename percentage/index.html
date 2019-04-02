@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+  <head lang="en">
+    <title>Percentage</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <input type="text" id="words">
+    <button onclick="Calculate()">Calculate</button>
+    <input type="text" id="percentage">
+    <script>
+        function Calculate(){
+            let words=parseInt(document.getElementById("words").value);
+            if(isNaN(words))words=0;
+            let percentage=Math.round((words/15000)*10000)/100;
+            let percentageElement=document.getElementById("percentage");
+            percentageElement.value=percentage+"%";}
+    </script>
+  </body>
+</html>

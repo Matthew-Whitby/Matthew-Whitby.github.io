@@ -1,4 +1,4 @@
-body{font-family:Verdana,Geneva,Tahoma,sans-serif;text-align:center;}
+body{font-family:Verdana,Geneva,Tahoma,sans-serif;text-align:center;margin:0;}
 .cd{font-size:50px;margin-top:0px;margin-bottom:5px;}
 .section{border-collapse:collapse;border-top:solid;border-right:solid;border-left:solid;border-width:5px;}
 .section:last-child{border-bottom:solid;border-width:5px;}

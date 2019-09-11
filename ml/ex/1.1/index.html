@@ -25,7 +25,8 @@
             ypoint[z]=xpoint[z];
          }
          for(z=0;z<xpoint.Length;z++){
-            data.push({x:xpoint,y:ypoint});
+            point=[{x:xpoint,y:ypoint}];
+            data.push(point);
          }
          
          console.log(data);

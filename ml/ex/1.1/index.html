@@ -8,13 +8,13 @@
       var ctx = document.getElementById('myChart').getContext('2d');
       var myLineChart = new Chart(ctx, {
       type: 'line',
-      data: GenerateData(),
+      data: GenerateData()/*,
       options: {
         scales: {
             yAxes: [{
                 stacked: true
             }]
-        }}
+        }}*/
       });
       function GenerateData(){
          var xpoint=[];

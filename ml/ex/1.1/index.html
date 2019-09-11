@@ -15,6 +15,7 @@
       function newDateString(days) {
          return moment().add(days, 'd').format(timeFormat);
       }
+      var color = Chart.helpers.color;
       var ctx = document.getElementById('myChart').getContext('2d');
       var usedata=GenerateData();
       var myLineChart = new Chart(ctx, {

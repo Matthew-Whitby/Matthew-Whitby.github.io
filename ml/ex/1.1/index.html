@@ -5,6 +5,15 @@
 <body>
    <canvas id="myChart" width="400" height="400"></canvas>
    <script>
+      var timeFormat = 'MM/DD/YYYY HH:mm';
+
+      function newDate(days) {
+         return moment().add(days, 'd').toDate();
+      }
+
+      function newDateString(days) {
+         return moment().add(days, 'd').format(timeFormat);
+      }
       var ctx = document.getElementById('myChart').getContext('2d');
       var usedata=GenerateData();
       var myLineChart = new Chart(ctx, {

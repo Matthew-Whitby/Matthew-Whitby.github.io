@@ -9,7 +9,12 @@
       var myLineChart = new Chart(ctx, {
       type: 'line',
       data: GenerateData(),
-      options: options
+      options: {
+        scales: {
+            yAxes: [{
+                stacked: true
+            }]
+        }}
       });
       function GenerateData(){
          var xpoint=[];

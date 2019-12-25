@@ -32,6 +32,7 @@ function LoadFile(){
    var counter=0;
    for(var i=0;i<arrLines.length;i++){
        var curLine=arrLines[i];
+       if(curLine=="")continue;
        switch(counter){
           case 0:currentQuestion.setQuestion(curLine);counter++;break;
           case 1:currentQuestion.setAnswer(curLine);counter++;break;

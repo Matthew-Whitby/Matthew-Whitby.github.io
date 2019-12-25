@@ -5,10 +5,6 @@ function answeredQuestion(qNum,arrPos){
    console.log(length);
 }
 
-function LoadQuestions(){
-   question=new Question();
-}
-
 class Question{
    constructor(pId){this.mId=pId;}
    setQuestion(pQuestion){this.mQuestion=pQuestion;}
@@ -26,10 +22,8 @@ function LoadFile(){
    while(strRawContents.indexOf("\r")>=0)
        strRawContents=strRawContents.replace("\r","");
    var arrLines=strRawContents.split("\n");
-   //console.log("File "+oFrame.src+" has "+arrLines.length+" lines");
-   var idCounter=0;
+   var idCounter=0,counter=0;
    var currentQuestion=new Question(idCounter);
-   var counter=0;
    for(var i=0;i<arrLines.length;i++){
        var curLine=arrLines[i];
        if(curLine=="")continue;
@@ -43,7 +37,8 @@ function LoadFile(){
             currentQuestion=new Question(++idCounter);
             break;
        }
-       //console.log("Line #"+(i+1)+" is: '"+curLine+"'");
    }
    console.log(allQuestions);
+   document.getElementById("quizWindow").style.display="block";
+   document.getElementById("beginBtn").style.display="none";
 }

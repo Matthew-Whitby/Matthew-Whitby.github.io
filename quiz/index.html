@@ -8,28 +8,31 @@
   </head>
   <body>
     <h1>Matthew Whitby's Wonderful Quiz</h1>
-    <iframe id="frmFile" src="questions.txt" onload="LoadFile();" style="display:none;">LOADING</iframe>
-    <div id="questionBox">
-      <h2 class="label">Question</h2>
-      <p id="question">this is where the question goes</p>
-      <h2 class="label">Answer</h2>
-      <p id="answer">answer</p>
-      <div id="categoryBox">
-        Category:
-        <select id="categorySelection">
-          <option value="All" selected>All</option>
-          <option value="Science">Science</option>
-          <option value="History">History</option>
-          <option value="General">General</option>
-          <option value="TvFilm">Tv/Film</option>
-          <option value="Celebrities">Celebrities</option>
-          <option value="Food">Food</option>
-          <option value="Art">Art</option>
-          <option value="Geography">Geography</option>
-        </select>
+    <button id="beginBtn">Begin</button>
+    <div id="quizWindow" style="display:none;">
+      <iframe id="frmFile" src="questions.txt" onload="LoadFile();" style="display:none;">LOADING</iframe>
+      <div id="questionBox">
+        <h2 class="label">Question</h2>
+        <p id="question">this is where the question goes</p>
+        <h2 class="label">Answer</h2>
+        <p id="answer">answer</p>
+        <div id="categoryBox">
+          Category:
+          <select id="categorySelection">
+            <option value="All" selected>All</option>
+            <option value="Science">Science</option>
+            <option value="History">History</option>
+            <option value="General">General</option>
+            <option value="TvFilm">Tv/Film</option>
+            <option value="Celebrities">Celebrities</option>
+            <option value="Food">Food</option>
+            <option value="Art">Art</option>
+            <option value="Geography">Geography</option>
+          </select>
+        </div>
+        
+        <button onClick="nextQuestion();">Next Question</button>
       </div>
-      
-      <button onClick="nextQuestion();">Next Question</button>
     </div>
     <script>LoadQuestions();</script>
   </body>

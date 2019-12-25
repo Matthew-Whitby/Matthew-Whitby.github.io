@@ -1,4 +1,5 @@
 var currentQuestions=[],allQuestions=[],progressBarLevel=0;
+var progressBar=document.getElementById("myBar");  
 function answeredQuestion(qNum,arrPos){
    length=currentQuestions.length;
    console.log(length);
@@ -46,15 +47,14 @@ function LoadFile(){
 }
 
 function move(percentage){
-   var elem=document.getElementById("myBar");  
    var id=setInterval(frame,10);
    function frame(){
      if(progressBarLevel>=percentage)
        clearInterval(id);
      else{
       progressBarLevel++; 
-       elem.style.width=progressBarLevel+'%'; 
-       elem.innerHTML=progressBarLevel*1+'%';
+      progressBar.style.width=progressBarLevel+'%'; 
+      progressBar.innerHTML=progressBarLevel*1+'%';
      }
    }
  }

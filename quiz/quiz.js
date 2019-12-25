@@ -40,5 +40,5 @@ function LoadFile(){
    }
    console.log(allQuestions);
    document.getElementById("quizWindow").style.display="block";
-   document.getElementById("beginBtn").style.display="none";
+   document.getElementById("loadingScreen").style.display="none";
 }

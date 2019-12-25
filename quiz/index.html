@@ -8,7 +8,9 @@
   </head>
   <body>
     <h1>Matthew Whitby's Wonderful Quiz</h1>
-    <button id="beginBtn">Begin</button>
+    <div id="loadingScreen">
+      <h2>LOADING</h2>
+    </div>
     <div id="quizWindow" style="display:none;">
       <iframe id="frmFile" src="questions.txt" onload="LoadFile();" style="display:none;">LOADING</iframe>
       <div id="questionBox">

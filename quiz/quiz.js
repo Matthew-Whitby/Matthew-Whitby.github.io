@@ -35,7 +35,7 @@ function LoadFile(){
             currentQuestion.setCategory(curLine);
             counter=0;
             allQuestions.push(currentQuestion);
-            var percentage=math.round((i/(arrLines.length-1))*100);
+            var percentage=Math.round((i/(arrLines.length-1))*100);
             move(percentage);
             currentQuestion=new Question(++idCounter);
             break;

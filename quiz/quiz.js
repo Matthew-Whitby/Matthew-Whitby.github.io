@@ -1,5 +1,5 @@
 var currentQuestions=[],allQuestions=[],progressBarLevel=0;
-var progressBar=document.getElementById("myBar");  
+var progressBar;
 function answeredQuestion(qNum,arrPos){
    length=currentQuestions.length;
    console.log(length);
@@ -24,6 +24,7 @@ function LoadFile(){
    var arrLines=strRawContents.split("\n");
    var idCounter=0,counter=0;
    var currentQuestion=new Question(idCounter);
+   progressBar=document.getElementById("myBar");
    for(var i=0;i<arrLines.length;i++){
        var curLine=arrLines[i];
        if(curLine=="")continue;

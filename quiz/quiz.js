@@ -1,5 +1,6 @@
 var currentQuestions=[],allQuestions=[];
 var progressBar;
+var currentQuestionID;
 function answeredQuestion(qNum){
    length=currentQuestions.length;
    console.log(length);
@@ -12,6 +13,12 @@ function answeredQuestion(qNum){
       else r=pointer-1;
    }
    console.log("REMOVED");
+}
+
+function DisplayQuestion(question){
+   document.getElementById("question").innerText=question.getQuestion();
+   document.getElementById("answer").innerText=question.getAnswer();
+   currentQuestionID=question.getID();
 }
 
 function Initialise(){

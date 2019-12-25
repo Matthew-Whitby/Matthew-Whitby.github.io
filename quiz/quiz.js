@@ -23,6 +23,7 @@ function LoadFile(){
    var arrLines=strRawContents.split("\n");
    var idCounter=0,counter=0;
    var currentQuestion=new Question(idCounter);
+   console.log("ARRRRR:"+arrLines.length);
    for(var i=0;i<arrLines.length;i++){
        var curLine=arrLines[i];
        if(curLine=="")continue;
@@ -33,6 +34,7 @@ function LoadFile(){
             currentQuestion.setCategory(curLine);
             counter=0;
             allQuestions.push(currentQuestion);
+            console.log(i);
             var percentage=(i/(arrLines.length-1))*100;
             move(percentage);
             currentQuestion=new Question(++idCounter);

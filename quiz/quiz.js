@@ -10,14 +10,7 @@ function LoadQuestions(){
 }
 
 class Question{
-   constructor(){}
    constructor(pId){this.mId=pId;}
-   constructor(pId,pQuestion,pAnswer,pCategory){
-      this.mId=pId;
-      this.mQuestion=pQuestion;
-      this.mAnswer=pAnswer;
-      this.mCategory=pCategory;
-   }
    setQuestion(pQuestion){this.mQuestion=pQuestion;}
    getQuestion(){return this.mQuestion;}
    setAnswer(pAnswer){this.mAnswer=pAnswer;}

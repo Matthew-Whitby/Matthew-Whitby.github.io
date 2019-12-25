@@ -34,9 +34,8 @@ function LoadFile(){
             currentQuestion.setCategory(curLine);
             counter=0;
             allQuestions.push(currentQuestion);
-            let percentage=(i/arrLines.length)*100;
+            var percentage=(i/arrLines.length)*100;
             move(percentage);
-            
             currentQuestion=new Question(++idCounter);
             break;
        }
@@ -46,17 +45,17 @@ function LoadFile(){
    document.getElementById("loadingScreen").style.display="none";
 }
 
-function move(percentage) {
-   var elem = document.getElementById("myBar");   
-   var width = progressBarLevel;
-   var id = setInterval(frame, 10);
-   function frame() {
-     if (width >= percentage) {
+function move(percentage){
+   var elem=document.getElementById("myBar");   
+   var width=progressBarLevel;
+   var id=setInterval(frame,10);
+   function frame(){
+     if(width>=percentage){
        clearInterval(id);
-     } else {
+     }else{
        width++; 
-       elem.style.width = width + '%'; 
-       elem.innerHTML = width * 1  + '%';
+       elem.style.width=width+'%'; 
+       elem.innerHTML=width*1+'%';
      }
    }
  }

@@ -1,4 +1,4 @@
 h1,p,button{text-align:center;}
 #questionBox{border-style:solid;} 
 #question{border-width:0 0 2px 0;border-style:solid;}
-#question,#answer{padding:10px 0 10px 0;}
+#question,#answer{padding:5px 0 5px 0;margin:0;}

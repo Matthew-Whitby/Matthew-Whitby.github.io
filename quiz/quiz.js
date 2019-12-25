@@ -34,12 +34,10 @@ function LoadFile(){
        var curLine=arrLines[i];
        if(curLine=="")continue;
        switch(counter=(counter==2)?0:counter+1){
-          case 0:currentQuestion.setQuestion(curLine);/*counter++;*/break;
-          case 1:currentQuestion.setAnswer(curLine);/*counter++;*/break;
+          case 0:currentQuestion.setQuestion(curLine);break;
+          case 1:currentQuestion.setAnswer(curLine);break;
           case 2:
             currentQuestion.setCategory(curLine);
-            console.log(currentQuestion);
-            //counter=0;
             allQuestions.push(currentQuestion);
             var percentage=Math.round((i/(arrLines.length-1))*100);
             move(percentage);

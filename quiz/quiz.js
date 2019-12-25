@@ -26,7 +26,7 @@ function LoadFile(){
    while(strRawContents.indexOf("\r")>=0)
        strRawContents=strRawContents.replace("\r","");
    var arrLines=strRawContents.split("\n");
-   var idCounter=0,counter=0;
+   var idCounter=0,counter=-1;
    var currentQuestion=new Question(idCounter);
    progressBar=document.getElementById("myBar");
    console.log(arrLines.length);

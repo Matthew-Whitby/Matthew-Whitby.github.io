@@ -19,7 +19,7 @@ class Question{
    getCategory(){return mCategory;}
 }
 
-function LoadFile() {
+function LoadFile(){
    var oFrame = document.getElementById("frmFile");
    var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
    while (strRawContents.indexOf("\r") >= 0)

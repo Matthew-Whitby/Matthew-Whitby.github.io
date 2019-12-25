@@ -48,9 +48,9 @@ function LoadFile(){
 }
 
 function move(percentage){
-   var id=setInterval(frame,10);
-   progressBar.style.width=progressBarLevel+'%'; 
-   progressBar.innerHTML=progressBarLevel*1+'%';
+   //var id=setInterval(frame,10);
+   progressBar.style.width=percentage+'%'; 
+   progressBar.innerHTML=percentage*1+'%';
    /*function frame(){
      if(progressBarLevel>=percentage)
        clearInterval(id);

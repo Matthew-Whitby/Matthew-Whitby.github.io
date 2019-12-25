@@ -42,7 +42,7 @@ function LoadFile(){
    }
    console.log(allQuestions);
    document.getElementById("quizWindow").style.display="block";
-   document.getElementById("loadingScreen").style.display="none";
+   //document.getElementById("loadingScreen").style.display="none";
 }
 
 function move(percentage){

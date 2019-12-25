@@ -1,4 +1,5 @@
 allQuestions={};
+currentQuestions={};
 function answeredQuestion(qNum,arrPos){
    length=currentQuestions.length;
    console.log(length);

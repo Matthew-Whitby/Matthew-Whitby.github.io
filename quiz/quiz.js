@@ -38,7 +38,7 @@ function LoadFile(){
           case 2:
             currentQuestion.setCategory(curLine);
             counter=0;
-            allQuestions.push(currentQuestion);
+            allQuestions.Push(currentQuestion);
             currentQuestion=new Question(++idCounter);
             break;
        }

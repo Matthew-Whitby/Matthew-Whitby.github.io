@@ -1,8 +1,12 @@
-var currentQuestions=[],allQuestions=[],progressBarLevel=0;
+var currentQuestions=[],allQuestions=[];
 var progressBar;
 function answeredQuestion(qNum,arrPos){
    length=currentQuestions.length;
    console.log(length);
+}
+
+function Initialise(){
+   currentQuestions=allQuestions;
 }
 
 class Question{
@@ -28,7 +32,7 @@ function LoadFile(){
    for(var i=0;i<arrLines.length;i++){
        var curLine=arrLines[i];
        if(curLine=="")continue;
-       switch(counter){
+       switch(counter=(counter==2)?counter++:0){
           case 0:currentQuestion.setQuestion(curLine);counter++;break;
           case 1:currentQuestion.setAnswer(curLine);counter++;break;
           case 2:
@@ -44,20 +48,10 @@ function LoadFile(){
    move(100);
    console.log(allQuestions);
    document.getElementById("quizWindow").style.display="block";
-   //document.getElementById("loadingScreen").style.display="none";
+   document.getElementById("loadingScreen").style.display="none";
 }
 
 function move(percentage){
-   //var id=setInterval(frame,10);
    progressBar.style.width=percentage+'%'; 
    progressBar.innerHTML=percentage*1+'%';
-   /*function frame(){
-     if(progressBarLevel>=percentage)
-       clearInterval(id);
-     else{
-      progressBarLevel++; 
-      progressBar.style.width=progressBarLevel+'%'; 
-      progressBar.innerHTML=progressBarLevel*1+'%';
-     }
-   }*/
  }

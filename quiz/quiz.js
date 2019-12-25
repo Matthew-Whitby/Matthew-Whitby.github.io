@@ -34,7 +34,7 @@ function LoadFile(){
             currentQuestion.setCategory(curLine);
             counter=0;
             allQuestions.push(currentQuestion);
-            var percentage=(i/arrLines.length)*100;
+            var percentage=(i/arrLines.length-1)*100;
             move(percentage);
             currentQuestion=new Question(++idCounter);
             break;
@@ -48,7 +48,7 @@ function LoadFile(){
 function move(percentage){
    var elem=document.getElementById("myBar");   
    var width=progressBarLevel;
-   var id=setInterval(frame,10);
+   var id=setInterval(frame,1);
    function frame(){
      if(width>=percentage){
        clearInterval(id);

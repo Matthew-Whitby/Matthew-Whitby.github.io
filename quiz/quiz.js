@@ -22,6 +22,7 @@ function LoadFile(){
    while(strRawContents.indexOf("\r")>=0)
        strRawContents=strRawContents.replace("\r","");
    var arrLines=strRawContents.split("\n");
+   var progressBar=document.getElementById("progressBar");
    var idCounter=0,counter=0;
    var currentQuestion=new Question(idCounter);
    for(var i=0;i<arrLines.length;i++){
@@ -34,6 +35,9 @@ function LoadFile(){
             currentQuestion.setCategory(curLine);
             counter=0;
             allQuestions.push(currentQuestion);
+            let percentage=(i/arrLines.length)*100;
+            progressBar.style.width=percentage;
+            progressBar.innerText=percentage+"%";
             currentQuestion=new Question(++idCounter);
             break;
        }

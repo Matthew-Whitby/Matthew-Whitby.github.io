@@ -1,8 +1,17 @@
 var currentQuestions=[],allQuestions=[];
 var progressBar;
-function answeredQuestion(qNum,arrPos){
+function answeredQuestion(qNum){
    length=currentQuestions.length;
    console.log(length);
+   found=false;
+   var l=0,r=currentQuestions.length-1,pointer;
+   while(!found){
+      pointer=Math.floor(l+r/2);
+      if(currentQuestions[pointer].getID()==qNum){currentQuestions.splice(currentQuestions[pointer],1);found=true;}
+      else if(currentQuestions[pointer].getID()<qNum)l=pointer+1;
+      else r=pointer-1;
+   }
+   console.log("REMOVED");
 }
 
 function Initialise(){
@@ -39,8 +48,7 @@ function LoadFile(){
           case 2:
             currentQuestion.setCategory(curLine);
             allQuestions.push(currentQuestion);
-            var percentage=Math.round((i/(arrLines.length-1))*100);
-            move(percentage);
+            move(Math.round((i/(arrLines.length-1))*100));
             currentQuestion=new Question(++idCounter);
             break;
        }

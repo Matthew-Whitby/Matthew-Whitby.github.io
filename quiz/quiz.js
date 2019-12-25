@@ -48,7 +48,7 @@ function LoadFile(){
 function move(percentage){
    var elem=document.getElementById("myBar");   
    var width=progressBarLevel;
-   var id=setInterval(frame,1);
+   var id=setInterval(frame,10);
    function frame(){
      if(width>=percentage){
        clearInterval(id);

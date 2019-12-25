@@ -1,5 +1,4 @@
-allQuestions=[];
-currentQuestions=[];
+var currentQuestions=[],allQuestions=[],progressBarLevel=0;
 function answeredQuestion(qNum,arrPos){
    length=currentQuestions.length;
    console.log(length);
@@ -36,8 +35,8 @@ function LoadFile(){
             counter=0;
             allQuestions.push(currentQuestion);
             let percentage=(i/arrLines.length)*100;
-            progressBar.style.width=percentage;
-            progressBar.innerText=percentage+"%";
+            move(percentage);
+            
             currentQuestion=new Question(++idCounter);
             break;
        }
@@ -46,3 +45,18 @@ function LoadFile(){
    document.getElementById("quizWindow").style.display="block";
    document.getElementById("loadingScreen").style.display="none";
 }
+
+function move(percentage) {
+   var elem = document.getElementById("myBar");   
+   var width = progressBarLevel;
+   var id = setInterval(frame, 10);
+   function frame() {
+     if (width >= percentage) {
+       clearInterval(id);
+     } else {
+       width++; 
+       elem.style.width = width + '%'; 
+       elem.innerHTML = width * 1  + '%';
+     }
+   }
+ }

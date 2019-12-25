@@ -1,0 +1,2 @@
+allQuestions={};
+currentQuestions={};

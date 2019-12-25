@@ -29,6 +29,7 @@ function LoadFile(){
    var idCounter=0,counter=0;
    var currentQuestion=new Question(idCounter);
    progressBar=document.getElementById("myBar");
+   console.log(arrLines.length);
    for(var i=0;i<arrLines.length;i++){
        var curLine=arrLines[i];
        if(curLine=="")continue;
@@ -37,6 +38,7 @@ function LoadFile(){
           case 1:currentQuestion.setAnswer(curLine);counter++;break;
           case 2:
             currentQuestion.setCategory(curLine);
+            console.log(currentQuestion);
             counter=0;
             allQuestions.push(currentQuestion);
             var percentage=Math.round((i/(arrLines.length-1))*100);

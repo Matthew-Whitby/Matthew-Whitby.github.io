@@ -2,14 +2,21 @@
   <head lang="en">
     <title>Quiz</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="stylesheet" href="./quiz.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./quiz.css">
+    <script type="text/javascript">currentQuestions={};</script>
+    <script type="text/javascript" src="quiz.js"></script>
   </head>
   <body>
     <h1>Matthew Whitby's Wonderful Quiz</h1>
-    <div id="questionBox"><h2 class="label">Question</h2><p id="question">this is where the question goes</p><h2 class="label">Answer</h2><p id="answer">answer</p></div>
-    <button onClick="nextQuestion">Next Question</button>
-    
-    <script>
-    </script>
+    <iframe id="frmFile" src="questions.txt" onload="LoadFile();" style="display: none;">LOADING</iframe>
+    <div id="questionBox">
+      <h2 class="label">Question</h2>
+      <p id="question">this is where the question goes</p>
+      <h2 class="label">Answer</h2>
+      <p id="answer">answer</p>
+      <button onClick="nextQuestion();">Next Question</button>
+    </div>
+    <script>LoadQuestions();</script>
   </body>
 </html>

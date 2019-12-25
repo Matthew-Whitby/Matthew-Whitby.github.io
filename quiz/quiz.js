@@ -21,7 +21,6 @@ function LoadFile(){
    while(strRawContents.indexOf("\r")>=0)
        strRawContents=strRawContents.replace("\r","");
    var arrLines=strRawContents.split("\n");
-   var progressBar=document.getElementById("progressBar");
    var idCounter=0,counter=0;
    var currentQuestion=new Question(idCounter);
    for(var i=0;i<arrLines.length;i++){
@@ -47,15 +46,14 @@ function LoadFile(){
 
 function move(percentage){
    var elem=document.getElementById("myBar");   
-   var width=progressBarLevel;
    var id=setInterval(frame,10);
    function frame(){
-     if(width>=percentage){
+     if(progressBarLevel>=percentage){
        clearInterval(id);
      }else{
-       width++; 
-       elem.style.width=width+'%'; 
-       elem.innerHTML=width*1+'%';
+      progressBarLevel++; 
+       elem.style.width=progressBarLevel+'%'; 
+       elem.innerHTML=progressBarLevel*1+'%';
      }
    }
  }

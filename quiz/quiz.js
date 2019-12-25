@@ -1,5 +1,5 @@
-allQuestions={};
-currentQuestions={};
+allQuestions=[];
+currentQuestions=[];
 function answeredQuestion(qNum,arrPos){
    length=currentQuestions.length;
    console.log(length);
@@ -38,7 +38,7 @@ function LoadFile(){
           case 2:
             currentQuestion.setCategory(curLine);
             counter=0;
-            allQuestions.Push(currentQuestion);
+            allQuestions.push(currentQuestion);
             currentQuestion=new Question(++idCounter);
             break;
        }

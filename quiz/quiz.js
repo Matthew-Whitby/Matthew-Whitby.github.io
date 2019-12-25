@@ -45,8 +45,10 @@ function LoadFile(){
 }
 
 function move(percentage){
-   var elem=document.getElementById("myBar");   
-   var id=setInterval(frame,10);
+   var elem=document.getElementById("myBar");  
+   elem.style.width=percentage+'%'; 
+   elem.innerHTML=percentage*1+'%';
+   /*var id=setInterval(frame,10);
    function frame(){
      if(progressBarLevel>=percentage){
        clearInterval(id);
@@ -55,5 +57,5 @@ function move(percentage){
        elem.style.width=progressBarLevel+'%'; 
        elem.innerHTML=progressBarLevel*1+'%';
      }
-   }
+   }*/
  }

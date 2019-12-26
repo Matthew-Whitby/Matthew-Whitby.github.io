@@ -39,7 +39,7 @@ function AddPlayer(){
 function UpdatePoint(player,point){
    pNum=player.id.split('_')[1];
    var pl=GetPlayer(pNum);
-   pl.UpdatePoint(point);
+   pl.UpdateScore(point);
    document.getElementById("PP_"+pNum+"_points").innerText=pl.GetScore();
 }
 

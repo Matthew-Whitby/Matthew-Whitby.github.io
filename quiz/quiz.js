@@ -45,7 +45,6 @@ function LoadFile(){
    var idCounter=0,counter=-1;
    var currentQuestion=new Question(idCounter);
    progressBar=document.getElementById("myBar");
-   console.log(arrLines.length);
    for(var i=0;i<arrLines.length;i++){
        var curLine=arrLines[i];
        if(curLine=="")continue;

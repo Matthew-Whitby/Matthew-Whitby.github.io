@@ -34,7 +34,7 @@ function AddPlayer(){
 
 
 
-   panels.childNodes.add(newPanel);
+   panels.appendChild(newPanel);
    console.log(players);
 }
 

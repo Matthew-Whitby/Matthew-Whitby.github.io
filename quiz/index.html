@@ -41,7 +41,7 @@
       </div>
       <div id="playerBox" class="center">
         <div id="playerPanels">
-          <div class="PP" id="PP_1">
+          <div onclick="UpdatePoint(this,1)" ondblclick="UpdatePoint(this,-1)" class="PP" id="PP_1">
             Player/Team Name:<input id="PP_1_Name" type="text" value="Player 1">
             <h2 class="unselectable">Points</h2>
             <h2 class="unselectable" id=PP_1_points>0</h2>

@@ -41,10 +41,12 @@
       </div>
       <div id="playerBox" class="center">
         <div id="playerPanels">
-          <div onclick="UpdatePoint(this,1)" ondblclick="UpdatePoint(this,-1)" class="PP" id="PP_1">
+          <div class="PP" id="PP_1">
             Player/Team Name:<input id="PP_1_Name" type="text" value="Player 1">
-            <h2 class="unselectable">Points</h2>
-            <h2 class="unselectable" id=PP_1_points>0</h2>
+            <div id="PP_1_ScoreBox" onclick="UpdatePoint(this,1)" ondblclick="UpdatePoint(this,-1)">
+              <h2 class="unselectable">Points</h2>
+              <h2 class="unselectable" id=PP_1_points>0</h2>
+            </div>
             <button id="PP_1_AddPoint" onclick="UpdatePoint(this,1)">Add Point</button>
             <button onclick="UpdatePoint(this,-1)" id="PP_1_RemovePoint">Remove Point</button>
           </div>

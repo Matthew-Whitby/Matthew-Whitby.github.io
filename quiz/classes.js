@@ -3,7 +3,7 @@ class Player{
    SetValues(pId,pName){this.mId=pId;this.mName=pName;this.mScore=0;}
    SetName(pName){this.mName=pName;}
    GetName(){return this.mName;}
-   SetScore(pPoints){this.mScore=mScore;}
+   SetScore(pScore){this.mScore=pScore;}
    UpdatePoint(n){this.mScore+=n;}
    GetScore(){return this.mScore;}
    GetId(){return this.mId;}

@@ -1,6 +1,7 @@
 var currentQuestions=[],allQuestions=[];
 var progressBar;
 var currentQuestionID;
+var currentPlayers=1;
 var players=[[1,"Player 1",0]];
 function answeredQuestion(qNum){
    length=currentQuestions.length;
@@ -45,17 +46,6 @@ function UpdatePoint(player,point){
 
 function Initialise(){
    currentQuestions=allQuestions;
-}
-
-class Question{
-   constructor(pId){this.mId=pId;}
-   setQuestion(pQuestion){this.mQuestion=pQuestion;}
-   getQuestion(){return this.mQuestion;}
-   setAnswer(pAnswer){this.mAnswer=pAnswer;}
-   getAnswer(){return this.mAnswer;}
-   setCategory(pCategory){this.mCategory=pCategory;}
-   getCategory(){return this.mCategory;}
-   getID(){return this.mId;}
 }
 
 function LoadFile(){

@@ -28,6 +28,14 @@ function AddPlayer(){
    players.push(player);
 }
 
+function AddPoint(player){
+   console.log(player.id);
+}
+
+function RemovePoint(player){
+   console.log(player.id);
+}
+
 function Initialise(){
    currentQuestions=allQuestions;
 }

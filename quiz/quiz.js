@@ -1,8 +1,5 @@
-var currentQuestions=[],allQuestions=[];
-var progressBar;
-var currentQuestionID;
-var currentPlayers=1;
-var players=[];
+var currentQuestions=[],allQuestions=[],players=[];
+var currentQuestionID,progressBar,currentPlayers=1;
 function answeredQuestion(qNum){
    length=currentQuestions.length;
    console.log(length);
@@ -41,8 +38,15 @@ function AddPlayer(){
 
 function UpdatePoint(player,point){
    pNum=player.id.split('_')[1];
-   players[pNum-1][2]+=point;
-   document.getElementById("PP_"+pNum+"_points").innerText=players[pNum-1][2];
+   var pl=GetPlayer(pNum);
+   pl.UpdatePoint(point);
+   document.getElementById("PP_"+pNum+"_points").innerText=players[pNum-1].GetScore();
+}
+
+function GetPlayer(pNum){
+   for(var i=0;i<players.length;i++){
+      if(players[i].GetId()==pNum)return players[i];
+   }
 }
 
 function Initialise(){

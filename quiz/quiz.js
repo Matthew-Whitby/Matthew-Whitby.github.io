@@ -1,6 +1,6 @@
 var currentQuestions=[],allQuestions=[];
 var progressBar;
-var currentQuestionID;
+var currentQuestionID,currentPlayers=1;
 function answeredQuestion(qNum){
    length=currentQuestions.length;
    console.log(length);

@@ -22,7 +22,7 @@
         <p id="question">this is where the question goes</p>
         <h2 class="label">Answer</h2>
         <p id="answer">answer</p>
-        <div style="text-align:center;" id="categoryBox">
+        <div class="center" id="categoryBox">
           Category:
           <select id="categorySelection">
             <option value="All" selected>All</option>
@@ -36,7 +36,19 @@
             <option value="Geography">Geography</option>
           </select>
         </div>
-        <div style="text-align:center;"><button onClick="nextQuestion();">Next Question</button></div>
+        <div class="center"><button onClick="nextQuestion();">Next Question</button></div>
+      </div>
+      <div id="playerBox" class="center">
+        <div id="playerPanels">
+          <div class="playerPanel_1">
+            Player/team name:<input type="text" value="Player 1">
+            <h2>Points</h2>
+            <h2 class=playerPanel_1_points>0</h2>
+            <button id="PP_1_AddPoint" onclick="AddPoint(this)">Add Point</button>
+            <button onclick="RemovePoint(this)" id="PP_1_RemovePoint">Remove Point</button>
+          </div>
+        </div>
+        <button onclick="AddPlayer()">Add Player</button>
       </div>
     </div>
   </body>

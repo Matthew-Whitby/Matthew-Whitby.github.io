@@ -26,15 +26,29 @@ function AddPlayer(){
    var pNum=players[players.length-1][0]+1;
    var player=[pNum,"Player "+pNum,0];
    players.push(player);
+   panels=document.getElementById("playerPanels");
+   var newPanel=document.createElement("div");
+   newPanel.classList.Add("playerPanel");
+   newPanel.id="playerPanel_"+pNum;
+
+
+
+   panels.childNodes.Add(newPanel);
    console.log(players);
 }
 
 function AddPoint(player){
    console.log(player.id);
+   pNum=player.id.split('_')[1];
+   players[pNum-1][2]++;
+   document.getElementById("PP_"+pNum+"_points").innerText=players[pNum-1][2];
 }
 
 function RemovePoint(player){
    console.log(player.id);
+   pNum=player.id.split('_')[1];
+   players[pNum-1][2]--;
+   document.getElementById("PP_"+pNum+"_points").innerText=players[pNum-1][2];
 }
 
 function Initialise(){

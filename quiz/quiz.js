@@ -26,6 +26,7 @@ function AddPlayer(){
    var pNum=players[players.length-1][0]+1;
    var player=[pNum,"Player "+pNum,0];
    players.push(player);
+   console.log(players);
 }
 
 function AddPoint(player){

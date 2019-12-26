@@ -80,6 +80,6 @@ function LoadFile(){
 }
 
 function move(percentage){
-   progressBar.style.width=percentage+'%';
-   progressBar.innerHTML=percentage+"%";
+   progressBar.style.width=percentage+'%'; 
+   progressBar.innerHTML=percentage*1+'%';
  }

@@ -38,23 +38,8 @@ function AddPlayer(){
 }
 
 function UpdatePoint(player,point){
-   console.log(player.id);
    pNum=player.id.split('_')[1];
    players[pNum-1][2]+=point;
-   document.getElementById("PP_"+pNum+"_points").innerText=players[pNum-1][2];
-}
-
-function AddPoint(player){
-   console.log(player.id);
-   pNum=player.id.split('_')[1];
-   players[pNum-1][2]++;
-   document.getElementById("PP_"+pNum+"_points").innerText=players[pNum-1][2];
-}
-
-function RemovePoint(player){
-   console.log(player.id);
-   pNum=player.id.split('_')[1];
-   players[pNum-1][2]--;
    document.getElementById("PP_"+pNum+"_points").innerText=players[pNum-1][2];
 }
 

@@ -27,8 +27,8 @@ function AddPlayer(){
    players.push(player);
    panels=document.getElementById("playerPanels");
    var newPanel=document.createElement("div");
-   newPanel.classList.add("playerPanel");
-   newPanel.id="playerPanel_"+pNum;
+   newPanel.classList.add("PP");
+   newPanel.id="PP_"+pNum;
 
 
 

@@ -4,7 +4,7 @@ class Player{
    SetName(pName){this.mName=pName;}
    GetName(){return this.mName;}
    SetScore(pScore){this.mScore=pScore;}
-   UpdatePoint(n){this.mScore+=n;}
+   UpdateScore(n){this.mScore+=n;}
    GetScore(){return this.mScore;}
    GetId(){return this.mId;}
 }

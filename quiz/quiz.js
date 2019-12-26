@@ -2,7 +2,7 @@ var currentQuestions=[],allQuestions=[];
 var progressBar;
 var currentQuestionID;
 var currentPlayers=1;
-var players=[[1,"Player 1",0]];
+var players=[];
 function answeredQuestion(qNum){
    length=currentQuestions.length;
    console.log(length);
@@ -24,8 +24,9 @@ function DisplayQuestion(question){
 }
 
 function AddPlayer(){
-   var pNum=players[players.length-1][0]+1;
-   var player=[pNum,"Player "+pNum,0];
+   var pNum=players[players.length-1].GetId()+1;
+   var player=new Player();
+   player.SetValues(pNum,"Player "+pNum);
    players.push(player);
    panels=document.getElementById("playerPanels");
    var newPanel=document.createElement("div");

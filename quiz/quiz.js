@@ -1,6 +1,7 @@
 var currentQuestions=[],allQuestions=[];
 var progressBar;
-var currentQuestionID,currentPlayers=1;
+var currentQuestionID;
+var players=[[1,"Player 1",0]];
 function answeredQuestion(qNum){
    length=currentQuestions.length;
    console.log(length);
@@ -19,6 +20,12 @@ function DisplayQuestion(question){
    document.getElementById("question").innerText=question.getQuestion();
    document.getElementById("answer").innerText=question.getAnswer();
    currentQuestionID=question.getID();
+}
+
+function AddPlayer(){
+   var pNum=players[players.length-1][0]+1;
+   var player=[pNum,"Player "+pNum,0];
+   players.push(player);
 }
 
 function Initialise(){

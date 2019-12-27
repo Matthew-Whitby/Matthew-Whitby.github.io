@@ -9,8 +9,6 @@ function NextQuestion(){
          answeredQuestions.push(currentQuestion);
       }
       GetQuestion();
-      console.log(currentQuestions);
-      console.log(answeredQuestions);
    }
    else{
       if(currentQuestions.length==1){
@@ -23,11 +21,43 @@ function NextQuestion(){
 }
 
 function GetQuestion(){
-   var pos;
+   var id,pos;
    var select=document.getElementById("categorySelection");
    var selected=select.options[select.selectedIndex].value;
-   console.log(selected);
-   pos=Math.floor(Math.random()*currentQuestions.length);
+   switch(selected){
+      case"All":
+         pos=Math.floor(Math.random()*currentQuestions.length);
+         break;
+      case"General":
+         pos=Math.floor(Math.random()*generalQs.length);
+
+         break;
+      case"ScienceNature":
+         pos=Math.floor(Math.random()*scienceQs.length);
+         break;
+      case"Georgraphy":
+         pos=Math.floor(Math.random()*geographyQs.length);
+         break;
+      case"History":
+         pos=Math.floor(Math.random()*historyQs.length);
+         break;
+      case"TvFilm":
+         pos=Math.floor(Math.random()*tvFilmQs.length);
+         break;
+      case"Celebrities":
+         pos=Math.floor(Math.random()*celebQs.length);
+         break;
+      case"Food":
+         pos=Math.floor(Math.random()*foodQs.length);
+         break;
+      case"Art":
+         pos=Math.floor(Math.random()*artQs.length);
+         break;
+      case"Music":
+         pos=Math.floor(Math.random()*musicQs.length);
+         break;
+   }
+   
    var newQuestion=currentQuestions[pos];
    DisplayQuestion(newQuestion);
 }
@@ -97,6 +127,8 @@ function AddPlayer(){
    newPanel.appendChild(removePointBtn);
    panels.appendChild(newPanel);
 }
+
+function ClearAllPoints(){players.map(p=>p.SetScore(0));}
 
 function UpdatePoint(player,point){
    pNum=player.id.split('_')[1];

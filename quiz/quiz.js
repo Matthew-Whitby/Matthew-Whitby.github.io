@@ -49,7 +49,7 @@ function AnsweredQuestion(qNum){
 
 function QuestionPosFromID(n,array){
    var l=0,r=array.length-1,pointer;
-   while(!found){
+   while(1){
       pointer=Math.floor((l+r)/2);
       if(array[pointer].GetId()==n)return pointer;
       else if(array[pointer].GetId()<n)l=pointer+1;
@@ -59,7 +59,7 @@ function QuestionPosFromID(n,array){
 
 function QuestionFromID(n,array){
    var l=0,r=array.length-1,pointer;
-   while(!found){
+   while(1){
       pointer=Math.floor((l+r)/2);
       if(array[pointer].GetId()==n){
          return array[pointer];

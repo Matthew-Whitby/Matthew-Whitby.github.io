@@ -23,7 +23,7 @@ function AnsweredQuestion(qNum){
    found=false;
    var l=0,r=currentQuestions.length-1,pointer;
    while(!found){
-      pointer=Math.floor(l+r/2);
+      pointer=Math.floor((l+r)/2);
       if(currentQuestions[pointer].GetId()==qNum){
          currentQuestions.splice(currentQuestions[pointer],1);
          found=true;

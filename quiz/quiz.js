@@ -2,11 +2,7 @@ var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
-   if(currentQuestions.length==0){
-      document.getElementById("question").innerText="END OF QUESTIONS";
-      document.getElementById("answer").innerText="END OF QUESTIONS";
-   }
-   else{
+   if(currentQuestions.length>0){
       if(currentQuestion){
          AnsweredQuestion(currentQuestion.GetId());
          answeredQuestions.push(currentQuestion);
@@ -14,6 +10,10 @@ function NextQuestion(){
       GetQuestion();
       console.log(currentQuestions);
       console.log(answeredQuestions);
+   }
+   else{
+      document.getElementById("question").innerText="END OF QUESTIONS";
+      document.getElementById("answer").innerText="END OF QUESTIONS";
    }
 }
 

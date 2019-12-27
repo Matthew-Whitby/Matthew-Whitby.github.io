@@ -21,52 +21,24 @@ function NextQuestion(){
 }
 
 function GetQuestion(){
-   var id,pos;
+   var id,pos,array;
    var select=document.getElementById("categorySelection");
    var selected=select.options[select.selectedIndex].value;
    switch(selected){
-      case"All":
-         pos=Math.floor(Math.random()*currentQuestions.length);
-         id=currentQuestions[pos].GetId();
-         break;
-      case"General":
-         pos=Math.floor(Math.random()*generalQs.length);
-         id=generalQs[pos];
-         break;
-      case"ScienceNature":
-         pos=Math.floor(Math.random()*scienceQs.length);
-         id=scienceQs[pos];
-         break;
-      case"Georgraphy":
-         pos=Math.floor(Math.random()*geographyQs.length);
-         id=geographyQs[pos];
-         break;
-      case"History":
-         pos=Math.floor(Math.random()*historyQs.length);
-         id=historyQs[pos];
-         break;
-      case"TvFilm":
-         pos=Math.floor(Math.random()*tvFilmQs.length);
-         id=tvFilmQs[pos];
-         break;
-      case"Celebrities":
-         pos=Math.floor(Math.random()*celebQs.length);
-         id=celebQs[pos];
-         break;
-      case"Food":
-         pos=Math.floor(Math.random()*foodQs.length);
-         id=foodQs[pos];
-         break;
-      case"Art":
-         pos=Math.floor(Math.random()*artQs.length);
-         id=artQs[pos];
-         break;
-      case"Music":
-         pos=Math.floor(Math.random()*musicQs.length);
-         id=musicQs[pos];
-         break;
+      case"All":array=currentQuestions;break;
+      case"General":array=generalQs;break;
+      case"ScienceNature":array=scienceQs;break;
+      case"Georgraphy":array=geographyQs;break;
+      case"History":array=historyQs;break;
+      case"TvFilm":array=tvFilmQs;break;
+      case"Celebrities":array=celebQs;break;
+      case"Food":array=foodQs;break;
+      case"Art":array=artQs;break;
+      case"Music":array=musicQs;break;
    }
-   var newQuestion=QuestionFromID(id);
+   pos=Math.floor(Math.random()*array.length);
+   id=array[pos];
+   var newQuestion=QuestionFromID(id,array);
    DisplayQuestion(newQuestion);
 }
 

@@ -1,8 +1,19 @@
-var currentQuestions=[],allQuestions=[],players=[];
-var currentQuestionID,progressBar,currentPlayers=1;
+var currentQuestions=[],allQuestions=[],AnsweredQuestions=[],players=[];
+var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
-   
+   if(currentQuestion){
+      AnsweredQuestions.push(currentQuestion);
+      currentQuestions.splice(currentQuestion,1);
+   }else{
+      GetQuestion();
+   }
+}
+
+function GetQuestion(){
+   var pos=Math.floor(Math.random()*currentQuestions.length);
+   var question=currentQuestions[pos];
+   DisplayQuestion(question);
 }
 
 function AnsweredQuestion(qNum){
@@ -22,7 +33,7 @@ function AnsweredQuestion(qNum){
 function DisplayQuestion(question){
    document.getElementById("question").innerText=question.getQuestion();
    document.getElementById("answer").innerText=question.getAnswer();
-   currentQuestionID=question.getID();
+   currentQuestion=question;
 }
 
 function AddPlayer(){

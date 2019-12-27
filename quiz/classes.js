@@ -11,11 +11,11 @@ class Player{
 
 class Question{
    constructor(pId){this.mId=pId;}
-   setQuestion(pQuestion){this.mQuestion=pQuestion;}
-   getQuestion(){return this.mQuestion;}
-   setAnswer(pAnswer){this.mAnswer=pAnswer;}
-   getAnswer(){return this.mAnswer;}
-   setCategory(pCategory){this.mCategory=pCategory;}
-   getCategory(){return this.mCategory;}
-   getID(){return this.mId;}
+   SetQuestion(pQuestion){this.mQuestion=pQuestion;}
+   GetQuestion(){return this.mQuestion;}
+   SetAnswer(pAnswer){this.mAnswer=pAnswer;}
+   GetAnswer(){return this.mAnswer;}
+   SetCategory(pCategory){this.mCategory=pCategory;}
+   GetCategory(){return this.mCategory;}
+   GetID(){return this.mId;}
 }

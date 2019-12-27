@@ -3,11 +3,11 @@ var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
    if(currentQuestions.length>0){
+      GetQuestion();
       if(currentQuestion){
          AnsweredQuestion(currentQuestion.GetId());
          answeredQuestions.push(currentQuestion);
       }
-      GetQuestion();
       console.log(currentQuestions);
       console.log(answeredQuestions);
    }

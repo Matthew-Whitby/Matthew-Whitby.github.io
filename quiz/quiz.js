@@ -11,12 +11,11 @@ function NextQuestion(){
       console.log(currentQuestions);
       console.log(answeredQuestions);
    }
-   else if(currentQuestions.length==1){
-      GetQuestion();
-      AnsweredQuestion(currentQuestion.GetId());
-      answeredQuestions.push(currentQuestion);
-   }
    else{
+      if(currentQuestions.length==1){
+         AnsweredQuestion(currentQuestion.GetId());
+         answeredQuestions.push(currentQuestion);
+      }
       document.getElementById("question").innerText="END OF QUESTIONS";
       document.getElementById("answer").innerText="END OF QUESTIONS";
    }

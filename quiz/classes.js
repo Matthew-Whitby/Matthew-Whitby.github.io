@@ -17,5 +17,5 @@ class Question{
    GetAnswer(){return this.mAnswer;}
    SetCategory(pCategory){this.mCategory=pCategory;}
    GetCategory(){return this.mCategory;}
-   GetID(){return this.mId;}
+   GetId(){return this.mId;}
 }

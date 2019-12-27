@@ -41,7 +41,6 @@ function AnsweredQuestion(qNum){
       else if(currentQuestions[pointer].GetId()<qNum)l=pointer+1;
       else r=pointer-1;
    }
-   console.log("REMOVED");
 }
 
 function DisplayQuestion(question){

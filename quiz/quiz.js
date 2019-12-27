@@ -1,4 +1,5 @@
 var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
+var generalQs=[],scienceQs=[],geographyQs=[],historyQs=[],tvFilmQs=[],celebQs=[],foodQs=[],artQs=[],musicQs=[];
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
@@ -22,7 +23,11 @@ function NextQuestion(){
 }
 
 function GetQuestion(){
-   var pos=Math.floor(Math.random()*currentQuestions.length);
+   var pos;
+   var select=document.getElementById("categorySelection");
+   var selected=select.options[select.selectedIndex].value;
+   console.log(selected);
+   pos=Math.floor(Math.random()*currentQuestions.length);
    var newQuestion=currentQuestions[pos];
    DisplayQuestion(newQuestion);
 }
@@ -129,6 +134,17 @@ function LoadFile(){
          case 1:currentQuestion.SetAnswer(curLine);break;
          case 2:
             currentQuestion.SetCategory(curLine);
+            switch(curLine){
+               case"science":scienceQs.push(currentQuestion.GetId());break;
+               case"general":generalQs.push(currentQuestion.GetId());break;
+               case"geography":geographyQs.push(currentQuestion.GetId());break;
+               case"history":historyQs.push(currentQuestion.GetId());break;
+               case"tvFilm":tvFilmQs.push(currentQuestion.GetId());break;
+               case"celebrities":celebQs.push(currentQuestion.GetId());break;
+               case"food":foodQs.push(currentQuestion.GetId());break;
+               case"art":artQs.push(currentQuestion.GetId());break;
+               case"music":musicQs.push(currentQuestion.GetId());break;
+            }
             allQuestions.push(currentQuestion);
             move(Math.round((i/(arrLines.length-1))*100));
             currentQuestion=new Question(++idCounter);

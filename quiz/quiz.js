@@ -1,9 +1,9 @@
-var currentQuestions=[],allQuestions=[],AnsweredQuestions=[],players=[];
+var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
    if(currentQuestion){
-      AnsweredQuestions.push(currentQuestion);
+      answeredQuestions.push(currentQuestion);
       currentQuestions.splice(currentQuestion,1);
    }
    GetQuestion();

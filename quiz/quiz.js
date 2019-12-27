@@ -24,11 +24,11 @@ function AnsweredQuestion(qNum){
    var l=0,r=currentQuestions.length-1,pointer;
    while(!found){
       pointer=Math.floor(l+r/2);
-      if(currentQuestions[pointer].getID()==qNum){
+      if(currentQuestions[pointer].GetID()==qNum){
          currentQuestions.splice(currentQuestions[pointer],1);
          found=true;
       }
-      else if(currentQuestions[pointer].getID()<qNum)l=pointer+1;
+      else if(currentQuestions[pointer].GetID()<qNum)l=pointer+1;
       else r=pointer-1;
    }
    console.log("REMOVED");

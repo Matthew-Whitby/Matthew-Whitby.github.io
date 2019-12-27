@@ -1,6 +1,11 @@
 var currentQuestions=[],allQuestions=[],players=[];
 var currentQuestionID,progressBar,currentPlayers=1;
-function answeredQuestion(qNum){
+
+function NextQuestion(){
+   
+}
+
+function AnsweredQuestion(qNum){
    length=currentQuestions.length;
    console.log(length);
    found=false;

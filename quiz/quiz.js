@@ -170,7 +170,7 @@ function LoadFile(){
    var currentQuestion=new Question(idCounter);
    progressBar=document.getElementById("myBar");
    for(var i=0;i<arrLines.length;i++){
-      var curLine=arrLines[i];
+      var curLine=arrLines[i].trim();
       if(curLine==""||curLine.substring(0,1)=="*")continue;
       switch(counter=(counter==2)?0:counter+1){
          case 0:currentQuestion.SetQuestion(curLine);break;

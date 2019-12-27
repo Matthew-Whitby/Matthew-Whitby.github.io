@@ -1,4 +1,4 @@
-*Ignore this
+*General|Science|Geography|History|TvFilm|Celebrities|Food|Art|Music
 What colour is cobalt?
 Blue
 Science
@@ -27,4 +27,110 @@ What is the colour of a giraffe's tongue?
 Blue/Purple
 Science
 
-Who composed
+Who composed Symphony No. 5?
+Ludwig van Beethoven
+Music
+
+Which composer wrote many famous works whislt deaf?
+Ludwig van Beethoven
+Music
+
+From which country does pitta bread originate?
+Greece
+Food
+
+How many calories does a glass of water contain?
+Zero calories
+Food
+
+What is the largest continent on Earth?
+Asia
+Geography
+
+Which country has the most natural lakes?
+Canada
+Geography
+
+What is the only sea without any coasts?
+Sargasso Sea
+Geography
+
+In what country can you visit Machu Picchu?
+Peru
+Geography
+
+Which African nation has the most pyramids?
+Sudan
+Geography
+
+What is the oldest city in the world?
+Damascus (in Syria)
+Geography
+
+What country has the most coastline?
+Canada
+Geography
+
+What country is home to Kangaroo Island?
+Australia
+Geography
+
+What is the largest country in South America?
+Brazil
+Geography
+
+What is the tallest mountain in the world?
+Mount Everest
+Geography
+
+What city is the capital of Australia?
+Canberra
+Geography
+
+Riyadh is the capital of what Middle-Eastern country?
+Saudi Arabia
+Geography
+
+What is the smallest independent country on Earth?
+Vatican City
+Geography
+
+What is the deepest point in Earth's oceans?
+Mariana Trench
+Geography
+
+What is the tallest mountain in North America?
+Denali (In Alaska)
+Geography
+
+What is the only continent with land in all four hemispheres?
+Africa
+Geography
+
+What ocean is home to 75% of the Earth's volcanoes?
+Pacific
+Geography
+
+What is the only major city located on two continents?
+Istanbul (Europe and Asia)
+Geography
+
+What river runs through Paris?
+Seine
+Geography
+
+What European country is home to Transylvania?
+Romania
+Geography
+
+What is the largest country in the world in terms of land area?
+Russia
+Geography
+
+What is the longest river in the UK?
+Severn
+Geography
+
+What is the highest mountain in the British Isles?
+Ben Nevis
+Geography

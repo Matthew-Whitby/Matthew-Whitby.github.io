@@ -3,8 +3,8 @@ var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
    if(currentQuestion){
+      AnsweredQuestion(currentQuestion.GetId());
       answeredQuestions.push(currentQuestion);
-      currentQuestions.splice(currentQuestion,1);
    }
    GetQuestion();
    console.log(currentQuestions);
@@ -24,7 +24,10 @@ function AnsweredQuestion(qNum){
    var l=0,r=currentQuestions.length-1,pointer;
    while(!found){
       pointer=Math.floor(l+r/2);
-      if(currentQuestions[pointer].getID()==qNum){currentQuestions.splice(currentQuestions[pointer],1);found=true;}
+      if(currentQuestions[pointer].getID()==qNum){
+         currentQuestions.splice(currentQuestions[pointer],1);
+         found=true;
+      }
       else if(currentQuestions[pointer].getID()<qNum)l=pointer+1;
       else r=pointer-1;
    }

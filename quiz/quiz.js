@@ -61,11 +61,9 @@ function AddPlayer(){
    removePointBtn.innerHTML="Remove Point";
    newPanel.appendChild(removePointBtn);
    panels.appendChild(newPanel);
-   console.log(players);
 }
 
 function UpdatePoint(player,point){
-   console.log(player);
    pNum=player.id.split('_')[1];
    var pl=GetPlayer(pNum);
    pl.UpdateScore(point);

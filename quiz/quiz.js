@@ -25,7 +25,7 @@ function AnsweredQuestion(qNum){
    while(!found){
       pointer=Math.floor((l+r)/2);
       if(currentQuestions[pointer].GetId()==qNum){
-         currentQuestions.splice(currentQuestions[pointer],1);
+         currentQuestions.splice(pointer,1);
          found=true;
       }
       else if(currentQuestions[pointer].GetId()<qNum)l=pointer+1;

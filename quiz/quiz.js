@@ -27,53 +27,73 @@ function GetQuestion(){
    switch(selected){
       case"All":
          pos=Math.floor(Math.random()*currentQuestions.length);
+         id=currentQuestions[pos].GetId();
          break;
       case"General":
          pos=Math.floor(Math.random()*generalQs.length);
-
+         id=generalQs[pos];
          break;
       case"ScienceNature":
          pos=Math.floor(Math.random()*scienceQs.length);
+         id=scienceQs[pos];
          break;
       case"Georgraphy":
          pos=Math.floor(Math.random()*geographyQs.length);
+         id=geographyQs[pos];
          break;
       case"History":
          pos=Math.floor(Math.random()*historyQs.length);
+         id=historyQs[pos];
          break;
       case"TvFilm":
          pos=Math.floor(Math.random()*tvFilmQs.length);
+         id=tvFilmQs[pos];
          break;
       case"Celebrities":
          pos=Math.floor(Math.random()*celebQs.length);
+         id=celebQs[pos];
          break;
       case"Food":
          pos=Math.floor(Math.random()*foodQs.length);
+         id=foodQs[pos];
          break;
       case"Art":
          pos=Math.floor(Math.random()*artQs.length);
+         id=artQs[pos];
          break;
       case"Music":
          pos=Math.floor(Math.random()*musicQs.length);
+         id=musicQs[pos];
          break;
    }
    
-   var newQuestion=currentQuestions[pos];
+   var newQuestion=GetQuestion(id);
    DisplayQuestion(newQuestion);
 }
 
 function AnsweredQuestion(qNum){
-   length=currentQuestions.length;
-   console.log(length);
-   found=false;
-   var l=0,r=currentQuestions.length-1,pointer;
+   var questionPos=QuestionPosFromID(qNum,currentQuestions);
+   currentQuestions.splice(questionPos,1);
+}
+
+function QuestionPosFromID(n,array){
+   var l=0,r=array.length-1,pointer;
    while(!found){
       pointer=Math.floor((l+r)/2);
-      if(currentQuestions[pointer].GetId()==qNum){
-         currentQuestions.splice(pointer,1);
-         found=true;
+      if(array[pointer].GetId()==n)return pointer;
+      else if(array[pointer].GetId()<n)l=pointer+1;
+      else r=pointer-1;
+   }
+}
+
+function QuestionFromID(n,array){
+   var l=0,r=array.length-1,pointer;
+   while(!found){
+      pointer=Math.floor((l+r)/2);
+      if(array[pointer].GetId()==qNum){
+         return array[pointer];
       }
-      else if(currentQuestions[pointer].GetId()<qNum)l=pointer+1;
+      else if(array[pointer].GetId()<qNum)l=pointer+1;
       else r=pointer-1;
    }
 }
@@ -111,7 +131,7 @@ function AddPlayer(){
    scoreBox.appendChild(pointLabel);
    var pointDisplay=document.createElement("h2");
    pointDisplay.classList.add("unselectable");
-   pointDisplay.id="PP_"+pNum+"_points";
+   pointDisplay.id="PP_"+pNum+"_Points";
    pointDisplay.innerHTML="0";
    scoreBox.appendChild(pointDisplay);
    newPanel.appendChild(scoreBox);
@@ -128,13 +148,18 @@ function AddPlayer(){
    panels.appendChild(newPanel);
 }
 
-function ClearAllPoints(){players.map(p=>p.SetScore(0));}
+function ClearAllPoints(){
+   players.map(p=>{
+      p.SetScore(0);
+      document.getElementById("PP_"+p.GetId()+"_points").innerHTML="0";
+   });
+}
 
 function UpdatePoint(player,point){
    pNum=player.id.split('_')[1];
    var pl=GetPlayer(pNum);
    pl.UpdateScore(point);
-   document.getElementById("PP_"+pNum+"_points").innerText=pl.GetScore();
+   document.getElementById("PP_"+pNum+"_Points").innerText=pl.GetScore();
 }
 
 function UpdatePlayerName(n){

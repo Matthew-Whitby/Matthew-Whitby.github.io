@@ -75,14 +75,9 @@ function UpdatePlayerName(n){
    var pNum=n.id.split('_')[1];
    var pl=GetPlayer(pNum);
    pl.SetName(n.value);
-   console.log("Player name now: "+pl.GetName());
 }
 
-function GetPlayer(pNum){
-   for(var i=0;i<players.length;i++){
-      if(players[i].GetId()==pNum)return players[i];
-   }
-}
+function GetPlayer(pNum){for(var i=0;i<players.length;i++)if(players[i].GetId()==pNum)return players[i];}
 
 function Initialise(){
    currentQuestions=allQuestions;
@@ -92,24 +87,24 @@ function LoadFile(){
    var oFrame=document.getElementById("frmFile");
    var strRawContents=oFrame.contentWindow.document.body.childNodes[0].innerHTML;
    while(strRawContents.indexOf("\r")>=0)
-       strRawContents=strRawContents.replace("\r","");
+      strRawContents=strRawContents.replace("\r","");
    var arrLines=strRawContents.split("\n");
    var idCounter=0,counter=-1;
    var currentQuestion=new Question(idCounter);
    progressBar=document.getElementById("myBar");
    for(var i=0;i<arrLines.length;i++){
-       var curLine=arrLines[i];
-       if(curLine=="")continue;
-       switch(counter=(counter==2)?0:counter+1){
-          case 0:currentQuestion.setQuestion(curLine);break;
-          case 1:currentQuestion.setAnswer(curLine);break;
-          case 2:
+      var curLine=arrLines[i];
+      if(curLine=="")continue;
+      switch(counter=(counter==2)?0:counter+1){
+         case 0:currentQuestion.setQuestion(curLine);break;
+         case 1:currentQuestion.setAnswer(curLine);break;
+         case 2:
             currentQuestion.setCategory(curLine);
             allQuestions.push(currentQuestion);
             move(Math.round((i/(arrLines.length-1))*100));
             currentQuestion=new Question(++idCounter);
             break;
-       }
+      }
    }
    move(100);
    console.log(allQuestions);

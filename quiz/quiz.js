@@ -7,6 +7,8 @@ function NextQuestion(){
       currentQuestions.splice(currentQuestion,1);
    }
    GetQuestion();
+   console.log(currentQuestions);
+   console.log(AnsweredQuestions);
 }
 
 function GetQuestion(){

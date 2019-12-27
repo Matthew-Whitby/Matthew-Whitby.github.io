@@ -8,7 +8,7 @@ function NextQuestion(){
    }
    GetQuestion();
    console.log(currentQuestions);
-   console.log(AnsweredQuestions);
+   console.log(answeredQuestions);
 }
 
 function GetQuestion(){

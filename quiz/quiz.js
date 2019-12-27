@@ -66,7 +66,6 @@ function GetQuestion(){
          id=musicQs[pos];
          break;
    }
-   
    var newQuestion=QuestionFromID(id);
    DisplayQuestion(newQuestion);
 }
@@ -90,10 +89,10 @@ function QuestionFromID(n,array){
    var l=0,r=array.length-1,pointer;
    while(!found){
       pointer=Math.floor((l+r)/2);
-      if(array[pointer].GetId()==qNum){
+      if(array[pointer].GetId()==n){
          return array[pointer];
       }
-      else if(array[pointer].GetId()<qNum)l=pointer+1;
+      else if(array[pointer].GetId()<n)l=pointer+1;
       else r=pointer-1;
    }
 }

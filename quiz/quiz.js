@@ -2,14 +2,19 @@ var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
-   if(currentQuestions.length>0){
-      GetQuestion();
+   if(currentQuestions.length>1){
       if(currentQuestion){
          AnsweredQuestion(currentQuestion.GetId());
          answeredQuestions.push(currentQuestion);
       }
+      GetQuestion();
       console.log(currentQuestions);
       console.log(answeredQuestions);
+   }
+   else if(currentQuestions.length==1){
+      GetQuestion();
+      AnsweredQuestion(currentQuestion.GetId());
+      answeredQuestions.push(currentQuestion);
    }
    else{
       document.getElementById("question").innerText="END OF QUESTIONS";

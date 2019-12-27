@@ -32,7 +32,7 @@ function GetQuestion(){
       case"All":array=currentQuestions;break;
       case"General":array=generalQs;break;
       case"ScienceNature":array=scienceQs;break;
-      case"Georgraphy":array=geographyQs;break;
+      case"Geography":array=geographyQs;break;
       case"History":array=historyQs;break;
       case"TvFilm":array=tvFilmQs;break;
       case"Celebrities":array=celebQs;break;
@@ -149,7 +149,7 @@ function Initialise(){
       switch(q.GetCategory()){
          case"General":generalQs.push(q);break;
          case"Science":scienceQs.push(q);break;
-         case"Georgraphy":geographyQs.push(q);break;
+         case"Geography":geographyQs.push(q);break;
          case"History":historyQs.push(q);break;
          case"TvFilm":tvFilmQs.push(q);break;
          case"Celebrities":celebQs.push(q);break;
@@ -200,7 +200,7 @@ function move(percentage){
       switch(q.GetCategory()){
          case"General":generalCount++;break;
          case"Science":scienceCount++;break;
-         case"Georgraphy":geographyCount++;break;
+         case"Geography":geographyCount++;break;
          case"History":historyCount++;break;
          case"TvFilm":tvFilmCount++;break;
          case"Celebrities":celebCount++;break;

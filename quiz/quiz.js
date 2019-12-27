@@ -67,7 +67,7 @@ function GetQuestion(){
          break;
    }
    
-   var newQuestion=GetQuestion(id);
+   var newQuestion=QuestionFromID(id);
    DisplayQuestion(newQuestion);
 }
 

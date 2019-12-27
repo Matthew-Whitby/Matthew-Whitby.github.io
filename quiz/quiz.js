@@ -139,8 +139,49 @@ function UpdatePlayerName(n){
 
 function GetPlayer(pNum){for(var i=0;i<players.length;i++)if(players[i].GetId()==pNum)return players[i];}
 
+function PrintData(){
+   var generalCount=0,scienceCount=0,geographyCount=0,historyCount=0,tvFilmCount=0,celebCount=0,foodCount=0,artCount=0,musicCount=0;
+   allQuestions.map(q=>{
+      switch(q.GetCategory()){
+         case"General":generalCount++;break;
+         case"Science":scienceCount++;break;
+         case"Georgraphy":geographyCount++;break;
+         case"History":historyCount++;break;
+         case"TvFilm":tvFilmCount++;break;
+         case"Celebrities":celebCount++;break;
+         case"Food":foodCount++;break;
+         case"Art":artCount++;break;
+         case"Music":musicCount++;break;
+      }
+   });
+   console.log("Current Question Data:");
+   console.log("Total Quesitons: "+allQuestions.length);
+   console.log("General Questions: "+generalCount);
+   console.log("Science Questions: "+scienceCount);
+   console.log("Geography Questions: "+geographyCount);
+   console.log("History Questions: "+historyCount);
+   console.log("Tv/Film Questions: "+tvFilmCount);
+   console.log("Celebrities Questions: "+celebCount);
+   console.log("Food Questions: "+foodCount);
+   console.log("Art Questions: "+artCount);
+   console.log("Music Questions: "+musicCount);
+}
+
 function Initialise(){
    currentQuestions=allQuestions;
+   allQuestions.map(q=>{
+      switch(q.GetCategory()){
+         case"General":generalQs.push(q);break;
+         case"Science":scienceQs.push(q);break;
+         case"Georgraphy":geographyQs.push(q);break;
+         case"History":historyQs.push(q);break;
+         case"TvFilm":tvFilmQs.push(q);break;
+         case"Celebrities":celebQs.push(q);break;
+         case"Food":foodQs.push(q);break;
+         case"Art":artQs.push(q);break;
+         case"Music":musicQs.push(q);break;
+      }
+   });
 }
 
 function LoadFile(){
@@ -160,27 +201,16 @@ function LoadFile(){
          case 1:currentQuestion.SetAnswer(curLine);break;
          case 2:
             currentQuestion.SetCategory(curLine);
-            switch(curLine){
-               case"science":scienceQs.push(currentQuestion.GetId());break;
-               case"general":generalQs.push(currentQuestion.GetId());break;
-               case"geography":geographyQs.push(currentQuestion.GetId());break;
-               case"history":historyQs.push(currentQuestion.GetId());break;
-               case"tvFilm":tvFilmQs.push(currentQuestion.GetId());break;
-               case"celebrities":celebQs.push(currentQuestion.GetId());break;
-               case"food":foodQs.push(currentQuestion.GetId());break;
-               case"art":artQs.push(currentQuestion.GetId());break;
-               case"music":musicQs.push(currentQuestion.GetId());break;
-            }
             allQuestions.push(currentQuestion);
             move(Math.round((i/(arrLines.length-1))*100));
             currentQuestion=new Question(++idCounter);
             break;
       }
    }
-   move(100);
    document.getElementById("quizWindow").style.display="block";
    document.getElementById("loadingScreen").style.display="none";
    Initialise();
+   move(100);
 }
 
 function move(percentage){

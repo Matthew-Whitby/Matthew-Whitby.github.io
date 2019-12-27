@@ -13,8 +13,8 @@ function NextQuestion(){
 
 function GetQuestion(){
    var pos=Math.floor(Math.random()*currentQuestions.length);
-   var question=currentQuestions[pos];
-   DisplayQuestion(question);
+   var newQuestion=currentQuestions[pos];
+   DisplayQuestion(newQuestion);
 }
 
 function AnsweredQuestion(qNum){
@@ -124,7 +124,6 @@ function LoadFile(){
       }
    }
    move(100);
-   console.log(allQuestions);
    document.getElementById("quizWindow").style.display="block";
    document.getElementById("loadingScreen").style.display="none";
    Initialise();

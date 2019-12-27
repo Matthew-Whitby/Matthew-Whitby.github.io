@@ -39,7 +39,7 @@ function AddPlayer(){
    newPanel.appendChild(name);
    var scoreBox=document.createElement("div");
    scoreBox.id="PP_"+pNum+"_ScoreBox";
-   scoreBox.addEventListener("click",()=>UpdatePoint(this,1));
+   scoreBox.addEventListener("click",function(){UpdatePoint(this,1)});
    var pointLabel=document.createElement("h2");
    pointLabel.classList.add("unselectable");
    pointLabel.innerHTML="Points";
@@ -51,12 +51,12 @@ function AddPlayer(){
    scoreBox.appendChild(pointDisplay);
    newPanel.appendChild(scoreBox);
    var addPointButton=document.createElement("button");
-   addPointButton.addEventListener("click",()=>UpdatePoint(this,1));
+   addPointButton.addEventListener("click",function(){UpdatePoint(this,1)});
    addPointButton.id="PP_"+pNum+"_AddPoint";
    addPointButton.innerHTML="Add Point";
    newPanel.appendChild(addPointButton);
    var removePointBtn=document.createElement("button");
-   removePointBtn.addEventListener("dblclick",()=>UpdatePoint(this,-1));
+   removePointBtn.addEventListener("click",function(){UpdatePoint(this,-1)});
    removePointBtn.id="PP_"+pNum+"_RemovePoint";
    removePointBtn.innerHTML="Remove Point";
    newPanel.appendChild(removePointBtn);
@@ -65,6 +65,7 @@ function AddPlayer(){
 }
 
 function UpdatePoint(player,point){
+   console.log(player);
    pNum=player.id.split('_')[1];
    var pl=GetPlayer(pNum);
    pl.UpdateScore(point);

@@ -39,7 +39,7 @@ function AddPlayer(){
    newPanel.appendChild(name);
    var scoreBox=document.createElement("div");
    scoreBox.id="PP_"+pNum+"_ScoreBox";
-   scoreBox.onclick="UpdatePoint(this,1)";
+   scoreBox.addEventListener("click",UpdatePoint(this,1));
    var pointLabel=document.createElement("h2");
    pointLabel.classList.add("unselectable");
    pointLabel.innerHTML="Points";

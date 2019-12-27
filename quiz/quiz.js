@@ -50,7 +50,16 @@ function AddPlayer(){
    pointDisplay.innerHTML="0";
    scoreBox.appendChild(pointDisplay);
    newPanel.appendChild(scoreBox);
-
+   var addPointButton=document.createElement("button");
+   addPointButton.addEventListener("click",UpdatePoint(this,1));
+   addPointButton.id="PP_"+pNum+"_AddPoint";
+   addPointButton.innerHTML="Add Point";
+   newPanel.appendChild(addPointButton);
+   var removePointBtn=document.createElement("button");
+   removePointBtn.addEventListener("dblclick",UpdatePoint(this,-1));
+   removePointBtn.id="PP_"+pNum+"_RemovePoint";
+   removePointBtn.innerHTML="Remove Point";
+   newPanel.appendChild(removePointBtn);
    panels.appendChild(newPanel);
    console.log(players);
 }

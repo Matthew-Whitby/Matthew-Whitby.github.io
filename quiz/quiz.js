@@ -5,9 +5,8 @@ function NextQuestion(){
    if(currentQuestion){
       AnsweredQuestions.push(currentQuestion);
       currentQuestions.splice(currentQuestion,1);
-   }else{
-      GetQuestion();
    }
+   GetQuestion();
 }
 
 function GetQuestion(){

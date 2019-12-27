@@ -29,8 +29,27 @@ function AddPlayer(){
    var newPanel=document.createElement("div");
    newPanel.classList.add("PP");
    newPanel.id="PP_"+pNum;
-
-
+   var span=document.createElement("span");
+   span.innerHTML="Player/Team Name:";
+   newPanel.appendChild(span);
+   var name=document.createElement("input");
+   name.type="text";
+   name.id="PP_"+pNum+"_Name";
+   name.value="Player "+pNum;
+   newPanel.appendChild(name);
+   var scoreBox=document.createElement("div");
+   scoreBox.id="PP_"+pNum+"_ScoreBox";
+   scoreBox.onclick="UpdatePoint(this,1)";
+   var pointLabel=document.createElement("h2");
+   pointLabel.classList.add("unselectable");
+   pointLabel.innerHTML="Points";
+   scoreBox.appendChild(pointLabel);
+   var pointDisplay=document.createElement("h2");
+   pointDisplay.classList.add("unselectable");
+   pointDisplay.id="PP_"+pNum+"_points";
+   pointDisplay.innerHTML="0";
+   scoreBox.appendChild(pointDisplay);
+   newPanel.appendChild(scoreBox);
 
    panels.appendChild(newPanel);
    console.log(players);

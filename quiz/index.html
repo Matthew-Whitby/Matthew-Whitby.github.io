@@ -42,7 +42,7 @@
       <div id="playerBox" class="center">
         <div id="playerPanels">
           <div class="PP" id="PP_1">
-            <span>Player/Team Name:</span><input id="PP_1_Name" type="text" value="Player 1">
+            <span>Player/Team Name:</span><input onchange="UpdatePlayerName(this)" id="PP_1_Name" type="text" value="Player 1">
             <div id="PP_1_ScoreBox" onclick="UpdatePoint(this,1)">
               <h2 class="unselectable">Points</h2>
               <h2 class="unselectable" id=PP_1_points>0</h2>

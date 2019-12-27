@@ -34,6 +34,7 @@ function AddPlayer(){
    newPanel.appendChild(span);
    var name=document.createElement("input");
    name.type="text";
+   name.addEventListener("change",function(){UpdatePlayerName(this)});
    name.id="PP_"+pNum+"_Name";
    name.value="Player "+pNum;
    newPanel.appendChild(name);
@@ -68,6 +69,12 @@ function UpdatePoint(player,point){
    var pl=GetPlayer(pNum);
    pl.UpdateScore(point);
    document.getElementById("PP_"+pNum+"_points").innerText=pl.GetScore();
+}
+
+function UpdatePlayerName(n){
+   var pNum=n.id.split('_')[1];
+   var pl=GetPlayer(pNum);
+   pl.SetName(n.value);
 }
 
 function GetPlayer(pNum){

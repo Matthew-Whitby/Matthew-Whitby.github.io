@@ -75,6 +75,7 @@ function UpdatePlayerName(n){
    var pNum=n.id.split('_')[1];
    var pl=GetPlayer(pNum);
    pl.SetName(n.value);
+   console.log("Player name now: "+pl.GetName());
 }
 
 function GetPlayer(pNum){

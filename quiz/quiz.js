@@ -124,7 +124,7 @@ function AddPlayer(){
 function ClearAllPoints(){
    players.map(p=>{
       p.SetScore(0);
-      document.getElementById("PP_"+p.GetId()+"_points").innerHTML="0";
+      document.getElementById("PP_"+p.GetId()+"_Points").innerHTML="0";
    });
 }
 

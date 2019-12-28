@@ -197,7 +197,7 @@ function move(percentage){
  function GenerateRandomNumber(){
     var range=document.getElementById("randomNumInput").value;
     var num=Math.floor(Math.random()*(range+1));
-    document.getElementById("randomNumberDisplay").innerHTML=num;
+    document.getElementById("randomNumDisplay").innerHTML=num;
  }
 
  function PrintData(){

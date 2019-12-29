@@ -1,5 +1,5 @@
 var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
-var generalQs,scienceQs,geographyQs,historyQs,tvFilmQs,celebQs,foodQs,artQs,musicQs;
+var generalQs,scienceQs,geographyQs,historyQs,tvFilmQs,foodQs,artQs,musicQs;
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
@@ -33,17 +33,16 @@ function GetQuestion(){
    var select=document.getElementById("categorySelection");
    var selected=select.options[select.selectedIndex].value;
    if(selected=="All"){
-      arrayNum=Math.floor(Math.random()*9);
+      arrayNum=Math.floor(Math.random()*8);
       switch(arrayNum){
          case 0:array=generalQs;selected="General";break;
          case 1:array=scienceQs;selected="Science";break;
          case 2:array=geographyQs;selected="Geography";break;
          case 3:array=historyQs;selected="History";break;
          case 4:array=tvFilmQs;selected="TvFilm";break;
-         case 5:array=celebQs;selected="Celebrities";break;
-         case 6:array=foodQs;selected="Food";break;
-         case 7:array=artQs;selected="Art";break;
-         case 8:array=musicQs;selected="Music";break;
+         case 5:array=foodQs;selected="Food";break;
+         case 6:array=artQs;selected="Art";break;
+         case 7:array=musicQs;selected="Music";break;
       }
    }else array=GetArray(selected);
    Restock(selected,array);
@@ -73,7 +72,6 @@ function GetArray(qType){
       case"Geography":return geographyQs;
       case"History":return historyQs;
       case"TvFilm":return tvFilmQs;
-      case"Celebrities":return celebQs;
       case"Food":return foodQs;
       case"Art":return artQs;
       case"Music":return musicQs;
@@ -179,7 +177,6 @@ function Initialise(){
    geographyQs=[];
    historyQs=[];
    tvFilmQs=[];
-   celebQs=[];
    foodQs=[];
    artQs=[];
    musicQs=[];
@@ -190,7 +187,6 @@ function Initialise(){
          case"Geography":geographyQs.push(q);break;
          case"History":historyQs.push(q);break;
          case"TvFilm":tvFilmQs.push(q);break;
-         case"Celebrities":celebQs.push(q);break;
          case"Food":foodQs.push(q);break;
          case"Art":artQs.push(q);break;
          case"Music":musicQs.push(q);break;
@@ -239,7 +235,7 @@ function move(percentage){
  }
 
  function PrintData(){
-   var generalCount=0,scienceCount=0,geographyCount=0,historyCount=0,tvFilmCount=0,celebCount=0,foodCount=0,artCount=0,musicCount=0;
+   var generalCount=0,scienceCount=0,geographyCount=0,historyCount=0,tvFilmCount=0,foodCount=0,artCount=0,musicCount=0;
    allQuestions.map(q=>{
       switch(q.GetCategory()){
          case"General":generalCount++;break;
@@ -247,7 +243,6 @@ function move(percentage){
          case"Geography":geographyCount++;break;
          case"History":historyCount++;break;
          case"TvFilm":tvFilmCount++;break;
-         case"Celebrities":celebCount++;break;
          case"Food":foodCount++;break;
          case"Art":artCount++;break;
          case"Music":musicCount++;break;
@@ -260,7 +255,6 @@ function move(percentage){
    console.log("Geography Questions: "+geographyCount);
    console.log("History Questions: "+historyCount);
    console.log("Tv/Film Questions: "+tvFilmCount);
-   console.log("Celebrities Questions: "+celebCount);
    console.log("Food Questions: "+foodCount);
    console.log("Art Questions: "+artCount);
    console.log("Music Questions: "+musicCount);

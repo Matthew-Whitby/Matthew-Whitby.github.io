@@ -40,6 +40,14 @@ function Restock(type,array){
    }
 }
 
+function RestockMessage(message){
+   var display=document.getElementById("displayMessage");
+   display.innerHTML="Answered all "+type+" questions, looping questions";
+   setTimeout(function(){
+      display.innerHTML="";
+   },10000);
+}
+
 function AnsweredQuestion(question){
    var array=GetArray(question.GetCategory());
    var questionPos=QuestionPosFromID(question.GetId(),array);

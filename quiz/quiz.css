@@ -1,4 +1,4 @@
-h1,h2,p,.center{text-align:center;}
+h1,h2,h3,p,.center{text-align:center;}
 #questionBox,.PP,#randomNumber{border-style:solid;}
 #question,#answer{border-width:0 0 2px 0;border-style:solid;}
 #question,#answer{padding:8px 0;margin:0;}

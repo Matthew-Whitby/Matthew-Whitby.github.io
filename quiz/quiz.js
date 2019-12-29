@@ -10,24 +10,6 @@ function NextQuestion(){
    GetQuestion();
 }
 
-/*function NextQuestion(){
-   if(currentQuestions.length>1){
-      if(currentQuestion){
-         AnsweredQuestion(currentQuestion.GetId());
-         answeredQuestions.push(currentQuestion);
-      }
-      GetQuestion();
-   }
-   else{
-      if(currentQuestions.length==1){
-         AnsweredQuestion(currentQuestion.GetId());
-         answeredQuestions.push(currentQuestion);
-      }
-      document.getElementById("question").innerText="END OF QUESTIONS";
-      document.getElementById("answer").innerText="END OF QUESTIONS";
-   }
-}*/
-
 function GetQuestion(){
    var pos,array;
    var select=document.getElementById("categorySelection");

@@ -1,5 +1,5 @@
 var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
-var generalQs=[],scienceQs=[],geographyQs=[],historyQs=[],tvFilmQs=[],celebQs=[],foodQs=[],artQs=[],musicQs=[];
+var generalQs,scienceQs,geographyQs,historyQs,tvFilmQs,celebQs,foodQs,artQs,musicQs;
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
@@ -145,6 +145,15 @@ function GetPlayer(pNum){for(var i=0;i<players.length;i++)if(players[i].GetId()=
 
 function Initialise(){
    currentQuestions=allQuestions;
+   generalQs=[];
+   scienceQs=[];
+   geographyQs=[];
+   historyQs=[];
+   tvFilmQs=[];
+   celebQs=[];
+   foodQs=[];
+   artQs=[];
+   musicQs=[];
    allQuestions.map(q=>{
       switch(q.GetCategory()){
          case"General":generalQs.push(q);break;

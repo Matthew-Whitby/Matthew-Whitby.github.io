@@ -60,7 +60,7 @@ function Restock(type,array){
 }
 
 function AnsweredQuestion(question){
-   var array=GetArray(question);
+   var array=GetArray(question.GetCategory());
    var questionPos=QuestionPosFromID(question.GetId(),array);
    array.splice(questionPos,1);
 }

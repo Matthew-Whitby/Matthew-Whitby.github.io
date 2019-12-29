@@ -82,7 +82,7 @@ function GetArray(qType){
    }
 }
 
-function QuestionPosFromID(n){
+function QuestionPosFromID(n,array){
    var l=0,r=array.length-1,pointer;
    while(1){
       pointer=Math.floor((l+r)/2);

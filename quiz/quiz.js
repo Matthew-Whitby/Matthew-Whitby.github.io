@@ -46,17 +46,7 @@ function GetQuestion(){
          case 8:array=musicQs;break;
       }
    }else{
-      switch(selected){
-         case"General":array=generalQs;break;
-         case"Science":array=scienceQs;break;
-         case"Geography":array=geographyQs;break;
-         case"History":array=historyQs;break;
-         case"TvFilm":array=tvFilmQs;break;
-         case"Celebrities":array=celebQs;break;
-         case"Food":array=foodQs;break;
-         case"Art":array=artQs;break;
-         case"Music":array=musicQs;break;
-      }
+      array=GetArray(selected);
    }
    Restock(selected,array);
    pos=Math.floor(Math.random()*array.length);
@@ -72,12 +62,27 @@ function Restock(type,array){
    }
 }
 
-function AnsweredQuestion(qNum){
-   var questionPos=QuestionPosFromID(qNum,currentQuestions);
-   currentQuestions.splice(questionPos,1);
+function AnsweredQuestion(question){
+   var array=GetArray(question);
+   var questionPos=QuestionPosFromID(question.GetId(),array);
+   array.splice(questionPos,1);
 }
 
-function QuestionPosFromID(n,array){
+function GetArray(qType){
+   switch(qType){
+      case"General":return generalQs;
+      case"Science":return scienceQs;
+      case"Geography":return geographyQs;
+      case"History":return historyQs;
+      case"TvFilm":return tvFilmQs;
+      case"Celebrities":return celebQs;
+      case"Food":return foodQs;
+      case"Art":return artQs;
+      case"Music":return musicQs;
+   }
+}
+
+function QuestionPosFromID(n){
    var l=0,r=array.length-1,pointer;
    while(1){
       pointer=Math.floor((l+r)/2);

@@ -60,9 +60,8 @@ function GetQuestion(){
    }
    Restock(selected,array);
    pos=Math.floor(Math.random()*array.length);
-   id=array[pos];
    
-   var newQuestion=QuestionFromID(id,array);
+   var newQuestion=array[pos];
    DisplayQuestion(newQuestion);
 }
 

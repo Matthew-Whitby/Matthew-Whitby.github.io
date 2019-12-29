@@ -151,30 +151,7 @@ function UpdatePlayerName(n){
 
 function GetPlayer(pNum){for(var i=0;i<players.length;i++)if(players[i].GetId()==pNum)return players[i];}
 
-function Initialise(){
-   //currentQuestions=allQuestions;
-   generalQs=[];
-   scienceQs=[];
-   geographyQs=[];
-   historyQs=[];
-   tvFilmQs=[];
-   foodQs=[];
-   artQs=[];
-   musicQs=[];
-   allQuestions.map(q=>{
-      GetArray(q.GetCategory()).push(q);
-      /*switch(q.GetCategory()){
-         case"General":generalQs.push(q);break;
-         case"Science":scienceQs.push(q);break;
-         case"Geography":geographyQs.push(q);break;
-         case"History":historyQs.push(q);break;
-         case"TvFilm":tvFilmQs.push(q);break;
-         case"Food":foodQs.push(q);break;
-         case"Art":artQs.push(q);break;
-         case"Music":musicQs.push(q);break;
-      }*/
-   });
-}
+function Initialise(){generalQs=[];scienceQs=[];geographyQs=[];historyQs=[];tvFilmQs=[];foodQs=[];artQs=[];musicQs=[];allQuestions.map(q=>{GetArray(q.GetCategory()).push(q);});}
 
 function LoadFile(){
    var oFrame=document.getElementById("frmFile");

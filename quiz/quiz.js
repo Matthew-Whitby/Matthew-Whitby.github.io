@@ -29,25 +29,23 @@ function NextQuestion(){
 }*/
 
 function GetQuestion(){
-   var id,pos,array;
+   var pos,array;
    var select=document.getElementById("categorySelection");
    var selected=select.options[select.selectedIndex].value;
    if(selected=="All"){
       arrayNum=Math.floor(Math.random()*9);
       switch(arrayNum){
-         case 0:array=generalQs;break;
-         case 1:array=scienceQs;break;
-         case 2:array=geographyQs;break;
-         case 3:array=historyQs;break;
-         case 4:array=tvFilmQs;break;
-         case 5:array=celebQs;break;
-         case 6:array=foodQs;break;
-         case 7:array=artQs;break;
-         case 8:array=musicQs;break;
+         case 0:array=generalQs;selected="General";break;
+         case 1:array=scienceQs;selected="Science";break;
+         case 2:array=geographyQs;selected="Geography";break;
+         case 3:array=historyQs;selected="History";break;
+         case 4:array=tvFilmQs;selected="TvFilm";break;
+         case 5:array=celebQs;selected="Celebrities";break;
+         case 6:array=foodQs;selected="Food";break;
+         case 7:array=artQs;selected="Art";break;
+         case 8:array=musicQs;selected="Music";break;
       }
-   }else{
-      array=GetArray(selected);
-   }
+   }else array=GetArray(selected);
    Restock(selected,array);
    pos=Math.floor(Math.random()*array.length);
    

@@ -62,7 +62,7 @@ function GetQuestion(){
    pos=Math.floor(Math.random()*array.length);
    id=array[pos];
    
-   var newQuestion=QuestionFromID(id);
+   var newQuestion=QuestionFromID(id,array);
    DisplayQuestion(newQuestion);
 }
 
@@ -88,12 +88,12 @@ function QuestionPosFromID(n,array){
    }
 }
 
-function QuestionFromID(n){
-   var l=0,r=currentQuestions.length-1,pointer;
+function QuestionFromID(n,array){
+   var l=0,r=array.length-1,pointer;
    while(1){
       pointer=Math.floor((l+r)/2);
-      if(currentQuestions[pointer].GetId()==n)return currentQuestions[pointer];
-      else if(currentQuestions[pointer].GetId()<n)l=pointer+1;
+      if(array[pointer].GetId()==n)return array[pointer];
+      else if(array[pointer].GetId()<n)l=pointer+1;
       else r=pointer-1;
    }
 }

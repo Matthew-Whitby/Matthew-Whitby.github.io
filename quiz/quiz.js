@@ -44,9 +44,7 @@ function Restock(type,array){
 function RestockMessage(type){
    var display=document.getElementById("displayMessage");
    display.innerHTML="Answered all "+type+" questions, looping questions";
-   setTimeout(function(){
-      display.innerHTML="";
-   },5000);
+   setTimeout(()=>{display.innerHTML="";},5000);
 }
 
 function AnsweredQuestion(question){
@@ -73,16 +71,6 @@ function QuestionPosFromID(n,array){
    while(1){
       pointer=Math.floor((l+r)/2);
       if(array[pointer].GetId()==n)return pointer;
-      else if(array[pointer].GetId()<n)l=pointer+1;
-      else r=pointer-1;
-   }
-}
-
-function QuestionFromID(n,array){
-   var l=0,r=array.length-1,pointer;
-   while(1){
-      pointer=Math.floor((l+r)/2);
-      if(array[pointer].GetId()==n)return array[pointer];
       else if(array[pointer].GetId()<n)l=pointer+1;
       else r=pointer-1;
    }

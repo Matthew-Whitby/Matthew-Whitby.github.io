@@ -36,11 +36,12 @@ function GetQuestion(){
 function Restock(type,array){
    if(array.length==0){
       console.log("RESTOCKING QUESTIONS OF TYPE: '"+type+"'");
+      RestockMessage(type);
       allQuestions.map(q=>{if(q.GetCategory()==type)array.push(q);});
    }
 }
 
-function RestockMessage(message){
+function RestockMessage(type){
    var display=document.getElementById("displayMessage");
    display.innerHTML="Answered all "+type+" questions, looping questions";
    setTimeout(function(){

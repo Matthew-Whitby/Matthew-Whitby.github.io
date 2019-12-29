@@ -10,7 +10,7 @@ function NextQuestion(){
    GetQuestion();
 }
 
-function NextQuestion(){
+/*function NextQuestion(){
    if(currentQuestions.length>1){
       if(currentQuestion){
          AnsweredQuestion(currentQuestion.GetId());
@@ -26,7 +26,7 @@ function NextQuestion(){
       document.getElementById("question").innerText="END OF QUESTIONS";
       document.getElementById("answer").innerText="END OF QUESTIONS";
    }
-}
+}*/
 
 function GetQuestion(){
    var id,pos,array;

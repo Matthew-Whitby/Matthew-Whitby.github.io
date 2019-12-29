@@ -3,7 +3,11 @@ var generalQs,scienceQs,geographyQs,historyQs,tvFilmQs,celebQs,foodQs,artQs,musi
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
-
+   if(currentQuestion){
+      AnsweredQuestion(currentQuestion);
+      answeredQuestions.push(currentQuestion);
+   }
+   GetQuestion();
 }
 
 function NextQuestion(){
@@ -28,22 +32,45 @@ function GetQuestion(){
    var id,pos,array;
    var select=document.getElementById("categorySelection");
    var selected=select.options[select.selectedIndex].value;
-   switch(selected){
-      case"All":array=currentQuestions;break;
-      case"General":array=generalQs;break;
-      case"ScienceNature":array=scienceQs;break;
-      case"Geography":array=geographyQs;break;
-      case"History":array=historyQs;break;
-      case"TvFilm":array=tvFilmQs;break;
-      case"Celebrities":array=celebQs;break;
-      case"Food":array=foodQs;break;
-      case"Art":array=artQs;break;
-      case"Music":array=musicQs;break;
+   if(selected=="All"){
+      arrayNum=Math.floor(Math.random()*9);
+      switch(arrayNum){
+         case 0:array=generalQs;break;
+         case 1:array=scienceQs;break;
+         case 2:array=geographyQs;break;
+         case 3:array=historyQs;break;
+         case 4:array=tvFilmQs;break;
+         case 5:array=celebQs;break;
+         case 6:array=foodQs;break;
+         case 7:array=artQs;break;
+         case 8:array=musicQs;break;
+      }
+   }else{
+      switch(selected){
+         case"General":array=generalQs;break;
+         case"Science":array=scienceQs;break;
+         case"Geography":array=geographyQs;break;
+         case"History":array=historyQs;break;
+         case"TvFilm":array=tvFilmQs;break;
+         case"Celebrities":array=celebQs;break;
+         case"Food":array=foodQs;break;
+         case"Art":array=artQs;break;
+         case"Music":array=musicQs;break;
+      }
    }
+   Restock(selected,array);
    pos=Math.floor(Math.random()*array.length);
    id=array[pos];
+   
    var newQuestion=QuestionFromID(id);
    DisplayQuestion(newQuestion);
+}
+
+function Restock(type,array){
+   if(array.length==0){
+      console.log("RESTOCKING QUESTIONS OF TYPE: '"+type+"'");
+      allQuestions.map(q=>{if(q.GetCategory()==type)array.push(q);});
+   }
 }
 
 function AnsweredQuestion(qNum){
@@ -144,7 +171,7 @@ function UpdatePlayerName(n){
 function GetPlayer(pNum){for(var i=0;i<players.length;i++)if(players[i].GetId()==pNum)return players[i];}
 
 function Initialise(){
-   currentQuestions=allQuestions;
+   //currentQuestions=allQuestions;
    generalQs=[];
    scienceQs=[];
    geographyQs=[];

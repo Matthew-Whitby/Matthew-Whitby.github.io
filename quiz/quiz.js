@@ -162,7 +162,8 @@ function Initialise(){
    artQs=[];
    musicQs=[];
    allQuestions.map(q=>{
-      switch(q.GetCategory()){
+      GetArray(q.GetCategory()).push(q);
+      /*switch(q.GetCategory()){
          case"General":generalQs.push(q);break;
          case"Science":scienceQs.push(q);break;
          case"Geography":geographyQs.push(q);break;
@@ -171,7 +172,7 @@ function Initialise(){
          case"Food":foodQs.push(q);break;
          case"Art":artQs.push(q);break;
          case"Music":musicQs.push(q);break;
-      }
+      }*/
    });
 }
 

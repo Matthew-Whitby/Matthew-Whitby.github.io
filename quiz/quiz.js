@@ -46,7 +46,7 @@ function RestockMessage(type){
    display.innerHTML="Answered all "+type+" questions, looping questions";
    setTimeout(function(){
       display.innerHTML="";
-   },10000);
+   },5000);
 }
 
 function AnsweredQuestion(question){

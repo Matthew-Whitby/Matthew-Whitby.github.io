@@ -62,7 +62,7 @@ function GetArray(qType){
       case"Food":return foodQs;
       case"Art":return artQs;
       case"Music":return musicQs;
-      default:return 'N';
+      default:return null;
    }
 }
 
@@ -168,6 +168,7 @@ function LoadFile(){
          case 2:
             currentQuestion.SetCategory(curLine);
             allQuestions.push(currentQuestion);
+            if(GetArray(currentQuestion.GetCategory())==null)console.log("INCORRECT CATEGORY: "+currentQuestion);
             move(Math.round((i/(arrLines.length-1))*100));
             currentQuestion=new Question(++idCounter);
             break;

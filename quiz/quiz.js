@@ -29,8 +29,7 @@ function GetQuestion(){
    }else array=GetArray(selected);
    Restock(selected,array);
    pos=Math.floor(Math.random()*array.length);
-   var newQuestion=array[pos];
-   DisplayQuestion(newQuestion);
+   DisplayQuestion(array[pos]);
 }
 
 function Restock(type,array){

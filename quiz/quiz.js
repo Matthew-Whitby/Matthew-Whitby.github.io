@@ -168,7 +168,6 @@ function LoadFile(){
          case 2:
             currentQuestion.SetCategory(curLine);
             allQuestions.push(currentQuestion);
-            if(GetArray(currentQuestion.GetCategory())==null)console.log("INCORRECT CATEGORY: "+currentQuestion.GetQuestion());
             move(Math.round((i/(arrLines.length-1))*100));
             currentQuestion=new Question(++idCounter);
             break;

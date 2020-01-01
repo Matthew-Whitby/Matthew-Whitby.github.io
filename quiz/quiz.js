@@ -214,13 +214,13 @@ function move(percentage){
    progressBar.innerHTML=percentage*1+'%';
  }
 
- function GenerateRandomNumber(){
-    var range=document.getElementById("randomNumInput").value;
-    var out=Math.floor(Math.random()*range)+1;
-    document.getElementById("randomNumDisplay").innerHTML=out;
- }
+function GenerateRandomNumber(){
+   var range=document.getElementById("randomNumInput").value;
+   var out=Math.floor(Math.random()*range)+1;
+   document.getElementById("randomNumDisplay").innerHTML=out;
+}
 
- function PrintData(){
+function PrintData(){
    var generalCount=0,scienceCount=0,geographyCount=0,historyCount=0,tvFilmCount=0,foodCount=0,artCount=0,musicCount=0;
    allQuestions.map(q=>{
       switch(q.GetCategory()){

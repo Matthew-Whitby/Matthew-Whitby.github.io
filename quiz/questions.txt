@@ -538,3 +538,7 @@ Science
 Which element is represented by the symbol Ag?
 Silver
 Science
+
+What makes fizzy drinks fizzy?
+CO2 (Carbon dioxide)
+Science

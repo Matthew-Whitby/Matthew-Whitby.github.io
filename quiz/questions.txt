@@ -589,8 +589,7 @@ TvFilm
 
 Which cyclist became the first Briton to win the Tour de France race in 2012?
 Bradley Wiggins
-General
-*CHANGE TO SPORT WHEN CATEGORY ADDED
+Sport
 
 Which singer known for the songs ‘My Way’ and ‘New York, New York’ died in 1998?
 Frank Sinatra
@@ -744,3 +743,6 @@ What theory was first formulated by George Lemaitre and suggests that the univer
 Big Bang Theory
 Science
 
+Which British athlete won gold in both the 5000m and 10000m events at the 2016 Olympic Games?
+Mo Farah
+Sport

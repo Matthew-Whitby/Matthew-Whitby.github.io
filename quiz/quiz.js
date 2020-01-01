@@ -1,5 +1,5 @@
 var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
-var generalQs,scienceQs,geographyQs,historyQs,tvFilmQs,foodQs,artQs,musicQs;
+var generalQs,scienceQs,geographyQs,historyQs,tvFilmQs,foodQs,artQs,musicQs,sportQs;
 var currentQuestion,progressBar,currentPlayers=1;
 
 function NextQuestion(){
@@ -15,7 +15,7 @@ function GetQuestion(){
    var select=document.getElementById("categorySelection");
    var selected=select.options[select.selectedIndex].value;
    if(selected=="All"){
-      arrayNum=Math.floor(Math.random()*8);
+      arrayNum=Math.floor(Math.random()*9);
       switch(arrayNum){
          case 0:array=generalQs;selected="General";break;
          case 1:array=scienceQs;selected="Science";break;
@@ -25,6 +25,7 @@ function GetQuestion(){
          case 5:array=foodQs;selected="Food";break;
          case 6:array=artQs;selected="Art";break;
          case 7:array=musicQs;selected="Music";break;
+         case 9:array=sportQs;selected="Sport";break;
       }
    }else array=GetArray(selected);
    Restock(selected,array);
@@ -62,6 +63,7 @@ function GetArray(qType){
       case"Food":return foodQs;
       case"Art":return artQs;
       case"Music":return musicQs;
+      case"Sport":return sportQs;
       default:return null;
    }
 }
@@ -221,7 +223,7 @@ function GenerateRandomNumber(){
 }
 
 function PrintData(){
-   var generalCount=0,scienceCount=0,geographyCount=0,historyCount=0,tvFilmCount=0,foodCount=0,artCount=0,musicCount=0;
+   var generalCount=0,scienceCount=0,geographyCount=0,historyCount=0,tvFilmCount=0,foodCount=0,artCount=0,musicCount=0,sportCount=0;
    allQuestions.map(q=>{
       switch(q.GetCategory()){
          case"General":generalCount++;break;
@@ -232,6 +234,7 @@ function PrintData(){
          case"Food":foodCount++;break;
          case"Art":artCount++;break;
          case"Music":musicCount++;break;
+         case"Sport":sportCount++;break;
       }
    });
    console.log("Current Question Data:");
@@ -244,4 +247,5 @@ function PrintData(){
    console.log("Food Questions: "+foodCount);
    console.log("Art Questions: "+artCount);
    console.log("Music Questions: "+musicCount);
+   console.log("Sport Questions: "+sportCount);
 }

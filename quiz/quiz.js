@@ -150,7 +150,7 @@ function UpdatePlayerName(n){
 
 function GetPlayer(pNum){for(var i=0;i<players.length;i++)if(players[i].GetId()==pNum)return players[i];}
 
-function Initialise(){generalQs=[];scienceQs=[];geographyQs=[];historyQs=[];tvFilmQs=[];foodQs=[];artQs=[];musicQs=[];allQuestions.map(q=>{GetArray(q.GetCategory()).push(q);});}
+function Initialise(){generalQs=[];scienceQs=[];geographyQs=[];historyQs=[];tvFilmQs=[];foodQs=[];artQs=[];musicQs=[];sportQs=[];allQuestions.map(q=>{GetArray(q.GetCategory()).push(q);});}
 
 function LoadFile(){
    var oFrame=document.getElementById("frmFile");
@@ -182,7 +182,7 @@ function LoadFile(){
 }
 
 function move(percentage){
-   progressBar.style.width=percentage+'%'; 
+   progressBar.style.width=percentage+'%';
    progressBar.innerHTML=percentage*1+'%';
  }
 

@@ -181,36 +181,6 @@ function LoadFile(){
    move(100);
 }
 
-function LoadCompFile(){
-   var oFrame=document.getElementById("frmFile");
-   var strRawContents=oFrame.contentWindow.document.body.childNodes[0].innerHTML;
-   while(strRawContents.indexOf("\r")>=0)
-      strRawContents=strRawContents.replace("\r","");
-   var arrLines=strRawContents.split("|");
-   var idCounter=0,counter=-1;
-   var currentQuestion=new Question(idCounter);
-   progressBar=document.getElementById("myBar");
-   for(var i=0;i<arrLines.length;i++){
-      var curLine=arrLines[i].trim();
-      //if(curLine==""||curLine.substring(0,1)=="*")continue;
-      switch(counter=(counter==2)?0:counter+1){
-         case 0:currentQuestion.SetQuestion(curLine);break;
-         case 1:currentQuestion.SetAnswer(curLine);break;
-         case 2:
-            currentQuestion.SetCategory(curLine);
-            if(GetArray(currentQuestion.GetCategory())==='N')console.log("INCORRECT CATEGORY: "+currentQuestion);
-            allQuestions.push(currentQuestion);
-            move(Math.round((i/(arrLines.length-1))*100));
-            currentQuestion=new Question(++idCounter);
-            break;
-      }
-   }
-   document.getElementById("quizWindow").style.display="block";
-   document.getElementById("loadingScreen").style.display="none";
-   Initialise();
-   move(100);
-}
-
 function move(percentage){
    progressBar.style.width=percentage+'%'; 
    progressBar.innerHTML=percentage*1+'%';

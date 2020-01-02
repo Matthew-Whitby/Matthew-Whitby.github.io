@@ -794,4 +794,3 @@ General
 Which is the larger island; Greenland or Iceland?
 Greenland
 Geography
-

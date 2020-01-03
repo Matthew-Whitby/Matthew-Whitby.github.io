@@ -25,7 +25,7 @@ function GetQuestion(){
          case 5:array=foodQs;selected="Food";break;
          case 6:array=artQs;selected="Art";break;
          case 7:array=musicQs;selected="Music";break;
-         case 9:array=sportQs;selected="Sport";break;
+         case 8:array=sportQs;selected="Sport";break;
       }
    }else array=GetArray(selected);
    Restock(selected,array);

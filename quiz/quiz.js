@@ -1,6 +1,6 @@
 var currentQuestions=[],allQuestions=[],answeredQuestions=[],players=[];
 var generalQs,scienceQs,geographyQs,historyQs,tvFilmQs,foodQs,artQs,musicQs,sportQs;
-var currentQuestion,progressBar,currentPlayers=1;
+var currentQuestion,progressBar,currentPlayers=1,disp=false;
 
 function NextQuestion(){
    if(currentQuestion){
@@ -8,6 +8,13 @@ function NextQuestion(){
       answeredQuestions.push(currentQuestion);
    }
    GetQuestion();
+}
+
+function PopQuestion(){
+   if(answeredQuestions.length>0){
+      currentQuestion=answeredQuestions[answeredQuestions.length-1];
+      answeredQuestions.splice(answeredQuestions.length-1,1);
+   }
 }
 
 function GetQuestion(){
@@ -44,7 +51,10 @@ function Restock(type,array){
 function RestockMessage(type){
    var display=document.getElementById("displayMessage");
    display.innerHTML="Answered all "+type+" questions, looping questions";
-   setTimeout(()=>{display.innerHTML="";},5000);
+   if(!disp){
+      disp=true;
+      setTimeout(()=>{disp=false;display.innerHTML="";},5000);
+   }
 }
 
 function AnsweredQuestion(question){

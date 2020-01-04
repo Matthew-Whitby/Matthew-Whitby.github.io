@@ -51,10 +51,8 @@ function Restock(type,array){
 function RestockMessage(type){
    var display=document.getElementById("displayMessage");
    display.innerHTML="Answered all "+type+" questions, looping questions";
-   if(!disp){
-      disp=true;
-      setTimeout(()=>{disp=false;display.innerHTML="";},5000);
-   }
+   //if(!disp)disp=true;
+   setTimeout(()=>{if(!disp)display.innerHTML="";else disp=false;},5000);
 }
 
 function AnsweredQuestion(question){

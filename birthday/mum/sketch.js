@@ -35,7 +35,7 @@ function setup(){
   for(ipoint of birthdayPoints)
     birthdayFireworks.push(new Firework(ipoint.x,ipoint.y));
   for(ipoint of mumPoints)
-    robertFireworks.push(new Firework(ipoint.x,ipoint.y));
+    mumFireworks.push(new Firework(ipoint.x,ipoint.y));
 }
 
 function counterplz(pointList){

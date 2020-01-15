@@ -2,6 +2,8 @@ var happyFireworks=[],birthdayFireworks=[],mumFireworks=[],fireworks=[];
 var font;
 var gravity;
 var stage=0;
+var windowWidth=window.screen.width;
+var windowHeight=window.screen.height;
 
 function preload(){
   font=loadFont('07にくまるフォント.otf');

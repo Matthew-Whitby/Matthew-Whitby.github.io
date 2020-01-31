@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://matthewwhitby.co.uk/CSS/countdown.css">
     <style>
-      .section{
+      .spin{
         animation-name: spin;
     animation-duration: 1000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;}
-    @-moz-keyframes spin {
+    .backspin{
+      animation-name: backspin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+    @-moz-keyframes backspin {
+    from { -moz-transform: rotate(360deg); }
+    to { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes backspin {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0deg); }
+}
+@keyframes backspin {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+}
+@-moz-keyframes spin {
     from { -moz-transform: rotate(0deg); }
     to { -moz-transform: rotate(360deg); }
 }
@@ -23,32 +41,32 @@
 }</style>
   </head>
   <body>
-    <div class="section">
+    <div class="section spin">
       <h1 class="title">Dissertation</h1>
       <p class="cd" id="dissertation"></p>
       <div class="dd">(29/04/19)</div>
     </div>
-    <div class="section">
+    <div class="section backspin">
       <h1 class="title">Distributed Systems Coursework</h1>
       <p class="cd" id="distributed"></p>
       <div class="dd">(29/04/19)</div>
     </div>
-    <div class="section">
+    <div class="section spin">
       <h1 class="title">Comp Vision Coursework</h1>
       <p class="cd" id="compvision"></p>
       <div class="dd">(30/04/19)</div>
     </div>
-    <div class="section">
+    <div class="section backspin">
       <h1 class="title">Distributed Systems Exam</h1>
       <p class="cd" id="distributedexam"></p>
       <div class="dd">(08/05/19)</div>
     </div>
-    <div class="section">
+    <div class="section spin">
       <h1 class="title">Dissertation Demo</h1>
       <p class="cd" id="dissdemo"></p>
       <div class="dd">(16/05/19) 10:00</div>
     </div>
-    <div class="section">
+    <div class="section backspin">
       <h1 class="title">Comp Vision Exam</h1>
       <p class="cd" id="compvisionexam"></p>
       <div class="dd">(17/05/19)</div>

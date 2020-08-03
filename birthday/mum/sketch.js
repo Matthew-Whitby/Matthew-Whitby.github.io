@@ -6,7 +6,7 @@ var windowWidth=window.screen.width;
 var windowHeight=window.screen.height;
 
 function preload(){
-  font=loadFont('07にくまるフォント.otf');
+  font=loadFont('../../resources/07にくまるフォント.otf');
 }
 
 function setup(){

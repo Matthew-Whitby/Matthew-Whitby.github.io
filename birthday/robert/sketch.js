@@ -7,7 +7,7 @@ var stage = 0;
 var fireworks = [];
 
 function preload(){
-  font = loadFont('07にくまるフォント.otf');
+  font = loadFont('https://matthewwhitby.co.uk/Resources/07にくまるフォント.otf');
 }
 
 function setup(){

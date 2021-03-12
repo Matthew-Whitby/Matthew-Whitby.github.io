@@ -6,66 +6,44 @@
   </head>
   <body>
     <div class="section">
-      <h1 class="title">Last Lecture</h1>
-      <p class="cd" id="LL"></p>
-      <div class="dd">(19/05/19 15:00-16:00)</div>
+      <h1 class="title">PHYS411 Advanced Relativity and Gravity</h1>
+      <p class="cd" id="411"></p>
+      <div class="dd">(27/04/21 09:30-11:00)</div>
     </div>
     <div class="section">
-      <h1 class="title">Phys-211 Math 1</h1>
-      <p class="cd" id="211"></p>
-      <div class="dd">(20/05/19 09:30-11:00)</div>
+      <h1 class="title">PHYS461 Cosmology III</h1>
+      <p class="cd" id="461"></p>
+      <div class="dd">(05/05/21 09:30-11:00)</div>
     </div>
     <div class="section">
-      <h1 class="title">Phys-213 Math 2</h1>
-      <p class="cd" id="213"></p>
-      <div class="dd">(22/05/19 14:00-15:00)</div>
+      <h1 class="title">PHYS462 Guage Theories</h1>
+      <p class="cd" id="462"></p>
+      <div class="dd">(06/05/21 09:30-11:00)</div>
+    </div>
+
+    <div class="section">
+      <h1 class="title">PHYS484 Advanced Electrodynamics and Gravity</h1>
+      <p class="cd" id="484"></p>
+      <div class="dd">(12/05/21 09:30-11:00)</div>
     </div>
     <div class="section">
-      <h1 class="title">Phys-265 Cosmology</h1>
-      <p class="cd" id="265"></p>
-      <div class="dd">(23/05/19 09:30-10:30)</div>
+      <h1 class="title">PHYS464 Astrophysics III: Galaxies/h1>
+      <p class="cd" id="464"></p>
+      <div class="dd">(19/05/21 09:30-11:00)</div>
     </div>
     <div class="section">
-      <h1 class="title">Phys-233 Thermo</h1>
-      <p class="cd" id="233"></p>
-      <div class="dd">(24/05/19 14:00-15:30)</div>
+      <h1 class="title">PHYS483 Quantum Information Processing</h1>
+      <p class="cd" id="483"></p>
+      <div class="dd">(25/05/21 09:30-11:00)</div>
     </div>
-    <div class="section">
-      <h1 class="title">Phys-222+221 E/M + Wave + Optics</h1>
-      <p class="cd" id="222"></p>
-      <div class="dd">(28/05/19 14:00-16:30)</div>
-    </div>
-    <div class="section">
-      <h1 class="title">Phys-263 Astronomy</h1>
-      <p class="cd" id="263"></p>
-      <div class="dd">(30/05/19 14:00-15:00)</div>
-    </div>
-    <div class="section">
-      <h1 class="title">Phys-223 Quantum</h1>
-      <p class="cd" id="223"></p>
-      <div class="dd">(31/05/19 9:30-11:00)</div>
-    </div>
-    <div class="section">
-      <h1 class="title">Phys-232 Relativity + Neclei</h1>
-      <p class="cd" id="232"></p>
-      <div class="dd">(03/06/19 9:30-11:30)</div>
-    </div>
-    <div class="section">
-      <h1 class="title">Phys-264 AstroPhysics</h1>
-      <p class="cd" id="264"></p>
-      <div class="dd">(05/06/19 9:30-10:30)</div>
-    </div>
+
     <script>
-      let d=[["LL",new Date("may 19, 2019 15:00:00").getTime()],
-        ["211",new Date("may 20, 2019 09:30:00").getTime()],
-        ["213",new Date("may 22, 2019 14:00:00").getTime()],
-        ["265",new Date("may 23, 2019 09:30:00").getTime()],
-        ["233",new Date("may 24, 2019 14:00:00").getTime()],
-        ["222",new Date("may 28, 2019 14:00:00").getTime()],
-        ["263",new Date("may 30, 2019 14:00:00").getTime()],
-        ["223",new Date("may 31, 2019 09:30:00").getTime()],
-        ["232",new Date("jun 03, 2019 09:30:00").getTime()],
-        ["264",new Date("jun 05, 2019 09:30:00").getTime()]];
+      let d=[["411",new Date("apr 27, 2021 09:30:00").getTime()],
+        ["461",new Date("may 05, 2021 09:30:00").getTime()],
+        ["462",new Date("may 06, 2021 09:30:00").getTime()],
+        ["484",new Date("may 12, 2021 09:30:00").getTime()],
+        ["464",new Date("may 19, 2021 09:30:00").getTime()],
+        ["483",new Date("may 25, 2021 09:30:00").getTime()],];
       var x=setInterval(()=>{for(var i=0;i<d.length;i++)GetTime(d[i]);},1000);
       function GetTime(d){
         let now=new Date().getTime();

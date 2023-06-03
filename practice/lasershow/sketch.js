@@ -31,8 +31,8 @@ async function draw() {
   }
     for(let i=lasers.length-1;i>=0;i--){
       //lasers[i].update();
-      await sleep(500);
       lasers[i].render();
+      await sleep(500);
       if(lasers[i].done()){
         lasers.splice(i,1);
       }

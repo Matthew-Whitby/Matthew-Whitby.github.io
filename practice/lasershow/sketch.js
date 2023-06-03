@@ -10,7 +10,7 @@ function setup(){
 }
 
 async function draw() {
-  if(random(1)<1){
+  if(random(1)<0.2){
     if(lasers.length>0){
       clear();
       lasers.splice(0,1);

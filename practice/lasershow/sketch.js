@@ -10,7 +10,7 @@ function setup(){
 }
 
 async function draw() {
-  if(random(1)<0.2){
+  if(random(1)<0.05){
     if(lasers.length>0){
       clear();
       lasers.splice(0,1);
@@ -32,15 +32,10 @@ async function draw() {
     for(let i=lasers.length-1;i>=0;i--){
       //lasers[i].update();
       lasers[i].render();
-      await sleep(500);
       if(lasers[i].done()){
         lasers.splice(i,1);
       }
   }
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function windowResized(){

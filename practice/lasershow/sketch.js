@@ -9,8 +9,8 @@ function setup(){
   background(0);
 }
 
-function draw() {
-  await new Promise(r => setTimeout(r, 100));
+async function draw() {
+  await sleep(100);
   if(random(1)<1){
     if(lasers.length>0){
       clear();
@@ -37,6 +37,10 @@ function draw() {
         lasers.splice(i,1);
       }
   }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function windowResized(){

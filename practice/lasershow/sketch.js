@@ -10,6 +10,7 @@ function setup(){
 }
 
 function draw() {
+  await new Promise(r => setTimeout(r, 100));
   if(random(1)<1){
     if(lasers.length>0){
       clear();

@@ -10,7 +10,7 @@ function setup(){
 }
 
 async function draw() {
-  await sleep(500);
+  await sleep(20000);
   if(random(1)<1){
     if(lasers.length>0){
       clear();

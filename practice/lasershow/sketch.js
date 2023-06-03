@@ -10,7 +10,6 @@ function setup(){
 }
 
 async function draw() {
-  await sleep(20000);
   if(random(1)<1){
     if(lasers.length>0){
       clear();
@@ -32,6 +31,7 @@ async function draw() {
   }
     for(let i=lasers.length-1;i>=0;i--){
       //lasers[i].update();
+      await sleep(500);
       lasers[i].render();
       if(lasers[i].done()){
         lasers.splice(i,1);
